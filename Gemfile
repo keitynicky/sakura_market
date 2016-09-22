@@ -19,6 +19,8 @@ group :development, :test do
   gem 'guard'
   gem 'guard-bundler'
   gem 'guard-rspec'
+  gem 'hirb'
+  gem 'hirb-unicode'
 end
 
 group :development do
