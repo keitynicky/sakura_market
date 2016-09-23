@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160922065145) do
+ActiveRecord::Schema.define(version: 20160923102358) do
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -18,8 +18,9 @@ ActiveRecord::Schema.define(version: 20160922065145) do
     t.string   "description"
     t.boolean  "is_hidden"
     t.integer  "sort"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.binary   "photo",       limit: 65535
   end
 
   create_table "shopping_carts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
