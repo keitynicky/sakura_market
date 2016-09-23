@@ -1,4 +1,7 @@
-<h1>商品一覧！</h1>
-
-- @products.each do |product|
-  = product.name
+%div.image-area
+  - @products.each do |product|
+    %div.image-box
+      = image_tag "hoge.gif", size: "250x200"
+      %div
+        %a
+          = product.name
