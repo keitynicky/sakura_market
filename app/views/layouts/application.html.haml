@@ -6,18 +6,17 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %div#top
-      %header
-        %hgroup
-          %h1 さくらマーケット
-        %nav
-          %ul
-            %li 
-              %a ああああ
-            %li 
-              %a いいいい
-            %li 
-              %a ううううう
-            %li 
-              %a ログアウト
+    %header
+      %nav
+        %ul
+          %li 
+            %h1 さくらマーケット
+          %li 
+            %a ああああ
+          %li 
+            %a いいいい
+          %li 
+            %a ううううう
+          %li 
+            %a ログアウト
   = yield
