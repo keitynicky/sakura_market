@@ -5,8 +5,7 @@ class ProductsController < ApplicationController
   end
 
   def show_photo
-    @product = Product.find(params[:id])
-    send_data @product.photo, :type => 'image/png', :disposition => 'inline'
+    send_data Product.find(params[:id]).photo, :type => 'image/png', :disposition => 'inline'
   end
   
 end
