@@ -1,4 +1,5 @@
-# 躓きストック
+# ソリューションログ
+※　『アジャイルプラクティス』にならって、躓いたポイントをストック☆
 
 ## deviseを用いてユーザー登録しようとしたら、「LoadError: cannot load such file — bcrypt_ext」というエラーが発生した。
   * http://stackoverflow.com/questions/33588735/loaderror-cannot-load-such-file-bcrypt-ext-on-windows-2008-x64-server
@@ -15,4 +16,8 @@
    * ブログ用のrailsのconfig/applicaiton.rbにはその記載があった！コメントで書かれていないのはバージョンかな？？scaffoldで作っていた（？）からかな？
   * 書いている場所は問題ない。rails サーバー再起動して確認してもだめ。なんでだろう。。
   * !!そうか、viewはベタで書いているから、そっちは別途直さないとだめなのね！
+
+## tmp/pid/server.pid
+ * ここに値が記載されていると、rails sで実行できない。
+ 　* visual studio codeのdebug for chromeを昨日使ってみたけどそれかな？一旦は様子見！
    
