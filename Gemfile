@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
 gem 'devise'
 gem 'bcrypt'
+gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'
 
 group :development, :test do
   gem 'pry-rails'
