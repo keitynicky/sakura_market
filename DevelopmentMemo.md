@@ -32,3 +32,14 @@
   * 試しにfile_fixtures_extension.rbを用いてみたけど、uninitialized constant fixtureのエラーが発生していた。
  * https://gist.github.com/averyvery/2361682
   * fileオブジェクトを登録する手順だと、画像ファイルが表示されない。。もしかして、こういう手順の場合は見せ方のコードも変えないといけないのかな？？
+
+## deviseに新たにフィールドを追加する方法
+ * 参考サイト：
+  * http://stackoverflow.com/questions/3546289/override-devise-registrations-controller
+  * http://jacopretor
+ * 最終的にはここのサイトを参考に
+  * http://jacopretorius.net/2014/03/adding-custom-fields-to-your-devise-user-model-in-rails-4.html
+
+## 郵便番号を引っ張ってくる方法
+ * http://ruby-rails.hatenadiary.com/entry/20150112/1421029284
+

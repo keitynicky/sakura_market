@@ -16,6 +16,14 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "off"
+  .field
+    = f.label :post_code
+    %br/
+    = f.text_field :post_code  
+  .field
+    = f.label :address
+    %br/
+    = f.text_field :address  
   .actions
     = f.submit "新規登録"
 = render "devise/shared/links"
