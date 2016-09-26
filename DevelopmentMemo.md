@@ -43,3 +43,7 @@
 ## 郵便番号を引っ張ってくる方法
  * http://ruby-rails.hatenadiary.com/entry/20150112/1421029284
 
+## migrateして最新のはずなのに、migrateされていないというエラーがでた。
+ * rails destroy migration AddDetailsToUsers
+  * たぶん、上記コマンドで削除した後、visual studio codeで未保存をすべて保存とした際に、表示していた削除済みのファイルが再度保存されてしまったことによる現象   
+
