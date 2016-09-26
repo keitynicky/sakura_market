@@ -26,4 +26,9 @@
   * http://qiita.com/fukumone/items/b8934f78f841b19edbbe
  * 最初のデプロイ手順はherokuのページにある手順でOk！久しぶりにやったら忘れていたからメモ！
   * https://dashboard.heroku.com/apps/sakuramarket/deploy/heroku-git
-   
+
+## seedでイメージファイルのデータを登録する方法
+ * http://stackoverflow.com/questions/12644057/how-to-use-binary-data-in-rails-fixtures
+  * 試しにfile_fixtures_extension.rbを用いてみたけど、uninitialized constant fixtureのエラーが発生していた。
+ * https://gist.github.com/averyvery/2361682
+  * fileオブジェクトを登録する手順だと、画像ファイルが表示されない。。もしかして、こういう手順の場合は見せ方のコードも変えないといけないのかな？？

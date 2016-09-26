@@ -3,6 +3,9 @@
 * .editorconfigを設定しています。
 
 ## 作業状況
- * GitHubのProjectにまとめています。 
+ * GitHubのProjectにまとめています。
+
+## heroku
+ * https://sakuramarket.herokuapp.com/ 
 
 
