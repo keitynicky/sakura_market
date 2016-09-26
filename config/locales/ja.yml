@@ -6,3 +6,5 @@ ja:
         password: パスワード
         password_confirmation: パスワード(確認)
         remember_me: パスワードを記憶
+        post_code: 郵便番号
+        address: 住所
