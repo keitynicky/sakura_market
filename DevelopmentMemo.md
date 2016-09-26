@@ -20,4 +20,10 @@
 ## tmp/pid/server.pid
  * ここに値が記載されていると、rails sで実行できない。
  　* visual studio codeのdebug for chromeを昨日使ってみたけどそれかな？一旦は様子見！
+
+## herokuデプロイ
+ * mysqlの設定を忘れずに！自動化できないのかな？？
+  * http://qiita.com/fukumone/items/b8934f78f841b19edbbe
+ * 最初のデプロイ手順はherokuのページにある手順でOk！久しぶりにやったら忘れていたからメモ！
+  * https://dashboard.heroku.com/apps/sakuramarket/deploy/heroku-git
    
