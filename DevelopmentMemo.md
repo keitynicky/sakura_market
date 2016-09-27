@@ -42,6 +42,7 @@
 
 ## 郵便番号を引っ張ってくる方法
  * http://ruby-rails.hatenadiary.com/entry/20150112/1421029284
+  * キャッシュを破棄しないと二回目以降は適用されない？？TODO化済
 
 ## migrateして最新のはずなのに、migrateされていないというエラーがでた。
  * rails destroy migration AddDetailsToUsers
