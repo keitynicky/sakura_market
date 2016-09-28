@@ -4,4 +4,4 @@
       = image_tag show_photo_product_path(product), size: "250x200"
       %div
         %a
-          = product.name
+          = link_to product.name, product

@@ -1,0 +1,10 @@
+%h2
+  = @product.name
+%br
+  = image_tag show_photo_product_path(@product), size: "250x200"
+%br
+  商品説明：
+  = @product.description
+%br
+  価格：
+  = number_to_currency(@product.price, :format => "%u%n", :unit => "￥", :precision => 0)

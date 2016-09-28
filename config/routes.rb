@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
   root 'products#index'
-  resources :products, only: [] do
+  resources :products, only: [:show] do
     member {get :show_photo}
   end
   resource :user do
