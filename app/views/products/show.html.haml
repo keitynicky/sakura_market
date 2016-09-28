@@ -1,10 +1,12 @@
-%h2
-  = @product.name
-%br
-  = image_tag show_photo_product_path(@product), size: "250x200"
-%br
-  商品説明：
-  = @product.description
-%br
-  価格：
-  = number_to_currency(@product.price, :format => "%u%n", :unit => "￥", :precision => 0)
+%div.content
+  %div.column
+    = image_tag show_photo_product_path(@product), size: "250x200"
+  %div.column
+    %h1.product-title
+      = @product.name
+    %div
+      = @product.description
+    %div
+      %h6 価格：
+      %span.order-total
+        = number_to_currency(@product.price, :format => "%u%n", :unit => "￥", :precision => 0)

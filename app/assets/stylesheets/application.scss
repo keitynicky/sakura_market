@@ -3,6 +3,10 @@ $font-stack: "Meiryo UI";
 $primary-color: #333;
 $menu-color:#7AC843;
 $menu-font-color: #fff;
+$border-color: #d9d9db;
+$h1-font-size: 25px;
+$order-color: #00ADEE;
+
 .image-area {
   display: flex;
   flex-wrap: wrap;
@@ -22,29 +26,55 @@ $menu-font-color: #fff;
   border: 1px solid #e7e7e7;
 }
 
+.content {
+  display: flex;
+  .column {
+    padding: 10px;
+  }
+  .column:nth-child(2) {
+    width: 100%;
+  }
+  .product-title {
+    border-bottom: 1px solid $border-color;
+    font-size: $h1-font-size; 
+  }
+
+  .order-total {
+    color: $order-color;
+    font-weight: bold;
+  }
+}
+
+
 body {
   font: 100% $font-stack;
   color: $primary-color;
+  h6 {
+    margin-bottom: 0;
+  }
   header {
     background: $menu-color;
-    color: $menu-font-color;
+    color: $menu-font-color !important;
     nav {
+      a {
+        margin: 10px;
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+        color: $menu-font-color !important;
+      }
       h1 {
-        font-size: 25px;
+        font-size: $h1-font-size;
+        margin: 0;
       }
       ul {
         display: flex;
+        padding: 0;
         li {
           list-style: none;
         }
         li:first-child {
           margin-right: auto;
-        }
-        a {
-          margin: 10px;
-          display: block;
-          padding: 15px;
-          text-decoration: none;
         }
       }
     }

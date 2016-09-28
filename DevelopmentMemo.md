@@ -48,3 +48,6 @@
  * rails destroy migration AddDetailsToUsers
   * たぶん、上記コマンドで削除した後、visual studio codeで未保存をすべて保存とした際に、表示していた削除済みのファイルが再度保存されてしまったことによる現象   
 
+## 商品詳細ページの作成
+ * http://dotinstall.com/lessons/basic_rails_v2/24911
+ * controllerのshowで実装。表示用のview側を作成すればOK！
