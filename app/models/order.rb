@@ -10,8 +10,7 @@ class Order < ApplicationRecord
   private
 
   def update_subtotal
-    self[:subtotal] = subtotal
-    p "self.subtotal=#{self.subtotal}"
+    self.subtotal = subtotal
   end
 
 end
