@@ -12,6 +12,7 @@
         = number_to_currency(@product.price, :format => "%u%n", :unit => "￥", :precision => 0)
       - if user_signed_in?
         %div.add_cart
-          = form_for [current_user, current_user.shopping_carts.build] do |f|
+          = form_for @order_item do |f|
             = f.number_field :quantity
+            = f.hidden_field :product_id, value: @product.id
             = f.submit "カートに追加"

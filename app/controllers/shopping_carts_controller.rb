@@ -1,8 +1,9 @@
 class ShoppingCartsController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   def create
-    current_user.shopping_carts.create(params)
+    # current_user.shopping_carts.create(params)
+    # redirect_to :back
   end
 
   private
