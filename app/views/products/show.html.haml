@@ -10,3 +10,8 @@
       %h6 価格：
       %span.order-total
         = number_to_currency(@product.price, :format => "%u%n", :unit => "￥", :precision => 0)
+      - if user_signed_in?
+        %div.add_cart
+          = form_for [current_user, current_user.shopping_carts.build] do |f|
+            = f.number_field :quantity
+            = f.submit "カートに追加"
