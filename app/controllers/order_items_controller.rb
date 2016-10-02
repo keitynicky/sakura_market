@@ -4,6 +4,8 @@ class OrderItemsController < ApplicationController
     @order_item = @order.order_items.new(order_item_params)
     @order.save
     session[:order_id] = @order.id
+
+    redirect_to cart_path
   end
 
 private
