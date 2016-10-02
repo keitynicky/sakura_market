@@ -1,1 +1,25 @@
-ショッピングカート
+%h2 
+  ショッピングカート
+%div
+  %table
+    %thead
+      %tr
+        %th
+          商品
+        %th 
+          金額
+        %th 
+          個数
+        %th 
+          総額
+    %tbody
+      - @order_items.each do |item|
+        %tr
+          %td 
+            = item.product.name
+          %td 
+            = item.unit_price
+          %td 
+            = item.quantity
+          %td 
+            = item.total_price
