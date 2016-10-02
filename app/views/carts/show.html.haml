@@ -1,10 +1,10 @@
 %h2 
   ショッピングカート
-%div
+%div.cart
   %table
     %thead
       %tr
-        %th
+        %th.product{:colspan => 2}
           商品
         %th 
           金額
@@ -13,13 +13,24 @@
         %th 
           総額
     %tbody
-      - @order_items.each do |item|
+      - @order.order_items.each do |item|
         %tr
-          %td 
-            = item.product.name
-          %td 
+          %td
+            = image_tag show_photo_product_path(item.product), size: "100x80"
+          %td.product_detail 
+            %h4
+              = link_to item.product.name, item.product
+            %span
+              = item.product.description
+          %td.number 
             = item.unit_price
-          %td 
+          %td.number 
             = item.quantity
-          %td 
+          %td.number 
             = item.total_price
+    %tfoot
+      %tr
+        %th{:colspan => 4} 
+          合計
+        %th 
+          = @order.subtotal

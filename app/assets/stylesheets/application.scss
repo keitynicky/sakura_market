@@ -60,6 +60,44 @@ $order-color: #00ADEE;
   }
 }
 
+.cart {
+  margin: 10px;
+  table {
+    border-spacing: 0;
+    border-collapse: separate;
+    width: 100%;
+    th,td {
+      padding: 10px;
+      margin: 2px;
+    }
+    thead {
+      background-color: #d9d9db;
+      .product {
+        width: 60%; 
+      }
+    }
+    tbody {
+      .number {
+        text-align: right;
+      }
+      .product_detail
+      {
+        width: 50%;
+        h4 {
+          margin: 2px 0 2px 0;
+        }
+        span {
+          padding-left: 1em;
+        }
+      }
+    }
+    tfoot {
+      background-color: $order-color; 
+      color:$menu-font-color; 
+      text-align: right;
+    }
+  }
+}
 
 .content {
   display: flex;
