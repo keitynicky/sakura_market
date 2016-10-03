@@ -10,9 +10,5 @@ class ProductsController < ApplicationController
       @order_item = current_order.order_items.new
     end
   end
-
-  def show_photo
-    send_data Product.find(params[:id]).photo, :type => 'image/png', :disposition => 'inline'
-  end
   
 end

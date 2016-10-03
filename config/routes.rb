@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   resources :products, only: [:show] do
     member {get :show_photo}
   end
-  resource :cart, only: [:show] do 
-    member {get :show_photo}
-  end
+  resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
   root to: "products#index"
 end

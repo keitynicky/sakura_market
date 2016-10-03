@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
       current_user.orders.new
     end
   end
+
+  def show_photo
+    send_data Product.find(params[:id]).photo, :type => 'image/png', :disposition => 'inline'
+  end
 end
