@@ -8,11 +8,9 @@ class OrderItemsController < ApplicationController
   end
 
   def create
-    redirect_to order_items_path
   end
 
   def update
-    redirect_to order_items_path    
   end
 
   def destroy
@@ -29,13 +27,14 @@ private
   def set_order_item
     @order_item = @order.order_items.find_or_initialize_by(product_id: order_item_params[:product_id])
     @order_item.quantity = order_item_params[:quantity]
-    @order_item.save    
+    @order_item.save
+    redirect_to order_items_path            
   end
 
   def after_create_or_update
     @order.save
     session[:order_id] = @order.id
-  end  
+  end
 
   def order_item_params
     params.require(:order_item).permit(:quantity, :product_id)
