@@ -30,6 +30,7 @@
           %td.number 
             = disp_money(item.total_price)
           %td
+            = link_to "削除", item, method: :delete, data: {confirm: "削除して良いですか？"}
     %tfoot
       %tr
         %th{:colspan => 4} 
