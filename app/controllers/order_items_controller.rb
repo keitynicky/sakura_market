@@ -1,7 +1,7 @@
 class OrderItemsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_order
-  before_action :set_order_item, only: [:create, :update]
+  before_action :save_order, only: [:create, :update]
 
   def index
   end
@@ -23,7 +23,8 @@ private
     @order = current_order
   end
 
-  def set_order_item
+  def save_order
+    # TODO リファクタ保存処理をもう少しシンプルにかけないかどうか。
     @order_item = @order.order_items.find_or_initialize_by(product_id: order_item_params[:product_id])
     @order_item.quantity = order_item_params[:quantity]
     @order_item.save
