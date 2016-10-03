@@ -6,8 +6,10 @@ class OrderItem < ApplicationRecord
 
   before_save :finalize
 
+  DEFAULT_QUANTITY = 1
+
   def quantity
-    self[:quantity] ||= 1
+    self[:quantity] ||= DEFAULT_QUANTITY
   end
 
   def unit_price
