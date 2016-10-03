@@ -12,6 +12,7 @@
           個数
         %th 
           総額
+        %th
     %tbody
       - @order.order_items.each do |item|
         %tr
@@ -28,9 +29,11 @@
             = item.quantity
           %td.number 
             = disp_money(item.total_price)
+          %td
     %tfoot
       %tr
         %th{:colspan => 4} 
           合計
         %th
           = disp_money(@order.subtotal)
+        %th
