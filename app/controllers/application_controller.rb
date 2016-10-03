@@ -6,7 +6,9 @@ class ApplicationController < ActionController::Base
     if !session[:order_id].nil?
       Order.find(session[:order_id])
     else
-      current_user.orders.new
+      # TODO:3456herokuデプロイ用仮コメントアウト
+      # current_user.orders.new
+      Order.new
     end
   end
 
