@@ -29,7 +29,7 @@ private
   end
 
   def set_order_item
-    @order_item = @order.order_items.find_or_create_by(product_id: order_item_params[:product_id])
+    @order_item = @order.order_items.find_or_initialize_by(product_id: order_item_params[:product_id])
   end
 
   def after_create_or_update
