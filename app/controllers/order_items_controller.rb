@@ -2,8 +2,11 @@ class OrderItemsController < ApplicationController
   before_action :set_order
 
   def create
-    @order_item = @order.order_items.new(order_item_params)
+    # TODO もうすでにカートに追加済の場合は更新する処理、もう少しシンプルにかけないか検討すること
+    @order_item = @order.order_items.where(product_id: order_item_params[:product_id]).first_or_initialize
+    @order_item.quantity = order_item_params[:quantity]
     @order.save
+    @order_item.save
     session[:order_id] = @order.id
     redirect_to cart_path
   end
