@@ -1,5 +1,5 @@
 class OrderItemsController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
   before_action :set_order
   before_action :set_order_item, only: [:create, :update]
   after_action :after_create_or_update, only: [:create, :update]
@@ -12,8 +12,6 @@ class OrderItemsController < ApplicationController
   end
 
   def update
-    @order_item.quantity = order_item_params[:quantity]
-    @order_item.save
     redirect_to order_items_path    
   end
 
@@ -30,6 +28,8 @@ private
 
   def set_order_item
     @order_item = @order.order_items.find_or_initialize_by(product_id: order_item_params[:product_id])
+    @order_item.quantity = order_item_params[:quantity]
+    @order_item.save    
   end
 
   def after_create_or_update
