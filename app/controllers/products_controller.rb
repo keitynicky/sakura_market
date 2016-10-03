@@ -8,8 +8,6 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     if user_signed_in?
       @order_item = current_order.order_items.find_or_create_by(product_id: params[:id])
-      p @order_item
-      # @order_item = current_order.order_items.new
     end
   end
   
