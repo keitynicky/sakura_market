@@ -17,7 +17,8 @@
       - @order.order_items.each do |item|
         %tr
           %td
-            = image_tag show_photo_product_path(item.product), size: "100x80"
+            %div.image-box
+              = image_tag show_photo_product_path(item.product), size: "100x80"
           %td.product_detail 
             %h4
               = link_to item.product.name, item.product
@@ -29,7 +30,7 @@
             = item.quantity
           %td.number 
             = disp_money(item.total_price)
-          %td
+          %td.delete
             = link_to "削除", item, method: :delete, data: {confirm: "削除して良いですか？"}
     %tfoot
       %tr

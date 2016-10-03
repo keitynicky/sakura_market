@@ -1,11 +1,11 @@
 @charset "utf-8";
 $font-stack: "Meiryo UI";
-$primary-color: #333;
-$menu-color:#7AC843;
+$primary-color: #151A0A;
+$menu-color:#AACF52;
 $menu-font-color: #fff;
-$border-color: #d9d9db;
+$border-color: #C8CFBA;
 $h1-font-size: 25px;
-$order-color: #00ADEE;
+$order-color: #53CFB6;
 
 .image-area {
   display: flex;
@@ -74,11 +74,11 @@ $order-color: #00ADEE;
     border-collapse: separate;
     width: 100%;
     th,td {
-      padding: 5px 10px 5px 10px;
+      padding: 2px 10px 2px 10px;
       margin: 2px;
     }
     thead {
-      background-color: #d9d9db;
+      background-color: $border-color;
       .product {
         width: 60%; 
       }
@@ -96,6 +96,9 @@ $order-color: #00ADEE;
         span {
           padding-left: 1em;
         }
+      }
+      .delete {
+        text-align: center;
       }
     }
     tfoot {
