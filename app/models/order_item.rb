@@ -6,6 +6,10 @@ class OrderItem < ApplicationRecord
 
   before_save :finalize
 
+  def quantity
+    self[:quantity] ||= 1
+  end
+
   def unit_price
     if persisted?
       # TODO 同名の列との識別のため下記のようなアクセスの仕方を設定している。
