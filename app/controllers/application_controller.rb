@@ -3,13 +3,11 @@ class ApplicationController < ActionController::Base
   helper_method :current_order
 
   def current_order
-    # if !session[:order_id].nil?
-    #   Order.find(session[:order_id])
-    # else
-    #   # TODO:3456herokuデプロイ用仮コメントアウト
-    #   # current_user.orders.new
-    Order.new
-    # end
+    if !session[:order_id].nil?
+      Order.find(session[:order_id])
+    else
+      current_user.orders.new
+    end
   end
 
   def show_photo
