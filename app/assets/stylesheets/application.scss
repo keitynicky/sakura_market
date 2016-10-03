@@ -60,8 +60,15 @@ $order-color: #00ADEE;
   }
 }
 
+.main {
+  h2 {
+    padding: 0 0 0 10px;
+    margin: 0;
+  }
+}
+
 .cart {
-  margin: 10px;
+  margin: 0 10px 0 10px;
   table {
     border-spacing: 0;
     border-collapse: separate;

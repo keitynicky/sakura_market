@@ -22,15 +22,15 @@
               = link_to item.product.name, item.product
             %span
               = item.product.description
-          %td.number 
-            = item.unit_price
+          %td.number
+            = number_to_currency(item.unit_price, :format => "%u%n", :unit => "￥", :precision => 0) 
           %td.number 
             = item.quantity
           %td.number 
-            = item.total_price
+            = number_to_currency(item.total_price, :format => "%u%n", :unit => "￥", :precision => 0) 
     %tfoot
       %tr
         %th{:colspan => 4} 
           合計
-        %th 
-          = @order.subtotal
+        %th
+          = number_to_currency(@order.subtotal, :format => "%u%n", :unit => "￥", :precision => 0) 
