@@ -9,7 +9,7 @@
     %div
       %h6 価格：
       %span.order-total
-        = number_to_currency(@product.price, :format => "%u%n", :unit => "￥", :precision => 0)
+        = disp_money(@product.price)
       - if user_signed_in?
         %div.add_cart
           = form_for @order_item do |f|
