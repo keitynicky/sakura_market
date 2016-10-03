@@ -1,18 +1,17 @@
 class OrderItemsController < ApplicationController
   before_action :set_order
+  after_action :after_create_or_update, only: [:create, :update]
 
   def create
-    # TODO もうすでにカートに追加済の場合は更新する処理、もう少しシンプルにかけないか検討すること（商品詳細が新規作成しか作っていないから、多分そこを見直したほうがよい）
-    @order_item = @order.order_items.where(product_id: order_item_params[:product_id]).first_or_initialize
-    @order_item.quantity = order_item_params[:quantity]
-    @order.save
-    @order_item.save
-    session[:order_id] = @order.id
-    redirect_to cart_path
+    @order_item = @order.order_items.new(order_item_params)
+    redirect_to cart_path    
   end
 
   def update
-
+    @order_item = @order.order_items.find_or_create_by(product_id: order_item_params[:product_id])
+    @order_item.quantity = order_item_params[:quantity]
+    @order_item.save
+    redirect_to cart_path        
   end
 
   def destroy
@@ -24,6 +23,11 @@ class OrderItemsController < ApplicationController
 private
   def set_order
     @order = current_order
+  end
+
+  def after_create_or_update
+    @order.save
+    session[:order_id] = @order.id
   end  
 
   def order_item_params
