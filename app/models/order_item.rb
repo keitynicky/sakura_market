@@ -13,12 +13,8 @@ class OrderItem < ApplicationRecord
   end
 
   def unit_price
-    if persisted?
-      # TODO 同名の列との識別のため下記のようなアクセスの仕方を設定している。
-      self[:unit_price]
-    else
-      product.price
-    end
+    # TODO 同名の列との識別のため下記のようなアクセスの仕方を設定している。
+    self[:unit_price] ||= product.price
   end
 
   def total_price
