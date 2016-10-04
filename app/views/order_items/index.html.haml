@@ -1,41 +1,47 @@
 %h2 
   ショッピングカート
 %div.cart
-  %table
-    %thead
-      %tr
-        %th.product{:colspan => 2}
-          商品
-        %th 
-          金額
-        %th 
-          個数
-        %th 
-          総額
-        %th
-    %tbody
-      - @order.order_items.each do |item|
+  - if @order.order_items.count == 0
+    %span
+      ショッピングカートは空です。
+    %div
+      = link_to "お買い物をする", root_path
+  - else
+    %table
+      %thead
         %tr
-          %td
-            %div.image-box
-              = image_tag show_photo_product_path(item.product), size: "100x80"
-          %td.product_detail 
-            %h4
-              = link_to item.product.name, item.product
-            %span
-              = item.product.description
-          %td.number
-            = disp_money(item.unit_price)
-          %td.number 
-            = item.quantity
-          %td.number 
-            = disp_money(item.total_price)
-          %td.delete
-            = link_to "削除", item, method: :delete, data: {confirm: "削除して良いですか？"}
-    %tfoot
-      %tr
-        %th{:colspan => 4} 
-          合計
-        %th
-          = disp_money(@order.subtotal)
-        %th
+          %th.product{:colspan => 2}
+            商品
+          %th 
+            金額
+          %th 
+            個数
+          %th 
+            総額
+          %th
+      %tbody
+        - @order.order_items.each do |item|
+          %tr
+            %td
+              %div.image-box
+                = image_tag show_photo_product_path(item.product), size: "100x80"
+            %td.product_detail 
+              %h4
+                = link_to item.product.name, item.product
+              %span
+                = item.product.description
+            %td.number
+              = disp_money(item.unit_price)
+            %td.number 
+              = item.quantity
+            %td.number 
+              = disp_money(item.total_price)
+            %td.delete
+              = link_to "削除", item, method: :delete, data: {confirm: "削除して良いですか？"}
+      %tfoot
+        %tr
+          %th{:colspan => 4} 
+            合計
+          %th
+            = disp_money(@order.subtotal)
+          %th
