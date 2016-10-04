@@ -2,11 +2,12 @@ class OrderItem < ApplicationRecord
   belongs_to :order, touch: true
   belongs_to :product
 
-  validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
+  validates :quantity, presence: true, numericality: { only_integer: true, greater_than: DEFAULT_QUANTITY, less_than: MAX_QUANTITY}
 
   before_save :finalize
 
   DEFAULT_QUANTITY = 1
+  MAX_QUANTITY = 1000000
 
   def quantity
     self[:quantity] ||= DEFAULT_QUANTITY
