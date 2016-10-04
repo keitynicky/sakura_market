@@ -18,7 +18,7 @@
           %li 
             %a いいいい
           %li 
-            %a ううううう
+            = link_to "ショッピングカート", order_items_path
           %li 
             - if user_signed_in? 
               = link_to "ログアウト", destroy_user_session_path, method: :delete
