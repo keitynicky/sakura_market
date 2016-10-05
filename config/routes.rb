@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     member {get :show_photo}
   end
   resources :order_items, only: [:index, :create, :update, :destroy]
+  resource :check_out, only: [:new, :create]
   root to: "products#index"
 end
 
