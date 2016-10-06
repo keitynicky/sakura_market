@@ -51,3 +51,21 @@
 ## 商品詳細ページの作成
  * http://dotinstall.com/lessons/basic_rails_v2/24911
  * controllerのshowで実装。表示用のview側を作成すればOK！
+
+## bootstrapの適用
+ * http://qiita.com/shizuma/items/83cdadbe0a629f1f74d1
+ * http://qiita.com/masamitsu-konya/items/e3630046774ac1fbd346
+ * 最初windows64bitの関連でエラーが発生していたけれど、必要なgemを限定したら導入できた。
+ * http://getbootstrap.com/css/#helper-classes
+  * 現状はbootstrapのCSSを適用しているだけだけれど。。
+
+### bootstrapのiconをlink_toで利用したい
+ * Hamlとbootstrapでiconを表示することができていない。一旦はアイコンを導入しないことにしたけれど、以下の調査記録だけは残しておく。 
+  * http://stackoverflow.com/questions/20694997/how-to-add-glyphicons-to-rails-link-to-helper-bootstrap-3
+
+## simple_formの適用
+ * https://github.com/plataformatec/simple_form
+ * 結構便利な機能が多いっぽい。
+ * 基本的なフォームの記載ならば、1行で記載できて便利♪
+
+
