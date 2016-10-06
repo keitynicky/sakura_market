@@ -22,5 +22,5 @@
               = link_to "ログアウト", destroy_user_session_path, method: :delete
             - else
               = link_to "ログイン", new_user_session_path
-    %div.main
+    %div.container
       = yield

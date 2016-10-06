@@ -8,18 +8,17 @@ $menu-color:#AACF52;
 $menu-font-color: #fff;
 $border-color: #C8CFBA;
 $h1-font-size: 25px;
+$base-font-size: 14px;
 $order-color: #53CFB6;
 
 .image-area {
   display: flex;
   flex-wrap: wrap;
-  width: auto;
-  margin: auto;
 }
 
 .image-box {
   padding: 10px;
-  margin: 10px;
+  margin: 5px;
   box-shadow: 5px 6px 6px -3px #e7e7e7;
   -moz-box-shadow: 5px 6px 6px -3px #e7e7e7;
   -webkit-box-shadow: 5px 6px 6px -3px #e7e7e7;
@@ -59,16 +58,6 @@ $order-color: #53CFB6;
     -ms-border-radius: 0px;
     -o-border-radius: 0px;
     border-radius: 0px;
-  }
-}
-
-.main {
-  h2 {
-    padding: 0 0 0 10px;
-    margin: 0;
-  }
-  .main-content {
-    margin: 0 2%;
   }
 }
 
@@ -135,6 +124,7 @@ $order-color: #53CFB6;
 
 
 body {
+  font-size: $base-font-size !important;
   font: 100% $font-stack;
   color: $primary-color;
   h6 {
