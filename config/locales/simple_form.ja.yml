@@ -1,0 +1,23 @@
+ja: 
+  simple_form:
+    labels:
+      user:
+        username: 'ユーザー名'
+        email: 'メールアドレス'
+        password: 'パスワード (%{min_length}桁以上)'
+        password_confirmation: 'パスワード　確認用'
+        post_code: '郵便番号'
+        address: '住所'
+    hints:
+      user:
+        username: 'サインインするユーザ名を入力してください'
+        password: '半角英数字のみ使えます'
+        password_confirmation: '上記のパスワードと同じ値を入力してください'
+        post_code: 'ハイフン込（123-4567）、もしくは、ハイフン無し（1234567）が入力可能です'        
+        address: '郵便番号を入力すると自動で設定されます。必要に応じて追記修正してください'        
+    placeholders:
+      user:
+        username: 'なまえ'
+        email: 'abc@mail.com'
+        password: '*****'
+        post_code: '123-4567 or 1234567'
