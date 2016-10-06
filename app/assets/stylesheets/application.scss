@@ -14,48 +14,6 @@ $order-color: #53CFB6;
 @import 'products';
 @import 'order_items';
 
-.cart {
-  margin: 0 10px 0 10px;
-  table {
-    border-spacing: 0;
-    border-collapse: separate;
-    width: 100%;
-    th,td {
-      padding: 2px 10px 2px 10px;
-      margin: 2px;
-    }
-    thead {
-      background-color: $border-color;
-      .product {
-        width: 60%; 
-      }
-    }
-    tbody {
-      .number {
-        text-align: right;
-      }
-      .product_detail
-      {
-        width: 50%;
-        h4 {
-          margin: 2px 0 2px 0;
-        }
-        span {
-          padding-left: 1em;
-        }
-      }
-      .delete {
-        text-align: center;
-      }
-    }
-    tfoot {
-      background-color: $order-color; 
-      color:$menu-font-color; 
-      text-align: right;
-    }
-  }
-}
-
 body {
   font-size: $base-font-size !important;
   font: 100% $font-stack;

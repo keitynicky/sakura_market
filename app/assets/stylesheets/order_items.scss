@@ -21,3 +21,42 @@
     width: 10%;
   }
 }
+
+.cart {
+  table {
+    thead {
+      background-color: $border-color;
+      .product {
+        width: 65%; 
+      }
+      th {
+        text-align: center;
+      } 
+    }
+    tbody {
+      .number {
+        text-align: right;
+      }
+      .product_detail
+      {
+        width: 53%;
+        h4 {
+          margin: 2px 0 2px 0;
+        }
+        span {
+          padding-left: 1em;
+        }
+      }
+      .delete {
+        text-align: center;
+      }
+    }
+    tfoot {
+      background-color: $order-color; 
+      color:$menu-font-color;
+      th {
+        text-align: right;
+      } 
+    }
+  }
+}
