@@ -1,7 +1,6 @@
 %div.image-area
   - @products.each do |product|
-    %div.image-box
+    %div.img-thumbnail.image-box
       = image_tag show_photo_product_path(product), size: "250x200"
       %div
-        %a
-          = link_to product.name, product
+        = link_to product.name, product

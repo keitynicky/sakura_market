@@ -23,7 +23,7 @@
         - @order.order_items.each do |item|
           %tr
             %td
-              %div.image-box
+              %div.img-thumbnail
                 = image_tag show_photo_product_path(item.product), size: "100x80"
             %td.product_detail 
               %h4

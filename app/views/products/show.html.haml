@@ -1,6 +1,6 @@
 %div.content
   %div.column
-    %div.image-box
+    %div.img-thumbnail
       = image_tag show_photo_product_path(@product), size: "250x200"
   %div.column
     %h1.product-title
@@ -12,7 +12,7 @@
       %span.order-total
         = disp_money(@product.price)
       - if user_signed_in?
-        %div.add_cart
+        %div.add-cart
           = form_for @order_item do |f|
             .form-inline
               = f.number_field :quantity, value: @order_item.quantity, :class => 'form-control'
