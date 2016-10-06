@@ -1,6 +1,7 @@
 %div.content
   %div.column
-    = image_tag show_photo_product_path(@product), size: "250x200"
+    %div.image-box
+      = image_tag show_photo_product_path(@product), size: "250x200"
   %div.column
     %h1.product-title
       = @product.name
