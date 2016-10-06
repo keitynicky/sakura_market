@@ -13,7 +13,7 @@ gem 'haml-rails'
 gem 'devise'
 gem 'bcrypt'
 gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'
-gem 'twitter-bootstrap-rails'
+gem 'bootstrap-sass'
 gem 'simple_form'
 
 group :development, :test do
