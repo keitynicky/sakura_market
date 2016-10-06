@@ -7,16 +7,16 @@
     = csrf_meta_tags
     = favicon_link_tag
   %body
-    %header
-      %nav
-        %ul
-          %li 
-            %h1
-              = link_to "さくらマーケット", root_path
+    %nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          = link_to "さくらマーケット", root_path, class: 'navbar-brand'
+        %ul.nav.navbar-nav 
           %li 
             = link_to "お買い物", root_path
           %li 
             = link_to "ショッピングカート", order_items_path
+        %ul.nav.navbar-nav.navbar-right           
           %li 
             - if user_signed_in? 
               = link_to "ログアウト", destroy_user_session_path, method: :delete
