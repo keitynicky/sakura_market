@@ -1,6 +1,7 @@
 
 @charset "utf-8";
 @import 'bootstrap';
+@import 'products';
 
 $font-stack: "Meiryo UI";
 $primary-color: #151A0A;
@@ -10,23 +11,6 @@ $border-color: #C8CFBA;
 $h1-font-size: 25px;
 $base-font-size: 14px;
 $order-color: #53CFB6;
-
-.image-area {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.image-box {
-  padding: 10px;
-  margin: 5px;
-  box-shadow: 5px 6px 6px -3px #e7e7e7;
-  -moz-box-shadow: 5px 6px 6px -3px #e7e7e7;
-  -webkit-box-shadow: 5px 6px 6px -3px #e7e7e7;
-  border-radius: 0px 0px 0px 0px;
-  -moz-border-radius: 0px 0px 0px 0px;
-  -webkit-border-radius: 0px 0px 0px 0px;
-  border: 1px solid #e7e7e7;
-}
 
 .add_cart {
   padding-top: 10px;
