@@ -5,7 +5,7 @@ class OrderItem < ApplicationRecord
   DEFAULT_QUANTITY = 1
   MAX_QUANTITY = 1000000
 
-  validates :quantity, presence: true, numericality: { only_integer: true, greater_than: DEFAULT_QUANTITY, less_than: MAX_QUANTITY}
+  validates :quantity, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: DEFAULT_QUANTITY, less_than: MAX_QUANTITY}
 
   before_save :finalize
 
