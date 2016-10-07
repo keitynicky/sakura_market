@@ -24,11 +24,9 @@ private
   end
 
   def save_order
-    # TODO リファクタ保存処理をもう少しシンプルにかけないかどうか。
     @order_item = @order.order_items.find_or_initialize_by(product_id: order_item_params[:product_id])
     @order_item.quantity = order_item_params[:quantity]
     @order_item.save
-    @order.save
     session[:order_id] = @order.id
     redirect_to order_items_path            
   end

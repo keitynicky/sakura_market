@@ -71,4 +71,6 @@
  * 結構便利な機能が多いっぽい。
  * 基本的なフォームの記載ならば、1行で記載できて便利♪
 
-
+## order_items_controllでsave_orderでorder_itemとorderの両方をsaveしているのは少し冗長だった
+ * http://stackoverflow.com/questions/6736265/rails-update-parent-object-when-saving-child
+  * belongs_toのmodelにtouchをtrueにしていたから、それで親のsaveは不要であることが判明！
