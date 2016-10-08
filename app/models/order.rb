@@ -3,7 +3,7 @@ class Order < ApplicationRecord
   belongs_to :user
 
   TAX = 0.08
-  SHIPPING_COUNT = 6
+  SHIPPING_COUNT = 5
   SHIPPING_FEE = 600
 
   def subtotal
@@ -47,7 +47,8 @@ class Order < ApplicationRecord
   end
 
   def get_shipping
-    SHIPPING_FEE * (order_items.size.div(SHIPPING_COUNT) + 1)
+    quantities = order_items.calculate(:sum, "quantity")
+    SHIPPING_FEE * (((quantities - 1) / SHIPPING_COUNT) + 1)
   end
 
   def get_total_net_of_tax
