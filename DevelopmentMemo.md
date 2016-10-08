@@ -32,9 +32,17 @@
   * 試しにfile_fixtures_extension.rbを用いてみたけど、uninitialized constant fixtureのエラーが発生していた。
  * https://gist.github.com/averyvery/2361682
   * fileオブジェクトを登録する手順だと、画像ファイルが表示されない。。もしかして、こういう手順の場合は見せ方のコードも変えないといけないのかな？？
-* http://railstutorial.jp/chapters/user_microposts?version=4.2#sec-micropost_images
- * http://ja.stackoverflow.com/questions/19451/rails%E3%81%A7%E3%83%86%E3%82%B9%E3%83%88%E3%82%84%E9%96%8B%E7%99%BA%E7%94%A8%E3%81%AE%E5%88%9D%E6%9C%9F%E3%83%87%E3%83%BC%E3%82%BF%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E3%82%92%E7%94%A8%E6%84%8F%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95
- * バイナリデータではなく、ファイル形式で持たせないとやっぱりまずいのかなぁ。。
+ * http://railstutorial.jp/chapters/user_microposts?version=4.2#sec-micropost_images
+  * http://ja.stackoverflow.com/questions/19451/rails%E3%81%A7%E3%83%86%E3%82%B9%E3%83%88%E3%82%84%E9%96%8B%E7%99%BA%E7%94%A8%E3%81%AE%E5%88%9D%E6%9C%9F%E3%83%87%E3%83%BC%E3%82%BF%E3%83%90%E3%82%A4%E3%83%8A%E3%83%AA%E3%82%92%E7%94%A8%E6%84%8F%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95
+  * バイナリデータではなく、ファイル形式で持たせないとやっぱりまずいのかなぁ。。
+ * http://ja.stackoverflow.com/questions/23694/rails%E3%81%A7seed%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E4%BF%9D%E5%AD%98%E3%81%97%E3%82%88%E3%81%86%E3%81%A8%E3%81%99%E3%82%8B%E3%81%A8-%E5%A4%96%E9%83%A8%E3%82%AD%E3%83%BC%E3%81%8Cnot-null-constraint-failed
+  * path = Rails.root.join("db/fixtures/images/image.png")
+  * s.photo = Rack::Test::UploadedFile.new(path, "image/jpeg", true)
+  * 上記で試してみたけどダメだった
+ * !!!!解決!!!!
+  * s.photo = File.open(path, "rb").read
+   * rb指定でバイナリでfileをopenして、readしたものを設定すればOK！
+
 
 ## deviseに新たにフィールドを追加する方法
  * 参考サイト：

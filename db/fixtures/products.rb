@@ -1,3 +1,5 @@
+READ_BINARY = "rb"
+
 10.times do |n|
   product = Product.where(name: 'name' + n.to_s).first
   if !product.nil?
@@ -10,7 +12,7 @@
     s.price = 100 + n 
     s.sort = n 
     s.is_hidden = false
-    # TODO 画像ファイルの登録はまだ実装中
-    s.photo = Rails.root.join("db/fixtures/images/image.png").open
+    path = Rails.root.join("db/fixtures/images/image.png")
+    s.photo = File.open(path, READ_BINARY).read
   end
 end
