@@ -35,8 +35,13 @@
           消費税
         .col-sm-8
           = disp_money @order.tax
+    .panel-heading
+      総額
+    .panel-body  
       .row
         .col-sm-4
-          総額
         .col-sm-8
-          = disp_money @order.total
+          %strong
+            = disp_money @order.total
+      
+          
