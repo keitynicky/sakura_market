@@ -20,5 +20,4 @@ ja:
       user:
         username: 'なまえ'
         email: 'abc@mail.com'
-        password: '*****'
         post_code: '1234567'

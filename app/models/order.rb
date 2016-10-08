@@ -1,7 +1,6 @@
 class Order < ApplicationRecord
   has_many :order_items
   belongs_to :user
-  before_save :update_calc_value
 
   TAX = 0.08
   SHIPPING_COUNT = 6
@@ -63,11 +62,4 @@ class Order < ApplicationRecord
     get_total_net_of_tax + tax
   end
 
-  def update_calc_value
-    self.subtotal = subtotal
-    self.tax = tax
-    self.cash_on_delivery = cash_on_delivery
-    self.shipping = shipping
-    self.total = total
-  end
 end
