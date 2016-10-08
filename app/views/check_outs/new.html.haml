@@ -17,19 +17,19 @@
     .panel-body  
       .row
         .col-sm-4
-          商品合計金額
+          商品合計金額(税抜き)
         .col-sm-8
           = disp_money @order.subtotal
       .row
         .col-sm-4
           代引き手数料
         .col-sm-8
-          7円  
+          = disp_money @order.cash_on_delivery
       .row
         .col-sm-4
           送料
         .col-sm-8
-          7円
+          = disp_money @order.shipping
       .row
         .col-sm-4
           消費税
@@ -39,4 +39,4 @@
         .col-sm-4
           総額
         .col-sm-8
-          7円
+          = disp_money @order.total
