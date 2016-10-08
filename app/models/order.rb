@@ -47,14 +47,9 @@ class Order < ApplicationRecord
     order_items.size > 0
   end
 
-  # TODO要定数
   def get_cash_on_delivery
-    case subtotal
-      when 0...CASH_ON_DELIVERY_1 then 300
-      when CASH_ON_DELIVERY_1...CASH_ON_DELIVERY_2 then 400
-      when CASH_ON_DELIVERY_2...CASH_ON_DELIVERY_3 then 600
-      else 1000
-    end
+    # TODO代引きテーブル内に処理を移動予定。
+    CashOnDelivery.where("? BETWEEN min_fee AND max_fee", subtotal ).first.cost
   end
 
   def get_shipping
