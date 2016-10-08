@@ -6,10 +6,6 @@ class Order < ApplicationRecord
   TAX = 0.08
   SHIPPING_COUNT = 6
   SHIPPING_FEE = 600
-  # TODO定数名要リファクタ。可能であればenumとかにする！
-  CASH_ON_DELIVERY_1 = 10000
-  CASH_ON_DELIVERY_2 = 30000
-  CASH_ON_DELIVERY_3 = 100000
 
   def subtotal
     if has_order_items?
@@ -48,8 +44,7 @@ class Order < ApplicationRecord
   end
 
   def get_cash_on_delivery
-    # TODO代引きテーブル内に処理を移動予定。
-    CashOnDelivery.where("? BETWEEN min_fee AND max_fee", subtotal ).first.cost
+    CashOnDelivery.select_recorod_by_subtotal(subtotal).cost
   end
 
   def get_shipping
