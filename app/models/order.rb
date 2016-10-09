@@ -33,7 +33,7 @@ class Order < ApplicationRecord
   end
 
   def get_shipping
-    quantities = order_items.calculate(:sum, "quantity")
+    quantities = order_items.sum(:quantity)
     SHIPPING_FEE * (((quantities - 1) / SHIPPING_COUNT) + 1)
   end
 

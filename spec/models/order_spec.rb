@@ -61,4 +61,30 @@ RSpec.describe Order, type: :model do
     end
 
   end
+
+  describe `#shipping` do
+    context `商品が5の時` do
+      it `送料は600円となっていること` do
+        order = Order.create
+        order_item = order.order_items.create(product: Product.all.first, quantity: 5)
+        expect(order.shipping).to eq(600)
+      end
+    end
+
+    context `商品が5個より上の時` do
+      it `送料は600 * 2円となっていること` do
+        order = Order.create
+        order_item = order.order_items.create(product: Product.all.first, quantity: 5 + 1) 
+        expect(order.shipping).to eq(600 * 2)
+      end
+    end
+
+    context `商品が5 * 2個より上の時` do
+      it `送料は600 * 3円となっていること` do
+        order = Order.create
+        order_item = order.order_items.create(product: Product.all.first, quantity: (5 * 2) + 1) 
+        expect(order.shipping).to eq(600 * 3)
+      end
+    end
+  end
 end
