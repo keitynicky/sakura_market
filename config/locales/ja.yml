@@ -8,3 +8,12 @@ ja:
         remember_me: パスワードを記憶
         post_code: 郵便番号
         address: 住所
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email: 
+              blank: 未入力です
+            password: 
+              blank: 未入力です
