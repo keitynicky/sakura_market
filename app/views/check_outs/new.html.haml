@@ -6,7 +6,6 @@
       .panel-heading
         お届け先住所
       .panel-body
-      -# TODO 共通化。ユーザー新規作成部分と。
         = simple_form_for(current_user, url: registration_path(current_user), html: { method: :put }) do |f|
           = f.input :postal_code, autocomplete: "postal-code"
           = f.input :address_level1, autocomplete: "address-level1"
