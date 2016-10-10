@@ -82,3 +82,7 @@
 ## order_items_controllでsave_orderでorder_itemとorderの両方をsaveしているのは少し冗長だった
  * http://stackoverflow.com/questions/6736265/rails-update-parent-object-when-saving-child
   * belongs_toのmodelにtouchをtrueにしていたから、それで親のsaveは不要であることが判明！
+
+## unmatched OUTDENTっていうエラーが出たら
+ * http://qiita.com/mrpepper/items/e49fed1e22bc976c3813
+  * coffee scriptで何か記載ミスしているっぽい
