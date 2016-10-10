@@ -2,22 +2,31 @@ ja:
   simple_form:
     labels:
       user:
-        username: 'ユーザー名'
         email: 'メールアドレス'
         remember_me: 'パスワードを記憶'
         password: 'パスワード'
         password_confirmation: 'パスワード　確認用'
-        post_code: '郵便番号'
-        address: '住所'
+        postal_code: '郵便番号'
+        address_level1: '都道府県'        
+        address_level2: '市区町村'        
+        address_line1: '番地等'        
+        address_line2: 'アパート／マンション名等' 
+        family_name: '氏名(姓)'
+        given_name: '氏名(名)'
     hints:
       user:
-        username: 'サインインするユーザ名を入力してください'
         password_regist: '%{min_length}桁以上の半角英数字を入力してください'
         password_confirmation: '上記のパスワードと同じ値を入力してください'
-        post_code: 'ハイフン無しの数字のみで入力してください'        
-        address: '郵便番号を入力すると自動で設定されます。必要に応じて追記修正してください'        
+        postal_code: 'ハイフン無しの数字のみ(1234567)、もしくはハイフン付き数字のみ(123-4567)で入力してください。郵便番号が入力されると住所は自動で設定されます'        
+        family_name: '姓を入力してください'
+        given_name: '名前を入力してください'
     placeholders:
       user:
-        username: 'なまえ'
         email: 'abc@mail.com'
-        post_code: '1234567'
+        postal_code: '1234567 or 123-4567'
+        address_level1: '都道府県'        
+        address_level2: '市区町村'        
+        address_line1: '番地等'        
+        address_line2: 'アパート／マンション名等'     
+        family_name: '姓'
+        given_name: '名前'
