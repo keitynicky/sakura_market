@@ -1,4 +1,3 @@
-# $ ->
 $("#user_postal_code").jpostal({
   postcode : [ "#user_postal_code" ],
   address : { 
