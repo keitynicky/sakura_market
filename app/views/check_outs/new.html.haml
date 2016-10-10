@@ -1,66 +1,60 @@
 %h2
   ご購入手続き
-.panel-group
-  .panel.panel-default
-    .panel-heading
-      お届け先住所
-    .panel-body
-      -# = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-      .row
-        .col-sm-4
-          郵便番号
-        .col-sm-8
-      .row
-        .col-sm-4
-          住所
-        .col-sm-8
-      .row
-        .col-sm-4
-          名前（姓）
-        .col-sm-8
-      .row
-        .col-sm-4
-          名前（名）
-        .col-sm-8            
-  .panel.panel-default
-    .panel-heading
-      配送情報
-    .panel-body
-      .row
-        .col-sm-4
-          配送日時
-        .col-sm-8
-  .panel.panel-default
-    .panel-heading
-      ご購入額合計
-    .panel-body  
-      .row
-        .col-sm-4
-          商品合計金額(税抜き)
-        .col-sm-8
-          = disp_money @order.subtotal
-      .row
-        .col-sm-4
-          代引き手数料
-        .col-sm-8
-          = disp_money @order.cash_on_delivery
-      .row
-        .col-sm-4
-          送料
-        .col-sm-8
-          = disp_money @order.shipping
-      .row
-        .col-sm-4
-          消費税
-        .col-sm-8
-          = disp_money @order.tax
-    .panel-heading
-      総額
-    .panel-body  
-      .row
-        .col-sm-4
-        .col-sm-8
-          %strong
-            = disp_money @order.total
-      
-          
+.row.flex-row
+  .col-md-6
+    .panel.panel-default.flex-col
+      .panel-heading
+        お届け先住所
+      .panel-body
+      -# TODO 共通化。ユーザー新規作成部分と。
+        = simple_form_for(current_user, url: registration_path(current_user), html: { method: :put }) do |f|
+          = f.input :postal_code, autocomplete: "postal-code"
+          = f.input :address_level1, autocomplete: "address-level1"
+          = f.input :address_level2, autocomplete: "address-level2"
+          = f.input :address_line1, autocomplete: "address-line1"
+          = f.input :address_line2, autocomplete: "address-line2"
+          = f.input :family_name, autocomplete: "family-name"
+          = f.input :given_name, autocomplete: "given-name"          
+  .col-md-6
+    .panel.panel-default.flex-col
+      .panel-heading
+        配送情報
+      .panel-body
+        .row
+          .col-sm-4
+            配送日時
+          .col-sm-8
+    .panel.panel-default
+      .panel-heading
+        ご購入額合計
+      .panel-body  
+        .row
+          .col-sm-4
+            商品合計金額(税抜き)
+          .col-sm-8
+            = disp_money @order.subtotal
+        .row
+          .col-sm-4
+            代引き手数料
+          .col-sm-8
+            = disp_money @order.cash_on_delivery
+        .row
+          .col-sm-4
+            送料
+          .col-sm-8
+            = disp_money @order.shipping
+        .row
+          .col-sm-4
+            消費税
+          .col-sm-8
+            = disp_money @order.tax
+      .panel-heading
+        総額
+      .panel-body  
+        .row
+          .col-sm-4
+          .col-sm-8
+            %strong
+              = disp_money @order.total
+        
+            
