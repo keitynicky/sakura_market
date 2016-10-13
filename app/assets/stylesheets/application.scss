@@ -11,6 +11,7 @@ $base-font-size: 14px;
 $order-color: #53CFB6;
 
 @import 'bootstrap';
+@import 'bootstrap-datepicker.min';
 @import 'products';
 @import 'order_items';
 
