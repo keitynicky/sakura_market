@@ -1,7 +1,9 @@
 $(window).load ->
-  $('#delivery_date').datepicker({
-    language: 'ja',
+  $('#sandbox-container input').datepicker({
+    language: "ja",
     format: "yyyy年mm月dd日",
-    startDate: "+3d", 
+    daysOfWeekDisabled: [0,6],     
+    startDate: "+3d",
+    endDate: "+14d",
     autoclose: true
   })

@@ -25,7 +25,8 @@
           .col-sm-8
             %label.control-label.string.optional
               配送日
-            = text_field_tag :delivery_date, "", :class => "form-control"
+            #sandbox-container
+              = text_field_tag :delivery_date, "", :class => "form-control"
             %label.control-label.string.optional            
               時間帯
             = select_tag 'delivery[time_range]', options_for_select(["8-12", "12-14", "14-16", "16-18", "18-20", "20-21"]), :class => "form-control"

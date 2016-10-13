@@ -86,3 +86,9 @@
 ## unmatched OUTDENTっていうエラーが出たら
  * http://qiita.com/mrpepper/items/e49fed1e22bc976c3813
   * coffee scriptで何か記載ミスしているっぽい
+
+## bootstrap datepicker
+ * bootstrap-datepicker.ja.min.self-759c412….j…:1 Uncaught TypeError: Cannot read property 'dates' of undefined
+  * 日本語化しようとしたらエラーがでていて日本語化できない。。
+   * http://stackoverflow.com/questions/15606022/twitter-bootstrap-datepicker-error
+   * https://github.com/rajit/bootstrap3-datepicker/issues/13
