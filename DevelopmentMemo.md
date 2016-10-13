@@ -92,3 +92,8 @@
   * 日本語化しようとしたらエラーがでていて日本語化できない。。
    * http://stackoverflow.com/questions/15606022/twitter-bootstrap-datepicker-error
    * https://github.com/rajit/bootstrap3-datepicker/issues/13
+
+## Wizard化検討
+ * https://github.com/katoy/rails4-form-after-wizard/tree/master/screenshots
+  * include Wicked::Wizardで実現できないか検討
+   * 単一のモデルを複数フォームで更新する用のウィザードなので、採用を断念
