@@ -1,12 +1,18 @@
 class CheckOutsController < ApplicationController
   before_action :authenticate_user!
 
-  def new
-    @order = current_order
-    
+  def user_info
   end
 
-  def create
+  def delivery
+    @order = current_order
+  end
+
+  def update
+    redirect_to confirm_check_out_path
+  end
+
+  def confirm
   end
 
 end
