@@ -106,3 +106,7 @@
     * http://stackoverflow.com/questions/21764623/rails-devise-fields-for-not-working
     * http://stackoverflow.com/questions/21765482/rails-devise-build-nested-model-in-controller
     * うーん、難しい。Wizardにはできないけど、やっぱりフォーム分けておいたほうがいいかなぁ。。
+* https://github.com/plataformatec/devise/blob/master/app/controllers/devise/registrations_controller.rb
+  * deviseの大本クラスの構造を確認し、そこから更新時の処理分岐を作成することで対応
+    * http://stackoverflow.com/questions/5113248/devise-update-user-without-password/11676957#11676957
+    
