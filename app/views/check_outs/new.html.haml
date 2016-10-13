@@ -1,61 +1,63 @@
 %h2
   ご購入手続き
-.row.flex-row
-  .col-md-6
-    .panel.panel-default.flex-col
-      .panel-heading
-        お届け先住所
-      .panel-body
-        = simple_form_for(current_user, url: registration_path(current_user), html: { method: :put }) do |f|
+= simple_form_for(current_user, url: registration_path(current_user), html: { method: :put }) do |f|
+  .row.flex-row
+    .col-md-6
+      .panel.panel-default.flex-col
+        .panel-heading
+          お届け先住所
+        .panel-body
           = render "devise/shared/user_info", f: f     
-  .col-md-6
-    .panel.panel-default.flex-col
-      .panel-heading
-        配送情報
-      .panel-body
-        .row
-          .col-sm-4
-            %strong
-              配送日時
-          .col-sm-8
-            %label.control-label.string.optional
-              配送日
-            #sandbox-container
-              = text_field_tag :delivery_date, "", :class => "form-control"
-            %label.control-label.string.optional            
-              時間帯
-            = select_tag 'delivery[time_range]', options_for_select(["8-12", "12-14", "14-16", "16-18", "18-20", "20-21"]), :class => "form-control"
-    .panel.panel-default
-      .panel-heading
-        ご購入額合計
-      .panel-body  
-        .row
-          .col-sm-4
-            商品合計金額(税抜き)
-          .col-sm-8
-            = disp_money @order.subtotal
-        .row
-          .col-sm-4
-            代引き手数料
-          .col-sm-8
-            = disp_money @order.cash_on_delivery
-        .row
-          .col-sm-4
-            送料
-          .col-sm-8
-            = disp_money @order.shipping
-        .row
-          .col-sm-4
-            消費税
-          .col-sm-8
-            = disp_money @order.tax
-      .panel-heading
-        総額
-      .panel-body  
-        .row
-          .col-sm-4
-          .col-sm-8
-            %strong
-              = disp_money @order.total
+    .col-md-6
+      .panel.panel-default.flex-col
+        .panel-heading
+          配送情報
+        .panel-body
+          .row
+            .col-sm-4
+              %strong
+                配送日時
+            .col-sm-8
+              %label.control-label.string.optional
+                配送日
+                = fields_for(current_order) do |order|
+                  #datepicker-container
+                    = order.text_field :delivery_date, :class => "form-control"
+                  %label.control-label.string.optional            
+                    時間帯
+                  = order.select :delivery_time, options_for_select(["8-12", "12-14", "14-16", "16-18", "18-20", "20-21"]), {}, :class => "form-control"
+      .panel.panel-default
+        .panel-heading
+          ご購入額合計
+        .panel-body  
+          .row
+            .col-sm-4
+              商品合計金額(税抜き)
+            .col-sm-8
+              = disp_money @order.subtotal
+          .row
+            .col-sm-4
+              代引き手数料
+            .col-sm-8
+              = disp_money @order.cash_on_delivery
+          .row
+            .col-sm-4
+              送料
+            .col-sm-8
+              = disp_money @order.shipping
+          .row
+            .col-sm-4
+              消費税
+            .col-sm-8
+              = disp_money @order.tax
+        .panel-heading
+          総額
+        .panel-body  
+          .row
+            .col-sm-4
+            .col-sm-8
+              %strong
+                = disp_money @order.total
+      = f.submit "確認画面へ", :class => 'btn btn-primary pull-right'
         
             

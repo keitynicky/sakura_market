@@ -7,7 +7,8 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def account_update_params
-    common_params.merge(:current_password)
+    # common_params.merge(:current_password)
+    common_params
   end
 
   def common_params

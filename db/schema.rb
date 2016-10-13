@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161010075746) do
+ActiveRecord::Schema.define(version: 20161013081027) do
 
   create_table "cash_on_deliveries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "min_fee"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20161010075746) do
     t.integer  "user_id"
     t.boolean  "is_phurchased",                   default: false
     t.integer  "cash_on_delivery"
+    t.date     "delivery_date"
+    t.string   "delivery_time"
   end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

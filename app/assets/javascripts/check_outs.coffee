@@ -1,5 +1,5 @@
 $(window).load ->
-  $('#sandbox-container input').datepicker({
+  $('#datepicker-container input').datepicker({
     language: "ja",
     format: "yyyy年mm月dd日",
     daysOfWeekDisabled: [0,6],     

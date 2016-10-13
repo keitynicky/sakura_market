@@ -101,4 +101,8 @@
 
 ### wizard以外での実装を検討
  * http://stackoverflow.com/questions/1231608/rails-user-input-for-multiple-models-on-a-single-form-how
-  * fields_forというのがあるみたい！ 
+  * fields_forというのがあるみたい！
+   * deviseでfields_forを用いる場合について調査
+    * http://stackoverflow.com/questions/21764623/rails-devise-fields-for-not-working
+    * http://stackoverflow.com/questions/21765482/rails-devise-build-nested-model-in-controller
+    * うーん、難しい。Wizardにはできないけど、やっぱりフォーム分けておいたほうがいいかなぁ。。
