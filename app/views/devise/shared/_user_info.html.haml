@@ -1,0 +1,17 @@
+.row
+  .col-sm-2
+    %strong
+      住所
+  .col-sm-10
+    = f.input :postal_code, autocomplete: "postal-code"
+    = f.input :address_level1, autocomplete: "address-level1"
+    = f.input :address_level2, autocomplete: "address-level2"
+    = f.input :address_line1, autocomplete: "address-line1"
+    = f.input :address_line2, autocomplete: "address-line2"
+.row
+  .col-sm-2
+    %strong
+      お名前
+  .col-sm-10
+    = f.input :family_name, autocomplete: "family-name"
+    = f.input :given_name, autocomplete: "given-name"

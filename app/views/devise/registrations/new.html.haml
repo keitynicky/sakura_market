@@ -12,12 +12,6 @@
       .panel-heading
         任意入力
       .panel-body
-        = f.input :postal_code, autocomplete: "postal-code"
-        = f.input :address_level1, autocomplete: "address-level1"
-        = f.input :address_level2, autocomplete: "address-level2"
-        = f.input :address_line1, autocomplete: "address-line1"
-        = f.input :address_line2, autocomplete: "address-line2"
-        = f.input :family_name, autocomplete: "family-name"
-        = f.input :given_name, autocomplete: "given-name"
+        = render "devise/shared/user_info", f: f
   = f.submit "新規登録", :class => 'btn btn-default'
 = render "devise/shared/links"
