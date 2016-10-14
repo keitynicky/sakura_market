@@ -1,7 +1,6 @@
 .one,
 .two,
-.three,
-.four {
+.three {
   position: absolute;
   margin-top: -10px;
   z-index: 1;
@@ -16,19 +15,15 @@
 }
 
 .one {
-  left: 20%;
+  left: 25%;
 }
 
 .two {
-  left: 40%;
+  left: 50%;
 }
 
 .three {
-  left: 60%;
-}
-
-.four {
-  left: 80%;
+  left: 75%;
 }
 
 .primary-color {
