@@ -5,7 +5,7 @@ class CheckOutsController < ApplicationController
   end
 
   def delivery
-    @order = current_order
+    @order = current_order        
   end
 
   def update
@@ -13,6 +13,7 @@ class CheckOutsController < ApplicationController
   end
 
   def confirm
+    @order = current_order    
   end
 
 end

@@ -1,5 +1,4 @@
-%h2
-  ご購入手続き
+= render "checkout_progress", set_width: "width: 45%", one_class: "primary-color", two_class: "primary-color", three_class: "no-color", four_class: "no-color"          
 = simple_form_for(current_order, url: check_out_path(current_order), html: { method: :put }) do |f|
   .panel.panel-default
     .panel-heading
@@ -17,38 +16,6 @@
             %label.control-label.string.optional            
               時間帯
             = f.select :delivery_time, options_for_select(["8-12", "12-14", "14-16", "16-18", "18-20", "20-21"]), {}, :class => "form-control"
-  .panel.panel-default
-    .panel-heading
-      ご購入額合計
-    .panel-body  
-      .row
-        .col-sm-4
-          商品合計金額(税抜き)
-        .col-sm-8
-          = disp_money @order.subtotal
-      .row
-        .col-sm-4
-          代引き手数料
-        .col-sm-8
-          = disp_money @order.cash_on_delivery
-      .row
-        .col-sm-4
-          送料
-        .col-sm-8
-          = disp_money @order.shipping
-      .row
-        .col-sm-4
-          消費税
-        .col-sm-8
-          = disp_money @order.tax
-    .panel-heading
-      総額
-    .panel-body  
-      .row
-        .col-sm-4
-        .col-sm-8
-          %strong
-            = disp_money @order.total
-  = f.submit "確認画面へ", :class => 'btn btn-primary pull-right'
+  = f.submit "次へ", :class => 'btn btn-primary pull-right'
         
             

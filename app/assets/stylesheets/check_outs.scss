@@ -1,3 +1,46 @@
-// Place all the styles related to the CheckOuts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.one,
+.two,
+.three,
+.four {
+  position: absolute;
+  margin-top: -10px;
+  z-index: 1;
+  height: 40px;
+  width: auto;
+  min-width: 100px;
+  border-radius: 5px;
+  text-align: center;
+  p {
+    padding: 10px;
+  }
+}
+
+.one {
+  left: 20%;
+}
+
+.two {
+  left: 40%;
+}
+
+.three {
+  left: 60%;
+}
+
+.four {
+  left: 80%;
+}
+
+.primary-color {
+  background-color: #4989bd;
+  p {
+    color: $menu-font-color;
+  }
+}
+
+.no-color {
+  background-color: inherit;
+  p {
+    color: inherit;
+  }
+}

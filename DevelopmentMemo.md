@@ -110,3 +110,7 @@
   * deviseの大本クラスの構造を確認し、そこから更新時の処理分岐を作成することで対応
     * http://stackoverflow.com/questions/5113248/devise-update-user-without-password/11676957#11676957
     
+## お買い上げ時のフォームでprogress barを実現
+ * bootstrapのtabだと、リンクになってしまうので、選択が可能になってしまう。
+ * http://bootsnipp.com/snippets/featured/progress-bars-responsive
+  * bootstrap progress bar order processあたりで検索
