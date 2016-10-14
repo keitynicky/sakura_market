@@ -1,4 +1,4 @@
-= render "checkout_progress", set_width: "width: 25%", one_class: "primary-color", two_class: "no-color", three_class: "no-color", four_class: "no-color"          
+= render "checkout_progress", progress_info: get_progress_info(1)          
 = simple_form_for(current_user, url: registration_path(current_user), html: { method: :put }) do |f|
   .panel.panel-default.flex-col
     .panel-heading
