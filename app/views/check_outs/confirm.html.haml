@@ -35,16 +35,29 @@
               = disp_money current_order.total
     .panel.panel-default
       .panel-heading
-        配送情報
+        配送日時
       .panel-body  
         .row
           .col-sm-4
-            配送日時
           .col-sm-8
             = current_order.disp_delivery_date    
-            = current_order.disp_delivery_time    
-    .panel.panel-default
+            = current_order.disp_delivery_time
       .panel-heading
-        お届け先情報
+        お届け先住所
       .panel-body  
-        
+        .row
+          .col-sm-4
+          .col-sm-8
+            = current_user.postal_code
+        .row
+          .col-sm-4
+          .col-sm-8
+            = current_user.address_level1
+            = current_user.address_level2
+            = current_user.address_line1
+            = current_user.address_line2
+        .row
+          .col-sm-4
+          .col-sm-8
+            = current_user.family_name
+            = current_user.given_name
