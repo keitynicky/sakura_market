@@ -114,3 +114,6 @@
  * bootstrapのtabだと、リンクになってしまうので、選択が可能になってしまう。
  * http://bootsnipp.com/snippets/featured/progress-bars-responsive
   * bootstrap progress bar order processあたりで検索
+
+## 配送日時が保存されない
+ * current_orderをそのまま用いていたから。一度変数に保持してその変数の値を変更することで保存することができた。確かにメソッドとして呼んでいるものだからってことかな。。

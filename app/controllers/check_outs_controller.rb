@@ -1,3 +1,5 @@
+require 'date'
+
 class CheckOutsController < ApplicationController
   before_action :authenticate_user!
 
@@ -5,15 +7,27 @@ class CheckOutsController < ApplicationController
   end
 
   def delivery
-    @order = current_order        
   end
 
   def update
+    order = current_order
+    order.delivery_date = convert_to_date order_params[:delivery_date]
+    order.delivery_time = order_params[:delivery_time]
+    order.save!
     redirect_to confirm_check_out_path
   end
 
   def confirm
-    @order = current_order    
+  end
+
+private
+
+  def order_params
+    params.require(:order).permit(:delivery_date, :delivery_time)
+  end
+
+  def convert_to_date target
+    Date.strptime(target,'%Y年%m月%d日')
   end
 
 end
