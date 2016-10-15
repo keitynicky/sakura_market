@@ -1,3 +1,5 @@
+require "date"
+
 class Order < ApplicationRecord
   has_many :order_items
   belongs_to :user
@@ -24,6 +26,14 @@ class Order < ApplicationRecord
 
   def total
     self[:total] ||= get_total 
+  end
+
+  def disp_delivery_date
+    self[:delivery_date].strftime("%Y年%m月%d日")
+  end
+
+  def disp_delivery_time
+    "#{self[:delivery_time]}時の間"
   end
 
   private

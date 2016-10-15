@@ -39,11 +39,10 @@
       .panel-body  
         .row
           .col-sm-4
-            %strong
-              配送日時
+            配送日時
           .col-sm-8
-            = current_order.delivery_date    
-            = current_order.delivery_time    
+            = current_order.disp_delivery_date    
+            = current_order.disp_delivery_time    
     .panel.panel-default
       .panel-heading
         お届け先情報
