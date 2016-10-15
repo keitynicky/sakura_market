@@ -52,12 +52,8 @@
         .row
           .col-sm-4
           .col-sm-8
-            = current_user.address_level1
-            = current_user.address_level2
-            = current_user.address_line1
-            = current_user.address_line2
+            = current_user.disp_address
         .row
           .col-sm-4
           .col-sm-8
-            = current_user.family_name
-            = current_user.given_name
+            = current_user.disp_user_name
