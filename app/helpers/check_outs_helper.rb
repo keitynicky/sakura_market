@@ -17,8 +17,12 @@ module CheckOutsHelper
       get_color_class current_process >= 3
     end
 
+    def four_class
+      get_color_class current_process >= 4
+    end
+
     def progress_width
-        width_percent = (30 * current_process) + 10
+        width_percent = (25 * current_process)
         "width: #{width_percent}%"
     end
 
