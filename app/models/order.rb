@@ -28,12 +28,8 @@ class Order < ApplicationRecord
     self[:total] ||= get_total 
   end
 
-  def disp_delivery_date
-    self[:delivery_date].strftime("%Y年%m月%d日")
-  end
-
-  def disp_delivery_time
-    "#{self[:delivery_time]}時の間"
+  def disp_delivery_datetime
+    "#{self[:delivery_date].strftime("%Y年%m月%d日")} #{self[:delivery_time]}時の間"
   end
 
   private
