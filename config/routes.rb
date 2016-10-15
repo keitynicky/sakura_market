@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     member {get :user_info}
     member {get :delivery}
     member {get :confirm}
+    member {get :complete}
   end
   root to: "products#index"
 end

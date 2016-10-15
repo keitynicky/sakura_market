@@ -1,0 +1,56 @@
+.panel-group
+  .panel.panel-default
+    .panel-heading
+      ご購入額合計
+    .panel-body  
+      .row
+        .col-sm-4
+          商品合計金額(税抜き)
+        .col-sm-8
+          = disp_money current_order.subtotal
+      .row
+        .col-sm-4
+          代引き手数料
+        .col-sm-8
+          = disp_money current_order.cash_on_delivery
+      .row
+        .col-sm-4
+          送料
+        .col-sm-8
+          = disp_money current_order.shipping
+      .row
+        .col-sm-4
+          消費税
+        .col-sm-8
+          = disp_money current_order.tax
+    .panel-heading
+      総額
+    .panel-body  
+      .row
+        .col-sm-4
+        .col-sm-8
+          %strong
+            = disp_money current_order.total
+  .panel.panel-default
+    .panel-heading
+      配送日時
+    .panel-body  
+      .row
+        .col-sm-4
+        .col-sm-8
+          = current_order.disp_delivery_datetime    
+    .panel-heading
+      お届け先住所
+    .panel-body  
+      .row
+        .col-sm-4
+        .col-sm-8
+          = current_user.postal_code
+      .row
+        .col-sm-4
+        .col-sm-8
+          = current_user.disp_address
+      .row
+        .col-sm-4
+        .col-sm-8
+          = current_user.disp_user_name

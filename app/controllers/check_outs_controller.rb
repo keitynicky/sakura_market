@@ -10,14 +10,19 @@ class CheckOutsController < ApplicationController
   end
 
   def update
-    order = current_order
-    order.delivery_date = Date.parse order_params[:delivery_date]
-    order.delivery_time = order_params[:delivery_time]
-    order.save!
-    redirect_to confirm_check_out_path
+    if is_complete?
+      redirect_to complete_check_out_path
+    else
+      save_delivery
+      redirect_to confirm_check_out_path
+    end
   end
 
   def confirm
+  end
+
+  def complete
+    order_is_phurchased
   end
 
 private
@@ -26,9 +31,20 @@ private
     params.require(:order).permit(:delivery_date, :delivery_time)
   end
 
-  def convert_to_date target
-    Date.parse target
-    # Date.strptime(target,'%Y年%m月%d日')
+  def is_complete?
+    params.require(:commit) == "ご購入"
   end
 
+  def save_delivery
+    order = current_order
+    order.delivery_date = Date.parse order_params[:delivery_date]
+    order.delivery_time = order_params[:delivery_time]
+    order.save
+  end
+
+  def order_is_phurchased
+    order = current_order
+    order.is_phurchased = true
+    order.save
+  end
 end
