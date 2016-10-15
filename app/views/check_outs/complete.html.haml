@@ -1,5 +1,4 @@
 = render "checkout_progress", progress_info: get_progress_info(4)
 %h2
   ご購入頂きありがとうございました。引き続きお買い物をお楽しみください。                 
-= simple_form_for(current_order, url: check_out_path(current_order), html: { method: :put }) do |f|
-  = render "checkout_summary"                 
+= render "checkout_summary", current_order: @order                 

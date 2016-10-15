@@ -23,6 +23,8 @@ class CheckOutsController < ApplicationController
 
   def complete
     order_is_phurchased
+    @order = current_order
+    session[:order_id] = nil
   end
 
 private
