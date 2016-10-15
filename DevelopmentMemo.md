@@ -117,3 +117,17 @@
 
 ## 配送日時が保存されない
  * current_orderをそのまま用いていたから。一度変数に保持してその変数の値を変更することで保存することができた。確かにメソッドとして呼んでいるものだからってことかな。。(ﾉ∀`)ｱﾁｬｰ
+
+## validate_presence_ofを使いたい
+ *   gem 'shoulda-matchers'
+ * だけど、x64で入れてしまっているから用いられない模様。。残念！
+
+## hirbとpryを使う
+ * .pryrcというファイルを作成しておく必要がある。作っておけばデータ表示時は表で表示される☆
+ * http://ruby-rails.hatenadiary.com/entry/20141024/1414160189
+
+## delivery_dateがnilだけどpresenceのチェックが効いていない？？ 
+ * 下手にnilを再設定したことによる動作不良。値設定の分岐でクリア。
+  * unless order_params[:delivery_date].empty?
+
+## delivery_dateのエラーメッセージが表示されない

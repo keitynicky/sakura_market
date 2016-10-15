@@ -4,6 +4,8 @@ class Order < ApplicationRecord
   has_many :order_items
   belongs_to :user
 
+  validates :delivery_date, presence: true, on: :delivery_save
+
   TAX = 0.08
   SHIPPING_COUNT = 5
   SHIPPING_FEE = 600

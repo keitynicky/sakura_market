@@ -14,7 +14,6 @@ class CheckOutsController < ApplicationController
       redirect_to complete_check_out_path
     else
       save_delivery
-      redirect_to confirm_check_out_path
     end
   end
 
@@ -39,9 +38,15 @@ private
 
   def save_delivery
     order = current_order
-    order.delivery_date = Date.parse order_params[:delivery_date]
+    unless order_params[:delivery_date].empty?
+      order.delivery_date = Date.parse order_params[:delivery_date]
+    end
     order.delivery_time = order_params[:delivery_time]
-    order.save
+    if order.save(context: :delivery_save)
+        redirect_to confirm_check_out_path
+    else
+        render 'delivery'
+    end
   end
 
   def order_is_phurchased
