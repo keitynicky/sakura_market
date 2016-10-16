@@ -131,3 +131,8 @@
   * unless order_params[:delivery_date].empty?
 
 ## delivery_dateのエラーメッセージが表示されない
+
+## undefined method `map' for "translation missing: ja.date.order" っていうエラーが発生
+ * 配送日を設定するところで、エラーメッセージを表示するためにsimple_formの形式で記載したところ、このエラーが発生した。
+ * http://qiita.com/wada811/items/e26692ca3dea4e03ba30
+  

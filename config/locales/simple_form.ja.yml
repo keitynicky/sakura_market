@@ -13,6 +13,8 @@ ja:
         address_line2: 'アパート／マンション名等' 
         family_name: '氏名(姓)'
         given_name: '氏名(名)'
+      order:
+        delivery_date: '配送日'
     hints:
       user:
         password_regist: '%{min_length}桁以上の半角英数字を入力してください'
@@ -20,6 +22,8 @@ ja:
         postal_code: 'ハイフン無しの数字のみ(1234567)、もしくはハイフン付き数字のみ(123-4567)で入力してください。郵便番号が入力されると住所は自動で設定されます'        
         family_name: '姓を入力してください'
         given_name: '名前を入力してください'
+      order:
+        delivery_date: '3営業日（営業日: 月-金）から14営業日までが選択可能です'
     placeholders:
       user:
         email: 'abc@mail.com'
