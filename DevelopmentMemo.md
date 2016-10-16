@@ -131,8 +131,20 @@
   * unless order_params[:delivery_date].empty?
 
 ## delivery_dateのエラーメッセージが表示されない
+ * http://qiita.com/ozy-san/items/940d3b3aae2f7141f9ec
+  * renderにしてるけど、表示されないなぁ。。
+   * renderにした結果、再度表示される画面のURLが当初と違うけど。。？
+ * http://stackoverflow.com/questions/16680930/simple-form-not-displaying-error
+  * saveで保存してるけどなぁ！
+   * 特別な場合にしかエラーを出さないようにしていることがもしかして何か影響してる？？うーんでも、エラー時にもとの画面に戻ってきてるし、この分岐はきちんと働いてるんだよね。
+  * ん！もしかしてcurrent_orderを使っているからかな？！
 
 ## undefined method `map' for "translation missing: ja.date.order" っていうエラーが発生
  * 配送日を設定するところで、エラーメッセージを表示するためにsimple_formの形式で記載したところ、このエラーが発生した。
  * http://qiita.com/wada811/items/e26692ca3dea4e03ba30
+
+## simple_form形式だと、Date型のが3インプットになってしまってる。（年月日）
+ * http://stackoverflow.com/questions/19761080/formatting-a-date-input-using-simple-form
+  * :as => :string
+   * これを追加すればOKだった！
   

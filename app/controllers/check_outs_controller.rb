@@ -2,6 +2,7 @@ require 'date'
 
 class CheckOutsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_order, only: [:delivery, :update, :confirm, :complete] 
 
   def user_info
   end
@@ -22,11 +23,14 @@ class CheckOutsController < ApplicationController
 
   def complete
     order_is_phurchased
-    @order = current_order
     session[:order_id] = nil
   end
 
 private
+
+  def set_order
+    @order = current_order
+  end
 
   def order_params
     params.require(:order).permit(:delivery_date, :delivery_time)
@@ -45,7 +49,7 @@ private
     if order.save(context: :delivery_save)
         redirect_to confirm_check_out_path
     else
-        render 'delivery'
+        # TODO:要実装
     end
   end
 

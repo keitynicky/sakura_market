@@ -26,9 +26,12 @@ private
   def save_order
     @order_item = @order.order_items.find_or_initialize_by(product_id: order_item_params[:product_id])
     @order_item.quantity = order_item_params[:quantity]
-    @order_item.save
-    session[:order_id] = @order.id
-    redirect_to order_items_path            
+    if @order_item.save
+      session[:order_id] = @order.id
+      redirect_to order_items_path     
+    else
+      # TODO:要実装
+    end
   end
 
   def order_item_params

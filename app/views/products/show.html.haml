@@ -13,7 +13,7 @@
         = disp_money(@product.price)
       - if user_signed_in?
         %div.add-cart
-          = form_for @order_item do |f|
+          = simple_form_for @order_item do |f|
             .form-inline
               = f.number_field :quantity, value: @order_item.quantity, :class => 'form-control'
               = f.hidden_field :product_id, value: @product.id
