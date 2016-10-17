@@ -4,6 +4,9 @@ class CheckOutsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_order, only: [:delivery, :update, :confirm, :complete] 
 
+  def user_info
+  end
+
   def delivery
   end
 

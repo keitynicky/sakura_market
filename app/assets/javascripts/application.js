@@ -16,4 +16,3 @@
 //= require_tree .
 //= require jquery.jpostal 
 //= require bootstrap-datepicker.min.js
-//= require bootstrap-datepicker.ja.min.js
