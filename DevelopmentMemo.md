@@ -148,4 +148,7 @@
  * http://stackoverflow.com/questions/19761080/formatting-a-date-input-using-simple-form
   * :as => :string
    * これを追加すればOKだった！
+
+## validationメッセージ
+  * 各項目ごとに未入力のメッセージ書いてるけど、これって共通化できないのかな？
   
