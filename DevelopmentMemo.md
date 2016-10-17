@@ -153,5 +153,17 @@
   * 各項目ごとに未入力のメッセージ書いてるけど、これって共通化できないのかな？
 
 ## deviseに追加したテーブルのフィールドバリデーションが上手くいっていない
- * edit以外のフォームを表示するようにしているから、エラー発生後の情報を正しく渡せていない
+ * edit以外のフォームを表示するようにしているから、エラー発生後の情報を正しく渡せていない？
+### 検証したこと
+ * deviseのカスタムフィールドを特定の場合のみvalidationでチェックをするようにしたい。
+  * http://qiita.com/yui-knk/items/b02fea5cfc74443c828d
+   * validate ifを用いて実装　→　ifに設定している関数を動作確認用にtrueにした結果、遷移先がdevise.registration.editになっている
+ * deviseの更新時の処理を確認
+  * https://github.com/plataformatec/devise/blob/master/app/controllers/devise/registrations_controller.rb
+   * updateでエラー発生時の処理はオーバーライドで編集不可
+  * http://stackoverflow.com/questions/19574643/rails-4-how-overwrite-devise-respond-path-upon-error
+   * エラー時に独自の処理を実装するためには、update関数全体をオーバーライドする必要があるのかもと予測
+   * update関数全体をオーバーライドし、お届先情報の入力自体位をcheck_outs_controllerからregistrations_controllerに移動（あわせてroutingやviewも修正）
+    * エラー発生後にエラーが表示されない。。（デプロイするために一旦この変更はロールバック）
+  * 対応方法について質問実施
   
