@@ -42,14 +42,11 @@ private
 
   def save_delivery
     order = current_order
-    unless order_params[:delivery_date].empty?
-      order.delivery_date = Date.parse order_params[:delivery_date]
-    end
-    order.delivery_time = order_params[:delivery_time]
+    order.update_delivery order_params
     if order.save(context: :delivery_save)
-        redirect_to confirm_check_out_path
+      redirect_to confirm_check_out_path
     else
-        # TODO:要実装
+      render :delivery
     end
   end
 

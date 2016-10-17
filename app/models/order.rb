@@ -57,4 +57,11 @@ class Order < ApplicationRecord
     get_total_net_of_tax + tax
   end
 
+  def update_delivery order_params
+    unless order_params[:delivery_date].empty?
+      self.delivery_date = Date.parse order_params[:delivery_date]
+    end
+    self.delivery_time = order_params[:delivery_time]
+  end
+
 end
