@@ -41,9 +41,8 @@ private
   end
 
   def save_delivery
-    order = current_order
-    order.update_delivery order_params
-    if order.save(context: :delivery_save)
+    @order.update_delivery order_params
+    if @order.save(context: :delivery_save)
       redirect_to confirm_check_out_path
     else
       render :delivery
@@ -51,8 +50,7 @@ private
   end
 
   def order_is_phurchased
-    order = current_order
-    order.is_phurchased = true
-    order.save
+    @order.is_phurchased = true
+    @order.save
   end
 end

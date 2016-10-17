@@ -34,6 +34,13 @@ class Order < ApplicationRecord
     "#{self[:delivery_date].strftime("%Y年%m月%d日")} #{self[:delivery_time]}時の間"
   end
 
+  def update_delivery order_params
+    unless order_params[:delivery_date].empty?
+      self.delivery_date = Date.parse order_params[:delivery_date]
+    end
+    self.delivery_time = order_params[:delivery_time]
+  end
+
   private
 
   def get_cash_on_delivery
@@ -55,13 +62,6 @@ class Order < ApplicationRecord
 
   def get_total
     get_total_net_of_tax + tax
-  end
-
-  def update_delivery order_params
-    unless order_params[:delivery_date].empty?
-      self.delivery_date = Date.parse order_params[:delivery_date]
-    end
-    self.delivery_time = order_params[:delivery_time]
   end
 
 end

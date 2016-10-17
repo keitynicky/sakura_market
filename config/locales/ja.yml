@@ -17,6 +17,10 @@ ja:
               blank: 未入力です
             password: 
               blank: 未入力です
+        order:
+          attributes:
+            delivery_date:
+              blank: 未入力です
   date:
     formats:
       default: "%Y/%m/%d"
