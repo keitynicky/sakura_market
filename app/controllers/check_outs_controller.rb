@@ -42,7 +42,7 @@ private
 
   def save_delivery
     @order.update_delivery order_params
-    if @order.save(context: :delivery_save)
+    if @order.save(context: :checkout)
       redirect_to confirm_check_out_path
     else
       render :delivery

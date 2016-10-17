@@ -4,7 +4,7 @@ class Order < ApplicationRecord
   has_many :order_items
   belongs_to :user
 
-  validates :delivery_date, presence: true, on: :delivery_save
+  validates :delivery_date, presence: true, on: :checkout
 
   TAX = 0.08
   SHIPPING_COUNT = 5
