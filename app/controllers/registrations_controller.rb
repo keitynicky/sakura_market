@@ -1,5 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
 
+  def user_info
+    # p self.resource.errors
+    render :user_info
+  end
+
   def update
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
@@ -19,7 +24,7 @@ class RegistrationsController < Devise::RegistrationsController
         clean_up_passwords resource
         respond_with resource
       else
-        respond_with resource, location: user_info_check_out_path
+        render :user_info
       end
     end
   end
