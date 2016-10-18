@@ -7,6 +7,15 @@ class CheckOutsController < ApplicationController
   def user_info
   end
 
+  def update_user_info
+    current_user.update_attributes(user_params)
+    if current_user.save(context: :checkout)
+      redirect_to delivery_check_out_path
+    else
+      render :user_info
+    end
+  end
+
   def delivery
   end
 
@@ -34,6 +43,10 @@ private
 
   def order_params
     params.require(:order).permit(:delivery_date, :delivery_time)
+  end
+
+  def user_params
+    params.require(:user).permit(:postal_code, :address_level1, :address_level2,:address_line1,:address_line2,:email, :password, :family_name, :given_name)    
   end
 
   def is_complete?

@@ -6,6 +6,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  validates :postal_code, presence: true, on: :checkout
+  validates :address_level1, presence: true, on: :checkout
+  validates :address_level2, presence: true, on: :checkout
+  validates :family_name, presence: true, on: :checkout
+  validates :given_name, presence: true, on: :checkout
+
   def disp_address
     "#{self.address_level1} #{self.address_level2} #{self.address_line1} #{self.address_line2}"
   end
