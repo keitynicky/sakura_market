@@ -1,5 +1,5 @@
 = render "checkout_progress", progress_info: get_progress_info(1)          
-= simple_form_for(current_user, url: update_user_info_check_out_path(current_user)) do |f|
+= simple_form_for(@user, url: update_user_info_check_out_path(@user), html: { method: :put }) do |f|
   .panel.panel-default.flex-col
     .panel-heading
       お届け先住所

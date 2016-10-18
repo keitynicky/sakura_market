@@ -10,17 +10,8 @@ ja:
         address: 住所
   activerecord:
     errors:
-      models:
-        user:
-          attributes:
-            email: 
-              blank: 未入力です
-            password: 
-              blank: 未入力です
-        order:
-          attributes:
-            delivery_date:
-              blank: 未入力です
+      messages:
+        blank: "未入力です"
   date:
     formats:
       default: "%Y/%m/%d"

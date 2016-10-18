@@ -2,14 +2,15 @@ require 'date'
 
 class CheckOutsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_user, only: [:user_info, :update_user_info] 
   before_action :set_order, only: [:delivery, :update, :confirm, :complete] 
 
   def user_info
   end
 
   def update_user_info
-    current_user.update_attributes(user_params)
-    if current_user.save(context: :checkout)
+    @user.update_attributes(user_params)
+    if @user.save(context: :checkout)
       redirect_to delivery_check_out_path
     else
       render :user_info
@@ -36,6 +37,10 @@ class CheckOutsController < ApplicationController
   end
 
 private
+
+  def set_user
+    @user = current_user
+  end
 
   def set_order
     @order = current_order
