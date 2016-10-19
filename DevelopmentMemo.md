@@ -201,3 +201,5 @@
 ## rubocop導入！
  * autocorrectでスペースとかの修正は適時行ってくれる便利！
  * ルールとかも共通設定且つカスタマイズが可能みたい！時間を見て調査すること！
+  * http://www.rubydoc.info/github/bbatsov/rubocop/Rubocop/Cop
+   * ↑rubocopのルール
