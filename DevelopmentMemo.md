@@ -185,3 +185,7 @@
 ## 週末を除いて日付を取得
  * http://stackoverflow.com/questions/8451190/add-no-of-days-in-a-date-to-get-next-dateexcluding-weekends
  * 愚直にくるくる回しながら該当曜日をスキップする
+
+## is_phurchased_orders
+ * http://stackoverflow.com/questions/5856838/scope-with-join-on-has-many-through-association
+  * 最初上記のサイトを参考に、whereとscopeで対応しようとしたが、whereという関数が定義されていないと怒られてしまったため、現在の作り（リレーションを張っている子供へのwhere）に変更した。
