@@ -189,3 +189,7 @@
 ## is_phurchased_orders
  * http://stackoverflow.com/questions/5856838/scope-with-join-on-has-many-through-association
   * 最初上記のサイトを参考に、whereとscopeで対応しようとしたが、whereという関数が定義されていないと怒られてしまったため、現在の作り（リレーションを張っている子供へのwhere）に変更した。
+
+## Hamlでリンクタグ以外でリンクができるように作るには
+ * http://stackoverflow.com/questions/11478743/haml-with-rails-making-a-table-column-into-a-link/21482372#21482372
+  * data-linkなどdata属性を定義し、且つ、jQuey側で遷移機能を実装すればOK
