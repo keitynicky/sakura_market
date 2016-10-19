@@ -22,7 +22,7 @@
         - current_user.is_phurchased_orders.each do |order|
           %tr
             %td
-              = order.updated_at
+              = order.disp_updated_at
             %td
               = order.disp_delivery_datetime
             %td
