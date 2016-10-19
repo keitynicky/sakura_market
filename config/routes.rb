@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :products, only: [:show] do
     member {get :show_photo}
   end
+  resource :account, only: [:show]
   resources :order_items, only: [:index, :create, :update, :destroy]
   resource :check_out, only: [:update] do
     member {get :user_info}

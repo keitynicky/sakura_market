@@ -16,7 +16,10 @@
             = link_to "お買い物", root_path
           %li 
             = link_to "ショッピングカート", order_items_path
-        %ul.nav.navbar-nav.navbar-right           
+        %ul.nav.navbar-nav.navbar-right
+          - if user_signed_in?
+            %li
+              = link_to "アカウント情報", account_path            
           %li 
             - if user_signed_in? 
               = link_to "ログアウト", destroy_user_session_path, method: :delete
