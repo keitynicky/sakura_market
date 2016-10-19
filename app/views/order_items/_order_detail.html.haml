@@ -1,0 +1,65 @@
+%div.cart
+  %table.table.table-striped
+    %thead
+      %tr
+        %th.product{:colspan => 2}
+          商品
+        %th 
+          金額
+        %th 
+          個数
+        %th 
+          総額
+        %th
+    %tbody
+      - order.order_items.each do |item|
+        %tr
+          %td
+            %div.img-thumbnail
+              = image_tag show_photo_product_path(item.product), size: "100x80"
+          %td.product_detail 
+            %h4
+              = link_to item.product.name, item.product
+            %span
+              = item.product.description
+          %td.number
+            = disp_money(item.unit_price)
+          %td.number 
+            = disp_number(item.quantity)
+          %td.number 
+            = disp_money(item.total_price)
+          %td.delete
+            - if is_cart
+              = link_to "削除", item, method: :delete, data: {confirm: "削除して良いですか？"}, class: 'btn btn-danger'
+    %tfoot
+      %tr
+        %th{:colspan => 4} 
+          合計
+        %th
+          = disp_money(order.subtotal)
+        %th
+      - if !is_cart
+        %tr
+          %th{:colspan => 4} 
+            代引き手数料
+          %th
+            = disp_money(order.cash_on_delivery)
+          %th
+        %tr
+          %th{:colspan => 4} 
+            送料
+          %th
+            = disp_money(order.shipping)
+          %th
+        %tr
+          %th{:colspan => 4} 
+            消費税
+          %th
+            = disp_money(order.tax)
+          %th
+        %tr
+          %th{:colspan => 4} 
+            総額
+          %th
+            = disp_money(order.total)
+          %th
