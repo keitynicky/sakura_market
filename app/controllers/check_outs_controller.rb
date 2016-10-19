@@ -33,7 +33,7 @@ class CheckOutsController < ApplicationController
 
   def complete
     order_is_phurchased
-    session[:order_id] = nil
+    init_order
   end
 
 private

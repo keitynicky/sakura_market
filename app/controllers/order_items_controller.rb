@@ -15,6 +15,9 @@ class OrderItemsController < ApplicationController
   def destroy
     @order_item = @order.order_items.find(params[:id])
     @order_item.destroy
+    if @order.order_items.count == 0 
+      init_order
+    end
     redirect_to order_items_path    
   end
 
