@@ -3,7 +3,7 @@
 %h3
   ご購入履歴
 %div.cart
-  - if current_user.orders.count == 0
+  - if current_user.is_phurchased_orders.count == 0
     %span
       ご購入履歴はありません
     %div
@@ -14,6 +14,16 @@
         %tr
           %th
             ご購入日時
+          %th
+            配送日時
           %th 
             ご購入金額合計
       %tbody
+        - current_user.is_phurchased_orders.each do |order|
+          %tr
+            %td
+              = order.updated_at
+            %td
+              = order.disp_delivery_datetime
+            %td
+              = disp_money(order.total)

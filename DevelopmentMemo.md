@@ -173,4 +173,15 @@
  * member {put :update_user_info}
  * check_outs_controllerにアクション追加し、そのアクションでのsave時にvalidationが行われるように設定
  * viewのパスを新たに定義したパスを指定
+
+## 数値フォーマットでカンマ付き
+ * http://stackoverflow.com/questions/1078347/is-there-a-rails-trick-to-adding-commas-to-large-numbers
+ * number_with_delimiter(@number, :delimiter => ',')
   
+## JQueryで日付間の日数取得
+ * http://stackoverflow.com/questions/20537165/how-to-count-days-between-two-dates-in-javascript
+ * var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)))
+
+## 週末を除いて日付を取得
+ * http://stackoverflow.com/questions/8451190/add-no-of-days-in-a-date-to-get-next-dateexcluding-weekends
+ * 愚直にくるくる回しながら該当曜日をスキップする
