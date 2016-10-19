@@ -193,3 +193,7 @@
 ## Hamlでリンクタグ以外でリンクができるように作るには
  * http://stackoverflow.com/questions/11478743/haml-with-rails-making-a-table-column-into-a-link/21482372#21482372
   * data-linkなどdata属性を定義し、且つ、jQuey側で遷移機能を実装すればOK
+
+## linkをボタンレイアウトに
+ * 前にもやったけれど、忘れていたのでメモ
+  * class: "btn btn-xx"を指定すればOK
