@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
   resource :account, only: [:show]
   resources :order_items, only: [:index, :create, :update, :destroy]
-  resource :check_out, only: [:update] do
+  resource :check_out, only: [:update, :show] do
     member {get :user_info}
     member {put :update_user_info}
     member {get :delivery}

@@ -5,6 +5,10 @@ class CheckOutsController < ApplicationController
   before_action :set_user, only: [:user_info, :update_user_info] 
   before_action :set_order, only: [:delivery, :update, :confirm, :complete] 
 
+  def show
+    @order = current_user.orders.find(params[:format])
+  end
+
   def user_info
   end
 
