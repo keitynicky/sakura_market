@@ -30,4 +30,7 @@ body {
       color: $menu-font-color !important;
     }
   }
+  [data-link] {
+    cursor: pointer;
+  }
 }
