@@ -15,13 +15,12 @@ class OrderItemsController < ApplicationController
   def destroy
     @order_item = @order.order_items.find(params[:id])
     @order_item.destroy
-    if @order.order_items.count == 0 
-      init_order
-    end
-    redirect_to order_items_path    
+    init_order if @order.order_items.count.zero?
+    redirect_to order_items_path
   end
 
-private
+  private
+
   def set_order
     @order = current_order
   end
@@ -29,16 +28,12 @@ private
   def save_order
     @order_item = @order.order_items.find_or_initialize_by(product_id: order_item_params[:product_id])
     @order_item.quantity = order_item_params[:quantity]
-    if @order_item.save
-      session[:order_id] = @order.id
-      redirect_to order_items_path     
-    else
-      # TODO:要実装
-    end
+    return unless @order_item.save
+    session[:order_id] = @order.id
+    redirect_to order_items_path
   end
 
   def order_item_params
     params.require(:order_item).permit(:quantity, :product_id)
   end
-
 end

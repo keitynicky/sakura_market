@@ -2,8 +2,8 @@ require 'date'
 
 class CheckOutsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: [:user_info, :update_user_info] 
-  before_action :set_order, only: [:delivery, :update, :confirm, :complete] 
+  before_action :set_user, only: [:user_info, :update_user_info]
+  before_action :set_order, only: [:delivery, :update, :confirm, :complete]
 
   def show
     @order = current_user.orders.find(params[:format])
@@ -25,7 +25,7 @@ class CheckOutsController < ApplicationController
   end
 
   def update
-    if is_complete?
+    if complete?
       redirect_to complete_check_out_path
     else
       save_delivery
@@ -40,7 +40,7 @@ class CheckOutsController < ApplicationController
     init_order
   end
 
-private
+  private
 
   def set_user
     @user = current_user
@@ -55,11 +55,11 @@ private
   end
 
   def user_params
-    params.require(:user).permit(:postal_code, :address_level1, :address_level2,:address_line1,:address_line2,:email, :password, :family_name, :given_name)    
+    params.require(:user).permit(:postal_code, :address_level1, :address_level2, :address_line1, :address_line2, :email, :password, :family_name, :given_name)
   end
 
-  def is_complete?
-    params.require(:commit) == "ご購入"
+  def complete?
+    params.require(:commit) == 'ご購入'
   end
 
   def save_delivery
