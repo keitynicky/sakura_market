@@ -2,14 +2,14 @@
   アカウント情報
 %h3
   ご購入履歴
-%div.cart
+%div
   - if current_user.is_phurchased_orders.count == 0
     %span
       ご購入履歴はありません
     %div
       = link_to "お買い物をする", root_path
   - else
-    %table.table.table-striped
+    %table#orders.table.table-striped
       %thead
         %tr
           %th
@@ -20,9 +20,9 @@
             ご購入金額合計
       %tbody
         - current_user.is_phurchased_orders.each do |order|
-          %tr
+          %tr.clickable-row{"data-link" => complete_check_out_path(order)}
             %td
-              = order.disp_updated_at
+              = link_to order.disp_updated_at, complete_check_out_path(order)
             %td.text-center
               = order.disp_delivery_datetime
             %td.text-right
