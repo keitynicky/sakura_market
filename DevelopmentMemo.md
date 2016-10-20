@@ -229,3 +229,5 @@
 
 ## 以下はhashのキーが文字列なのであえて=>の記法
  * %tr.clickable-row{"data-link" => check_out_path(order)}
+ * %div.img-thumbnail.image-box{"data-link" => product_path(product)}
+ * applicaiton.html.hamlのデフォルト記述
