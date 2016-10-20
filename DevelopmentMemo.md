@@ -217,3 +217,5 @@
  * http://stackoverflow.com/questions/21201493/couldnt-require-openssl-in-ruby
  * http://gagapi.hatenablog.jp/entry/2013/06/09/213814
   * ここのを参考に対応→ただ、「どこのサイトの（GitHub?のどこ?）」証明書を「どのように」取得可能なのかがいまいち不明。一旦は後回しに。
+ * C:\Ruby23-x64\lib\ruby\2.3.0\openssl
+  * 関連するクラスとかはここにあるみたい。
