@@ -8,7 +8,7 @@ class CheckOutsController < ApplicationController
   SHORT_PAGE_PER = 2
 
   def show
-    set_order_by_param current_user.orders.find(params[:format])
+    keep_order_by_param current_user.orders.find(params[:format])
   end
 
   def user_info
@@ -40,7 +40,7 @@ class CheckOutsController < ApplicationController
   end
 
   def complete
-    set_order_by_param current_user.orders.find(session[:backup_order_id])
+    keep_order_by_param current_user.orders.find(session[:backup_order_id])
   end
 
   private
@@ -49,11 +49,11 @@ class CheckOutsController < ApplicationController
     @user = current_user
   end
 
-  def set_order 
-    set_order_by_param current_order
+  def set_order
+    keep_order_by_param current_order
   end
 
-  def set_order_by_param order
+  def keep_order_by_param(order)
     @order = order
     order_items_pagenate SHORT_PAGE_PER
   end
