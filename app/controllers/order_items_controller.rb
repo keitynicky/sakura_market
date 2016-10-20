@@ -25,7 +25,7 @@ class OrderItemsController < ApplicationController
 
   def set_order
     @order = current_order
-    set_order_items PAGE_PER
+    order_items_pagenate PAGE_PER
   end
 
   def save_order

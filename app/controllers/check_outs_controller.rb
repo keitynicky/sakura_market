@@ -55,7 +55,7 @@ class CheckOutsController < ApplicationController
 
   def set_order_by_param order
     @order = order
-    set_order_items SHORT_PAGE_PER
+    order_items_pagenate SHORT_PAGE_PER
   end
 
   def order_params
