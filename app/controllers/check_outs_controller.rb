@@ -3,13 +3,12 @@ require 'date'
 class CheckOutsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:user_info, :update_user_info]
-  before_action :set_order, only: [:delivery, :update, :confirm, :complete]
+  before_action :set_order, only: [:delivery, :update, :confirm]
 
   SHORT_PAGE_PER = 2
 
   def show
-    @order = current_user.orders.find(params[:format])
-    set_order_items SHORT_PAGE_PER
+    set_order_by_param current_user.orders.find(params[:format])
   end
 
   def user_info
@@ -29,6 +28,8 @@ class CheckOutsController < ApplicationController
 
   def update
     if complete?
+      order_is_phurchased
+      init_order
       redirect_to complete_check_out_path
     else
       save_delivery
@@ -39,8 +40,7 @@ class CheckOutsController < ApplicationController
   end
 
   def complete
-    order_is_phurchased
-    init_order
+    set_order_by_param current_user.orders.last
   end
 
   private
@@ -49,8 +49,12 @@ class CheckOutsController < ApplicationController
     @user = current_user
   end
 
-  def set_order
-    @order = current_order
+  def set_order 
+    set_order_by_param current_order
+  end
+
+  def set_order_by_param order
+    @order = order
     set_order_items SHORT_PAGE_PER
   end
 
@@ -77,6 +81,6 @@ class CheckOutsController < ApplicationController
 
   def order_is_phurchased
     @order.is_phurchased = true
-    @order.save
+    @order.save(context: :checkout)
   end
 end
