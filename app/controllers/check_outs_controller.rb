@@ -40,7 +40,7 @@ class CheckOutsController < ApplicationController
   end
 
   def complete
-    set_order_by_param current_user.orders.last
+    set_order_by_param current_user.orders.find(session[:backup_order_id])
   end
 
   private

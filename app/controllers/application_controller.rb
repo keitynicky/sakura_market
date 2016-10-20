@@ -3,11 +3,16 @@ class ApplicationController < ActionController::Base
   helper_method :current_order
 
   def current_order
+    session[:backup_order_id] = nil
     if !session[:order_id].nil?
       Order.find(session[:order_id])
     else
       current_user.orders.new
     end
+  end
+
+  def complete_order
+    Order.find(session[:backup_order_id])
   end
 
   def show_photo
@@ -19,6 +24,7 @@ class ApplicationController < ActionController::Base
   end
 
   def init_order
+    session[:backup_order_id] = session[:order_id]
     session[:order_id] = nil
   end
 
