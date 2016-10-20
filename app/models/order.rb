@@ -1,4 +1,4 @@
-require "date"
+require 'date'
 
 class Order < ApplicationRecord
   has_many :order_items
@@ -15,19 +15,19 @@ class Order < ApplicationRecord
   end
 
   def tax
-    self[:tax] ||=  get_tax get_total_net_of_tax
+    self[:tax] ||= (total_net_of_tax * TAX).to_i
   end
 
   def cash_on_delivery
-    self[:cash_on_delivery] ||= get_cash_on_delivery 
+    self[:cash_on_delivery] ||= subtotal_cost
   end
 
   def shipping
-    self[:shipping] ||= get_shipping 
+    self[:shipping] ||= shipping_by_quantities
   end
 
   def total
-    self[:total] ||= get_total 
+    self[:total] ||= total_net_of_tax + tax
   end
 
   def disp_delivery_datetime
@@ -38,7 +38,7 @@ class Order < ApplicationRecord
     "#{self[:updated_at].strftime("%Y年%m月%d日 %H:%M:%S")}"
   end
 
-  def update_delivery order_params
+  def update_delivery(order_params)
     unless order_params[:delivery_date].empty?
       self.delivery_date = Date.parse order_params[:delivery_date]
     end
@@ -47,25 +47,16 @@ class Order < ApplicationRecord
 
   private
 
-  def get_cash_on_delivery
+  def subtotal_cost
     CashOnDelivery.select_recorod_by_subtotal(subtotal).cost
   end
 
-  def get_shipping
+  def shipping_by_quantities
     quantities = order_items.sum(:quantity)
     SHIPPING_FEE * (((quantities - 1) / SHIPPING_COUNT) + 1)
   end
 
-  def get_total_net_of_tax
+  def total_net_of_tax
     subtotal + cash_on_delivery + shipping
   end
-
-  def get_tax target
-     (target * TAX).to_i
-  end
-
-  def get_total
-    get_total_net_of_tax + tax
-  end
-
 end
