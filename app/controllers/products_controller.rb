@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all.order(:sort)
+    @products = Product.all.order(:sort).page(params[:page])
   end
 
   def show

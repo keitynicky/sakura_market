@@ -16,6 +16,7 @@ gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'seed-fu'
+gem 'kaminari'
 
 group :development, :test do
   gem 'pry-rails'

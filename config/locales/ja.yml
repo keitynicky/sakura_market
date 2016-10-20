@@ -12,6 +12,13 @@ ja:
     errors:
       messages:
         blank: "未入力です"
+  views:
+    pagination:
+      first:    "最初のページ"
+      last:     "最後のページ"
+      previous: "&lsaquo;"
+      next:     "&rsaquo;"
+      truncate: "（中略）"
   date:
     formats:
       default: "%Y/%m/%d"

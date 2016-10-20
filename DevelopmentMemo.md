@@ -203,3 +203,15 @@
  * ルールとかも共通設定且つカスタマイズが可能みたい！時間を見て調査すること！
   * http://www.rubydoc.info/github/bbatsov/rubocop/Rubocop/Cop
    * ↑rubocopのルール
+
+## kaminariを導入。でもエラーがでてる。page_entries_infoで。
+ * http://qiita.com/rojiuratech/items/7f31fc81fdd2ebc0fe8c
+ * http://sandragon.hatenablog.com/entry/2012/09/30/182651
+ * 凡ミス。。コントローラーのパラメーター名をタイポしていた。。( TДT)
+
+## kaminariにbootstrapのデザイン適用しようとしたらエラーが出てる
+ *  `connect_nonblock': SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed
+  * rails g kaminari:views bootstrap
+  * rails g kaminari:views bootstrap3
+ * 一旦はこれは対応せず。
+ 
