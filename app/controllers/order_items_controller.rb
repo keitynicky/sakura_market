@@ -3,6 +3,8 @@ class OrderItemsController < ApplicationController
   before_action :set_order
   before_action :save_order, only: [:create, :update]
 
+  PAGE_PER = 4
+
   def index
   end
 
@@ -23,6 +25,7 @@ class OrderItemsController < ApplicationController
 
   def set_order
     @order = current_order
+    set_order_items PAGE_PER
   end
 
   def save_order

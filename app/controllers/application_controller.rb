@@ -21,4 +21,8 @@ class ApplicationController < ActionController::Base
   def init_order
     session[:order_id] = nil
   end
+
+  def set_order_items per
+    @order_items = @order.order_items.page(params[:page]).per(per)
+  end
 end

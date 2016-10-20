@@ -23,6 +23,6 @@
         .col-sm-8
           = current_user.disp_user_name
   .panel.panel-default
-    = render "order_items/order_detail", order: current_order, is_cart: false          
+    = render "order_items/order_detail", order: current_order, order_items: order_items, is_cart: false          
 
   

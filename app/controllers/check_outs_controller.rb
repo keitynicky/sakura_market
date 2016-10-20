@@ -5,8 +5,11 @@ class CheckOutsController < ApplicationController
   before_action :set_user, only: [:user_info, :update_user_info]
   before_action :set_order, only: [:delivery, :update, :confirm, :complete]
 
+  SHORT_PAGE_PER = 2
+
   def show
     @order = current_user.orders.find(params[:format])
+    set_order_items SHORT_PAGE_PER
   end
 
   def user_info
@@ -48,6 +51,7 @@ class CheckOutsController < ApplicationController
 
   def set_order
     @order = current_order
+    set_order_items SHORT_PAGE_PER
   end
 
   def order_params

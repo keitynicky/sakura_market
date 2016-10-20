@@ -12,7 +12,7 @@
           総額
         %th
     %tbody
-      - order.order_items.each do |item|
+      - order_items.each do |item|
         %tr
           %td
             %div.img-thumbnail
@@ -31,6 +31,7 @@
           %td.delete
             - if is_cart
               = link_to "削除", item, method: :delete, data: {confirm: "削除して良いですか？"}, class: 'btn btn-danger'
+      = paginate order_items
     %tfoot
       %tr
         %th{:colspan => 4} 

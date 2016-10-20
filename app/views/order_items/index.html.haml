@@ -6,5 +6,5 @@
   %div
     = link_to "お買い物をする", root_path
 - else
-  = render "order_detail", order: @order, is_cart: true          
+  = render "order_detail", order: @order, order_items: @order_items, is_cart: true          
   = link_to "レジに進む", user_info_check_out_path, :class => 'btn btn-primary pull-right'
