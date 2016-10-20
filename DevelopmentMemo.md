@@ -213,5 +213,7 @@
  *  `connect_nonblock': SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed
   * rails g kaminari:views bootstrap
   * rails g kaminari:views bootstrap3
- * 一旦はこれは対応せず。
- 
+ * http://d.hatena.ne.jp/komiyak/20130508/1367993536
+ * http://stackoverflow.com/questions/21201493/couldnt-require-openssl-in-ruby
+ * http://gagapi.hatenablog.jp/entry/2013/06/09/213814
+  * ここのを参考に対応→ただ、「どこのサイトの（GitHub?のどこ?）」証明書を「どのように」取得可能なのかがいまいち不明。一旦は後回しに。
