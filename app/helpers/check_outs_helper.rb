@@ -1,10 +1,9 @@
 module CheckOutsHelper
-  def get_progress_info current_process
-    ProgressInfo.new(current_process)     
+  def get_progress_info(current_process)
+    ProgressInfo.new(current_process)
   end
-  
+
   class ProgressInfo < Struct.new :current_process
-    
     def one_class
       get_color_class current_process >= 1
     end
@@ -22,15 +21,14 @@ module CheckOutsHelper
     end
 
     def progress_width
-        width_percent = (25 * current_process)
-        "width: #{width_percent}%"
+      width_percent = (25 * current_process)
+      "width: #{width_percent}%"
     end
 
-  private
+    private
 
-    def get_color_class is_primary
-      is_primary ? "primary-color" : "no-color"
+    def get_color_class(is_primary)
+      is_primary ? 'primary-color' : 'no-color'
     end
   end
-
 end
