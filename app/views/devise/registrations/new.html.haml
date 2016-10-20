@@ -6,8 +6,8 @@
         必須入力
       .panel-body
         = f.input :email, autofocus: true
-        = f.input :password, autocomplete: "off", :hint => t(:'simple_form.hints.user.password_regist', :min_length => @minimum_password_length.to_s)
-        = f.input :password, autocomplete: "off", :label => t(:'simple_form.labels.user.password_confirmation'), :hint => t(:'simple_form.hints.user.password_confirmation')
+        = f.input :password, autocomplete: "off", hint: t(:'simple_form.hints.user.password_regist', min_length: @minimum_password_length.to_s)
+        = f.input :password, autocomplete: "off", label: t(:'simple_form.labels.user.password_confirmation'), hint: t(:'simple_form.hints.user.password_confirmation')
     .panel.panel-default 
       .panel-heading
         任意入力

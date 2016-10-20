@@ -3,7 +3,7 @@
   %table.table.table-striped
     %thead
       %tr
-        %th.product{:colspan => 2}
+        %th.product{colspan: 2}
           商品
         %th 
           金額
@@ -34,32 +34,32 @@
               = link_to "削除", item, method: :delete, data: {confirm: "削除して良いですか？"}, class: 'btn btn-danger'
     %tfoot
       %tr
-        %th{:colspan => 4} 
+        %th{colspan: 4} 
           合計
         %th
           = disp_money(order.subtotal)
         %th
       - if !is_cart
         %tr
-          %th{:colspan => 4} 
+          %th{colspan: 4} 
             代引き手数料
           %th
             = disp_money(order.cash_on_delivery)
           %th
         %tr
-          %th{:colspan => 4} 
+          %th{colspan: 4} 
             送料
           %th
             = disp_money(order.shipping)
           %th
         %tr
-          %th{:colspan => 4} 
+          %th{colspan: 4} 
             消費税
           %th
             = disp_money(order.tax)
           %th
         %tr
-          %th{:colspan => 4} 
+          %th{colspan: 4} 
             総額
           %th
             = disp_money(order.total)
