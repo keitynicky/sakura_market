@@ -3,7 +3,7 @@
 %h3
   ご購入履歴
 %div
-  - if current_user.is_phurchased_orders.count == 0
+  - if current_user.phurchased_orders?.count == 0
     %span
       ご購入履歴はありません
     %div
@@ -19,7 +19,7 @@
           %th 
             ご購入金額合計
       %tbody
-        - current_user.is_phurchased_orders.each do |order|
+        - current_user.phurchased_orders?.each do |order|
           %tr.clickable-row{"data-link" => check_out_path(order)}
             %td
               = link_to order.disp_updated_at, check_out_path(order)

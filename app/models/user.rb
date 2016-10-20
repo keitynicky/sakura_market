@@ -11,16 +11,15 @@ class User < ApplicationRecord
   validates :family_name, presence: true, on: :checkout
   validates :given_name, presence: true, on: :checkout
 
-  def is_phurchased_orders
-    self.orders.where(is_phurchased: true).order("updated_at DESC")
+  def phurchased_orders?
+    orders.where(is_phurchased: true).order('updated_at DESC')
   end
 
   def disp_address
-    "#{self.address_level1} #{self.address_level2} #{self.address_line1} #{self.address_line2}"
+    "#{address_level1} #{address_level2} #{address_line1} #{address_line2}"
   end
 
   def disp_user_name
-    "#{self.family_name} #{self.given_name}様"
+    "#{family_name} #{given_name}様"
   end
-
 end
