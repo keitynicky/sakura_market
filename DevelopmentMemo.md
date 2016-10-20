@@ -219,3 +219,7 @@
   * ここのを参考に対応→ただ、「どこのサイトの（GitHub?のどこ?）」証明書を「どのように」取得可能なのかがいまいち不明。一旦は後回しに。
  * C:\Ruby23-x64\lib\ruby\2.3.0\openssl
   * 関連するクラスとかはここにあるみたい。
+
+## rubocopのルール上書き
+ * http://qiita.com/necojackarc/items/8bc16092bbc69f17a16d
+ 
