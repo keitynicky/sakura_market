@@ -1,10 +1,10 @@
 %h2 ログイン
 = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   = f.error_notification
-  = f.input :email, autofocus: true, :input_html => { :class => 'form-control' }
-  = f.input :password, autocomplete: "off", :input_html => { :class => 'form-control' }
+  = f.input :email, autofocus: true, :input_html => { class: 'form-control' }
+  = f.input :password, autocomplete: "off", :input_html => { class: 'form-control' }
   - if devise_mapping.rememberable?
     .checkbox
       = f.input :remember_me, as: :boolean
-  = f.submit "ログイン", :class => 'btn btn-default'
+  = f.submit "ログイン", class: 'btn btn-default'
 = render "devise/shared/links"

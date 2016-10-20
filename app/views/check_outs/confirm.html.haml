@@ -1,4 +1,4 @@
 = render "checkout_progress", progress_info: get_progress_info(3)                 
 = simple_form_for(current_order, url: check_out_path(current_order), html: { method: :put }) do |f|
   = render "checkout_summary", current_order: @order, order_items: @order_items                              
-  = f.submit "ご購入", :class => 'btn btn-primary pull-right'
+  = f.submit "ご購入", class: 'btn btn-primary pull-right'

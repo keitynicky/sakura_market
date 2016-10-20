@@ -226,3 +226,6 @@
 ## users model rubocop
  * http://www.rubydoc.info/github/bbatsov/rubocop/Rubocop/Cop/Style/RedundantSelf
   * selfを付けると上記の指摘があったため、selfつけず。
+
+## 以下はhashのキーが文字列なのであえて=>の記法
+ * %tr.clickable-row{"data-link" => check_out_path(order)}

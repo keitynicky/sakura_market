@@ -14,7 +14,7 @@
               = f.input :delivery_date, :as => :string
             %label.control-label.string.optional            
               時間帯
-            = f.select :delivery_time, options_for_select(["8-12", "12-14", "14-16", "16-18", "18-20", "20-21"]), {}, :class => "form-control"
-  = f.submit "次へ", :class => 'btn btn-primary pull-right'
+            = f.select :delivery_time, options_for_select(["8-12", "12-14", "14-16", "16-18", "18-20", "20-21"]), {}, class: "form-control"
+  = f.submit "次へ", class: 'btn btn-primary pull-right'
         
             
