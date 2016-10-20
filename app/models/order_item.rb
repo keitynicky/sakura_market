@@ -3,9 +3,9 @@ class OrderItem < ApplicationRecord
   belongs_to :product
 
   DEFAULT_QUANTITY = 1
-  MAX_QUANTITY = 1000000
+  MAX_QUANTITY = 1_000_000
 
-  validates :quantity, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: DEFAULT_QUANTITY, less_than: MAX_QUANTITY}
+  validates :quantity, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: DEFAULT_QUANTITY, less_than: MAX_QUANTITY }
 
   before_save :finalize
 
@@ -14,7 +14,7 @@ class OrderItem < ApplicationRecord
   end
 
   def unit_price
-    # TODO 同名の列との識別のため下記のようなアクセスの仕方を設定している。
+    # TODO: 同名の列との識別のため下記のようなアクセスの仕方を設定している。
     self[:unit_price] ||= product.price
   end
 
@@ -22,9 +22,10 @@ class OrderItem < ApplicationRecord
     unit_price * quantity
   end
 
-private
+  private
+
   def finalize
     self.unit_price = unit_price
-    self.total_price = quantity * self.unit_price
+    self.total_price = quantity * unit_price
   end
 end
