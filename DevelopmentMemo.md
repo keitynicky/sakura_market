@@ -261,3 +261,30 @@
 
 ## Cannot add or update a child row: a foreign key constraint fails
  * foreignKeyを貼ろうとしている列の整合性を満たしていないデータが存在している場合に発生するエラー。
+
+## herokuにデプロイできない？！
+ * herokuにデプロイしようとしたらエラーが発生している
+  * 最後にデプロイしたのは昨日（10/20）今日は21時近くに初めてデプロイ対応。
+   * Heroku Git error, please try again shortly. 
+   * fatal: unable to access 'https://git.heroku.com/sakuramarket.git/': The requested URL returned error: 500
+ * ここで一旦Herokuにアクセスしてみればよかったんだけど、、一旦検索して以下のページを参考に対応
+  * http://nafuruby.hatenablog.com/entry/2014/10/18/004834
+   * 手順2でsshのところで上手く動かず、エラーメッセージも少し違っていたので、別のところで再検索
+  * http://stackoverflow.com/questions/28641851/cannot-push-to-heroku-fatal-unable-to-access-could-not-resolve-host-nil-n 
+   * git remote add heroku git@heroku.com:sakura_market.git
+   * fatal: Could not read from remote repository. 
+   * あ、アンスコいらなかったからかも。
+  * 以下を実行
+   * git remote rm heroku  
+   * git remote add heroku git@heroku.com:sakuramarket.git
+  * heroku keys:addでもエラーが起きてる
+   * spawn ssh-keygen ENOENT
+  * git push heroku masterしてみると
+   * ssh_exchange_identification: read: Connection reset by peer
+
+### sshコマンドを利用する
+ * http://vogel.at.webry.info/201507/article_3.html      
+ * herokuのページにアクセスしてみたら、以下のような画面が表示されてる！
+  * API Unavailable
+   * Our apologies, but there seems to have been a problem communicating with the Heroku API. If this problem persists, please e-mail support@heroku.com.
+ * heroku担当者に問い合わせ実施
