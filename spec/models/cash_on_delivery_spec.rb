@@ -1,5 +1,6 @@
 require 'rails_helper'
+require 'spec_helper'
 
 RSpec.describe CashOnDelivery, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  # OrderItemのユニットテストでこのパターンのテストを実施しているので、ここではテストせず
 end
