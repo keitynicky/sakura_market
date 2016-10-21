@@ -42,6 +42,7 @@ end
 group :test do
   gem 'fuubar'
   gem 'simplecov'
+  gem 'shoulda-matchers'
 end
 
 group :production do

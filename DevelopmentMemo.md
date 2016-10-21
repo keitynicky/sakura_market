@@ -121,6 +121,7 @@
 ## validate_presence_ofを使いたい
  *   gem 'shoulda-matchers'
  * だけど、x64で入れてしまっているから用いられない模様。。残念！
+  * 10/21再度試してみたら入れられた？？なんでだろう？？ちなみに今回はbundle exec guard経由だけど、それが理由かな？？
 
 ## hirbとpryを使う
  * .pryrcというファイルを作成しておく必要がある。作っておけばデータ表示時は表で表示される☆
@@ -231,3 +232,15 @@
  * %tr.clickable-row{"data-link" => check_out_path(order)}
  * %div.img-thumbnail.image-box{"data-link" => product_path(product)}
  * applicaiton.html.hamlのデフォルト記述
+
+## associationは設定していたけれど、テーブルのリレーションを貼っていなかったことが判明
+ * shouldaのテストを書いた時に、何故かExpected OrderItem to have a belongs_to association called Product (no association called Product)とエラーがでていた。
+  * shouldaではない書き方だったらエラーにならず。
+   *    t = Product.reflect_on_association(:order_items)
+   *    t.macro.should == :has_many
+  * 調べたところリレーションが正しく貼られていないことが原因ぽい
+   * http://stackoverflow.com/questions/11705772/rails-one-to-many-association-fails-due-to-foreign-key-validation
+
+## テーブルのリレーションの貼り方
+ * http://tkymtk.hatenablog.com/entry/rails-4-three-way-to-write-migration-2014-1
+  * 作成時に設定してしまうのがシンプル。今回はadd_referenceで対応する。
