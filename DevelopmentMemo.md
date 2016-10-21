@@ -288,3 +288,8 @@
   * API Unavailable
    * Our apologies, but there seems to have been a problem communicating with the Heroku API. If this problem persists, please e-mail support@heroku.com.
  * heroku担当者に問い合わせ実施
+
+### 無事デプロイできた！
+ * herokuのログインができるようになっていた！
+  * heroku toolbeltを再インストールしたことが時間差で効いたのかな？
+ * 作業ディレクトリのherokuのリレーションが切れてしまっていたから、別のディレクトリにHerokuとのヒモ付を行った環境を再度構築！その上でデプロイできた！！
