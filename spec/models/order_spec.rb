@@ -1,5 +1,6 @@
 require 'rails_helper'
 require 'spec_helper'
+require 'date'
 
 RSpec.describe Order, type: :model do
   describe `#subtotal` do
@@ -87,4 +88,49 @@ RSpec.describe Order, type: :model do
       end
     end
   end
+
+  describe `#disp_delivery_datetime` do
+    context `値取得時` do
+      it `配送日と配送時間のデータが取得されること` do
+        order = Order.create
+        order.delivery_date = Date.today
+        order.delivery_time = 'hoge'
+        expect(order.disp_delivery_datetime).to eq("#{order.delivery_date.strftime("%Y年%m月%d日")} #{order.delivery_time}時の間")
+      end
+    end
+  end
+
+  describe `#disp_updated_at` do
+    context `値取得時` do
+      it `更新時間のデータが取得されること` do
+        order = Order.create
+        expect(order.disp_updated_at).to eq("#{order.updated_at.strftime("%Y年%m月%d日 %H:%M:%S")}")
+      end
+    end
+  end
+
+  describe `#update_delivery` do
+    context `配送情報更新時` do
+      it `更新用の値が設定されること（正常系）` do
+        order = Order.create
+        params = {delivery_date: Date.today.strftime("%Y-%m-%d %H:%M:%S"), delivery_time: 'hoge'}
+        order.update_delivery params
+        expect(order.delivery_date).to eq(Date.parse params[:delivery_date])
+        expect(order.delivery_time).to eq(params[:delivery_time])
+      end
+    end
+  end
+
+  describe `#update_delivery` do
+    context `配送情報更新時` do
+      it `更新用の値が設定されること（正常系）` do
+        order = Order.create
+        params = {delivery_date: '', delivery_time: 'hoge'}
+        order.update_delivery params
+        expect(order.delivery_date).to eq(nil)
+        expect(order.delivery_time).to eq(params[:delivery_time])
+      end
+    end
+  end
+
 end

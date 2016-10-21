@@ -248,6 +248,8 @@ GEM
       activesupport (>= 3.1)
     sexp_processor (4.7.0)
     shellany (0.0.1)
+    shoulda-matchers (3.1.1)
+      activesupport (>= 4.0.0)
     simple_form (3.3.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
@@ -323,6 +325,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 5.0)
   seed-fu
+  shoulda-matchers
   simple_form
   simplecov
   spring

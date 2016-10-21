@@ -121,6 +121,7 @@
 ## validate_presence_ofを使いたい
  *   gem 'shoulda-matchers'
  * だけど、x64で入れてしまっているから用いられない模様。。残念！
+  * 10/21再度試してみたら入れられた？？なんでだろう？？ちなみに今回はbundle exec guard経由だけど、それが理由かな？？
 
 ## hirbとpryを使う
  * .pryrcというファイルを作成しておく必要がある。作っておけばデータ表示時は表で表示される☆
@@ -231,3 +232,59 @@
  * %tr.clickable-row{"data-link" => check_out_path(order)}
  * %div.img-thumbnail.image-box{"data-link" => product_path(product)}
  * applicaiton.html.hamlのデフォルト記述
+
+## associationは設定していたけれど、テーブルのリレーションを貼っていなかったことが判明
+ * shouldaのテストを書いた時に、何故かExpected OrderItem to have a belongs_to association called Product (no association called Product)とエラーがでていた。
+  * shouldaではない書き方だったらエラーにならず。
+   *    t = Product.reflect_on_association(:order_items)
+   *    t.macro.should == :has_many
+  * 調べたところリレーションが正しく貼られていないことが原因ぽい
+   * http://stackoverflow.com/questions/11705772/rails-one-to-many-association-fails-due-to-foreign-key-validation
+
+## テーブルのリレーションの貼り方
+ * http://tkymtk.hatenablog.com/entry/rails-4-three-way-to-write-migration-2014-1
+  * 作成時に設定してしまうのがシンプル。今回はadd_referenceで対応する。
+   * add_referenceだと新たに列を作っちゃう。。そうすると既存の列と同じだからって怒られてしまうから、一旦はindexとforeignkeyをそれぞれ追加する方法で対応してみた。
+
+### 。。のにもかかわらずテストでエラーが！
+~~~
+  describe OrderItem do
+     it { should belong_to(:product) }
+  end
+~~~
+* belong_toのところ、誤った理解で先頭大文字で書いてしまっていたのが原因！
+ * http://stackoverflow.com/questions/15723856/correct-way-of-testing-associations-with-rspec
+
+## migrationファイル
+ * destroyしてmigrationファイルを消しても、当然ながら、db:migrateしたあとは消したファイルの変更もdbに反映されちゃってる！
+ * rollbackで変更前に戻れなかったのは、そもそもmigrationファイルをそういう作りにしておかなかったからかな。。
+
+## Cannot add or update a child row: a foreign key constraint fails
+ * foreignKeyを貼ろうとしている列の整合性を満たしていないデータが存在している場合に発生するエラー。
+
+## herokuにデプロイできない？！
+ * herokuにデプロイしようとしたらエラーが発生している
+  * 最後にデプロイしたのは昨日（10/20）今日は21時近くに初めてデプロイ対応。
+   * Heroku Git error, please try again shortly. 
+   * fatal: unable to access 'https://git.heroku.com/sakuramarket.git/': The requested URL returned error: 500
+ * ここで一旦Herokuにアクセスしてみればよかったんだけど、、一旦検索して以下のページを参考に対応
+  * http://nafuruby.hatenablog.com/entry/2014/10/18/004834
+   * 手順2でsshのところで上手く動かず、エラーメッセージも少し違っていたので、別のところで再検索
+  * http://stackoverflow.com/questions/28641851/cannot-push-to-heroku-fatal-unable-to-access-could-not-resolve-host-nil-n 
+   * git remote add heroku git@heroku.com:sakura_market.git
+   * fatal: Could not read from remote repository. 
+   * あ、アンスコいらなかったからかも。
+  * 以下を実行
+   * git remote rm heroku  
+   * git remote add heroku git@heroku.com:sakuramarket.git
+  * heroku keys:addでもエラーが起きてる
+   * spawn ssh-keygen ENOENT
+  * git push heroku masterしてみると
+   * ssh_exchange_identification: read: Connection reset by peer
+
+### sshコマンドを利用する
+ * http://vogel.at.webry.info/201507/article_3.html      
+ * herokuのページにアクセスしてみたら、以下のような画面が表示されてる！
+  * API Unavailable
+   * Our apologies, but there seems to have been a problem communicating with the Heroku API. If this problem persists, please e-mail support@heroku.com.
+ * heroku担当者に問い合わせ実施
