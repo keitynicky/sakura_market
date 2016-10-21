@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013081027) do
+ActiveRecord::Schema.define(version: 20161021112121) do
 
   create_table "cash_on_deliveries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "min_fee"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20161013081027) do
     t.integer  "order_id"
     t.integer  "unit_price"
     t.integer  "total_price"
+    t.index ["order_id"], name: "index_order_items_on_order_id", using: :btree
+    t.index ["product_id"], name: "index_order_items_on_product_id", using: :btree
   end
 
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -79,4 +81,6 @@ ActiveRecord::Schema.define(version: 20161013081027) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "products"
 end

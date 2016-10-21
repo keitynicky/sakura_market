@@ -244,3 +244,20 @@
 ## テーブルのリレーションの貼り方
  * http://tkymtk.hatenablog.com/entry/rails-4-three-way-to-write-migration-2014-1
   * 作成時に設定してしまうのがシンプル。今回はadd_referenceで対応する。
+   * add_referenceだと新たに列を作っちゃう。。そうすると既存の列と同じだからって怒られてしまうから、一旦はindexとforeignkeyをそれぞれ追加する方法で対応してみた。
+
+### 。。のにもかかわらずテストでエラーが！
+~~~
+  describe OrderItem do
+     it { should belong_to(:product) }
+  end
+~~~
+* belong_toのところ、誤った理解で先頭大文字で書いてしまっていたのが原因！
+ * http://stackoverflow.com/questions/15723856/correct-way-of-testing-associations-with-rspec
+
+## migrationファイル
+ * destroyしてmigrationファイルを消しても、当然ながら、db:migrateしたあとは消したファイルの変更もdbに反映されちゃってる！
+ * rollbackで変更前に戻れなかったのは、そもそもmigrationファイルをそういう作りにしておかなかったからかな。。
+
+## Cannot add or update a child row: a foreign key constraint fails
+ * foreignKeyを貼ろうとしている列の整合性を満たしていないデータが存在している場合に発生するエラー。
