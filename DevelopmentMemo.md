@@ -315,6 +315,9 @@
  * http://xoyip.hatenablog.com/entry/2014/05/11/201307
   * Faker::Internet.email↑について記載あり
  * https://github.com/stympy/faker
-  * おお！なんだか色々あるみたい！slackの絵文字とか、ビールとか、本とか！へぇ！  
+  * おお！なんだか色々あるみたい！slackの絵文字とか、ビールとか、本とか！へぇ！
+
+## githubにpushできていなかった。。。
+ * herokuの方だけ対応していて、githubの方はcloneとかしていなかった。。はう。。
 
  
