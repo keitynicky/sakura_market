@@ -288,3 +288,33 @@
   * API Unavailable
    * Our apologies, but there seems to have been a problem communicating with the Heroku API. If this problem persists, please e-mail support@heroku.com.
  * heroku担当者に問い合わせ実施
+
+### 無事デプロイできた！
+ * herokuのログインができるようになっていた！
+  * heroku toolbeltを再インストールしたことが時間差で効いたのかな？
+ * 作業ディレクトリのherokuのリレーションが切れてしまっていたから、別のディレクトリにHerokuとのヒモ付を行った環境を再度構築！その上でデプロイできた！！
+
+## カバレッジ計測ツールの導入
+ * http://tech.mof-mof.co.jp/blog/coverage-wercker.html
+ 
+## カバレッジを走らせるため、guardで毎回のrspec実行方法を変更（現状修正したファイルのみ実行）
+ * http://ruby-rails.hatenadiary.com/entry/20141021/1413819783#guard-rspec-options
+  * guard :rspec, cmd: "bundle exec rspec", all_after_pass: true
+   * 上記の切り替えで実行の種類を制御可能
+
+## deviseのユニットテスト作成
+ * 新規ユーザーを登録するにあたってfactory_girlを導入
+  * https://github.com/plataformatec/devise/wiki/How-To:-Test-controllers-with-Rails-3-and-4-(and-RSpec)
+  * http://ayaketan.hatenablog.com/entry/2014/06/03/211110
+
+### factory_girlの導入
+ * http://qiita.com/muran001/items/436fd07eba1db18ed622
+
+### faker導入
+ * http://qiita.com/saino-katsutoshi/items/29c0918e489b27df637a
+ * http://xoyip.hatenablog.com/entry/2014/05/11/201307
+  * Faker::Internet.email↑について記載あり
+ * https://github.com/stympy/faker
+  * おお！なんだか色々あるみたい！slackの絵文字とか、ビールとか、本とか！へぇ！  
+
+ 

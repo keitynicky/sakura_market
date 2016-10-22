@@ -3,6 +3,11 @@ require 'spec_helper'
 require 'date'
 
 RSpec.describe Order, type: :model do
+
+  describe OrderItem do
+    it { should belong_to(:order) }
+  end
+
   describe `#subtotal` do
     context `order_itemがまだ追加されていない時` do
       it `初期値が設定されていること` do
@@ -14,53 +19,12 @@ RSpec.describe Order, type: :model do
 
   describe `#cash_on_delivery` do
     context `購入金額が10000円未満の時` do
-      it `300円となっていること` do
+      it `300円となっていること(各境界値のテストは、CashOnDeliveryのspecに記載)` do
         order = Order.new
         order.subtotal = 10000 - 1        
         expect(order.cash_on_delivery).to eq(300)
       end
     end
-    
-    context `購入金額が10000円の時` do
-      it `400円となっていること` do
-        order = Order.new
-        order.subtotal = 10000        
-        expect(order.cash_on_delivery).to eq(400)
-      end
-    end
-
-    context `購入金額が30,000円未満の時` do
-      it `400円となっていること` do
-        order = Order.new
-        order.subtotal = 30000 - 1        
-        expect(order.cash_on_delivery).to eq(400)
-      end
-    end
-
-    context `購入金額が30,000円の時` do
-      it `600円となっていること` do
-        order = Order.new
-        order.subtotal = 30000        
-        expect(order.cash_on_delivery).to eq(600)
-      end
-    end
-
-    context `購入金額が100,000円未満の時` do
-      it `600円となっていること` do
-        order = Order.new
-        order.subtotal = 100000 - 1        
-        expect(order.cash_on_delivery).to eq(600)
-      end
-    end
-
-    context `購入金額が100,000円の時` do
-      it `1000円となっていること` do
-        order = Order.new
-        order.subtotal = 100000        
-        expect(order.cash_on_delivery).to eq(1000)
-      end
-    end
-
   end
 
   describe `#shipping` do
@@ -129,6 +93,18 @@ RSpec.describe Order, type: :model do
         order.update_delivery params
         expect(order.delivery_date).to eq(nil)
         expect(order.delivery_time).to eq(params[:delivery_time])
+      end
+    end
+  end
+
+  describe `#total` do
+    context `値取得時` do
+      it `正しい値が取得されること` do
+        order = Order.create
+        order.subtotal = 100
+        order.cash_on_delivery = 100
+        order.shipping = 100
+        expect(order.total).to eq(324)
       end
     end
   end

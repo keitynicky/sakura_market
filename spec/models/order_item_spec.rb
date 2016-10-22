@@ -32,6 +32,16 @@ RSpec.describe OrderItem, type: :model do
         order_item.product_id = 1
         expect(order_item.unit_price).to eq(product.price)
       end
+
+      it `保存状態の場合はunit_priceから値が取得されること` do
+        product = Product.find_or_create_by(id: 1) do |target|
+          target.price = 100
+        end
+        order_item = OrderItem.new
+        order_item.product_id = 1
+        order_item.save
+        expect(order_item.unit_price).to eq(100)
+      end
     end
   end
 
