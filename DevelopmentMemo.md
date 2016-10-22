@@ -319,5 +319,8 @@
 
 ## githubにpushできていなかった。。。
  * herokuの方だけ対応していて、githubの方はcloneとかしていなかった。。はう。。
+ * cloneで同じローカルの作業ディレクトリから複数のpush先を設定するのがちょっと大変そうだったので、追加で調査
+ * herokuは一番最初にまだdeployしていないタイミングでgithubのリポジトリと関連付けたからスムーズに行ったんだね。
+  * http://stackoverflow.com/posts/16900010/revisions
 
  
