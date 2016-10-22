@@ -301,4 +301,20 @@
  * http://ruby-rails.hatenadiary.com/entry/20141021/1413819783#guard-rspec-options
   * guard :rspec, cmd: "bundle exec rspec", all_after_pass: true
    * 上記の切り替えで実行の種類を制御可能
+
+## deviseのユニットテスト作成
+ * 新規ユーザーを登録するにあたってfactory_girlを導入
+  * https://github.com/plataformatec/devise/wiki/How-To:-Test-controllers-with-Rails-3-and-4-(and-RSpec)
+  * http://ayaketan.hatenablog.com/entry/2014/06/03/211110
+
+### factory_girlの導入
+ * http://qiita.com/muran001/items/436fd07eba1db18ed622
+
+### faker導入
+ * http://qiita.com/saino-katsutoshi/items/29c0918e489b27df637a
+ * http://xoyip.hatenablog.com/entry/2014/05/11/201307
+  * Faker::Internet.email↑について記載あり
+ * https://github.com/stympy/faker
+  * おお！なんだか色々あるみたい！slackの絵文字とか、ビールとか、本とか！へぇ！  
+
  
