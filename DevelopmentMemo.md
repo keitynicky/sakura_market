@@ -309,6 +309,8 @@
 
 ### factory_girlの導入
  * http://qiita.com/muran001/items/436fd07eba1db18ed622
+ * http://ruby-rails.hatenadiary.com/entry/20150102/1420174315
+  * このサイトは丁寧な手順で記載されていて分かりやすかった
 
 ### faker導入
  * http://qiita.com/saino-katsutoshi/items/29c0918e489b27df637a
@@ -322,5 +324,9 @@
  * cloneで同じローカルの作業ディレクトリから複数のpush先を設定するのがちょっと大変そうだったので、追加で調査
  * herokuは一番最初にまだdeployしていないタイミングでgithubのリポジトリと関連付けたからスムーズに行ったんだね。
   * http://stackoverflow.com/posts/16900010/revisions
+
+## rspecのマッチャー
+ * http://morizyun.github.io/blog/rspec-builtin-matcher-rails/
+  * 色々と便利な書き方ができるみたい！都度都度で確認しよう！
 
  
