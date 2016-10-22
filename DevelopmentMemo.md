@@ -293,3 +293,12 @@
  * herokuのログインができるようになっていた！
   * heroku toolbeltを再インストールしたことが時間差で効いたのかな？
  * 作業ディレクトリのherokuのリレーションが切れてしまっていたから、別のディレクトリにHerokuとのヒモ付を行った環境を再度構築！その上でデプロイできた！！
+
+## カバレッジ計測ツールの導入
+ * http://tech.mof-mof.co.jp/blog/coverage-wercker.html
+ 
+## カバレッジを走らせるため、guardで毎回のrspec実行方法を変更（現状修正したファイルのみ実行）
+ * http://ruby-rails.hatenadiary.com/entry/20141021/1413819783#guard-rspec-options
+  * guard :rspec, cmd: "bundle exec rspec", all_after_pass: true
+   * 上記の切り替えで実行の種類を制御可能
+ 

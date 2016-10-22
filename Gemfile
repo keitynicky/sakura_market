@@ -43,6 +43,7 @@ group :test do
   gem 'fuubar'
   gem 'simplecov'
   gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
 end
 
 group :production do
