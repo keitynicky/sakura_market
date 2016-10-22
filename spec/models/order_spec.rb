@@ -3,6 +3,11 @@ require 'spec_helper'
 require 'date'
 
 RSpec.describe Order, type: :model do
+
+  describe OrderItem do
+    it { should belong_to(:order) }
+  end
+
   describe `#subtotal` do
     context `order_itemがまだ追加されていない時` do
       it `初期値が設定されていること` do
@@ -88,6 +93,18 @@ RSpec.describe Order, type: :model do
         order.update_delivery params
         expect(order.delivery_date).to eq(nil)
         expect(order.delivery_time).to eq(params[:delivery_time])
+      end
+    end
+  end
+
+  describe `#total` do
+    context `値取得時` do
+      it `正しい値が取得されること` do
+        order = Order.create
+        order.subtotal = 100
+        order.cash_on_delivery = 100
+        order.shipping = 100
+        expect(order.total).to eq(324)
       end
     end
   end
