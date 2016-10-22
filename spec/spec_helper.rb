@@ -19,7 +19,9 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require 'shoulda-matchers' 
+require 'shoulda-matchers'
+require 'simplecov'
+SimpleCov.start 'rails' 
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
