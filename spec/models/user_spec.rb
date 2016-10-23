@@ -1,11 +1,27 @@
 require 'spec_helper'
 
 RSpec.describe User, type: :model do
+
   describe `#特定の場合のみ空白を共用する項目` do
     context `保存時` do
       it `checkoutでなければ空白でも保存できること` do
         user = build(:user)
         be_true(user.save)
+      end
+
+      it `checkoutであれば空白は保存できないこと` do
+        user = build(:user)
+        be_false(user.save(context: :checkout))
+      end
+
+      it `checkoutであれば空白でなければ保存できること` do
+        user = build(:user)
+        user.postal_code = 'postal_code'
+        user.address_level1 = "address_level1"
+        user.address_level2 = "address_level2"
+        user.family_name = "family_name"
+        user.given_name = "given_name"
+        be_true(user.save(context: :checkout))
       end
     end
   end
