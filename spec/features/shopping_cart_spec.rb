@@ -14,26 +14,35 @@ RSpec.feature "ログイン後、ショッピングカート", type: :feature do
   end
 
   scenario '商品詳細ページでカートに追加ボタンが表示されている' do
-    login_as(@user, scope: :user)
-    visit root_path
-    click_link 'name0'
+    flow_click_link_product
     expect(page).to have_button 'カートに追加'
   end
 
   scenario '商品詳細ページから個数追加でショッピングカート画面に遷移する' do
-    login_as(@user, scope: :user)
-    visit root_path
-    click_link 'name0'
-    click_button 'カートに追加'
+    flow_click_add_cart
     expect(page).to have_content "レジに進む"
   end
 
   scenario 'ショッピングカート画面から商品名選択で商品詳細ページに遷移する' do
+    flow_click_add_cart
+    click_link 'name0'    
+    expect(page).to have_button "カートに追加"
+  end
+
+  # scenario 'ショッピングカート画面で削除ボタンを押すことで削除される' do
+  #   flow_click_add_cart
+  #   click_link '削除'   
+  #   expect(page).to have_no_content "name0"
+  # end
+
+  def flow_click_add_cart
+    flow_click_link_product
+    click_button 'カートに追加'    
+  end
+
+  def flow_click_link_product
     login_as(@user, scope: :user)
     visit root_path
     click_link 'name0'
-    click_button 'カートに追加'
-    click_link 'name0'    
-    expect(page).to have_button "カートに追加"
   end
 end

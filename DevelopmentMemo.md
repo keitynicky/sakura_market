@@ -334,6 +334,16 @@
   * ↑超参考になる！
 ### deviseのログインメソッド利用
  * http://totutotu.hatenablog.com/entry/2015/08/26/Devise%E3%81%A7%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3%E7%8A%B6%E6%85%8B%E3%82%92%E7%94%A8%E3%81%84%E3%81%9F%E6%8C%AF%E3%82%8B%E8%88%9E%E3%81%84%E3%83%86%E3%82%B9%E3%83%88%E3%82%92%E6%9B%B8%E3%81%8F
- 
+### capybaraでalertのボタンを押す
+ * http://altarf.net/computer/rails/3178
+  * ↑ちょっとこれは煩雑。。で、↓を追加調査
+ * http://stackoverflow.com/questions/6922241/rspec-capybara-how-to-click-on-alert-box
+ * http://qiita.com/sawamur@github/items/952f34ac07cc3cc7515f
+ * http://qiita.com/noriyotcp/items/9c469f2a1d8dece004b3
+  * gem 'capybara-webkit'が入っていなかったのが原因かな？
+#### capybara-webkitを入れられない。。
+ * windowsでcapybara-webkitを入れる方法↓
+  * http://d.hatena.ne.jp/penult/20140429/1398755123
+  * 新たにアカウント作らないといけないのかぁ。。一旦保留だね。→TODO：質問！
 
  
