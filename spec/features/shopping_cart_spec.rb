@@ -29,12 +29,6 @@ RSpec.feature "ログイン後、ショッピングカート", type: :feature do
     expect(page).to have_button "カートに追加"
   end
 
-  # scenario 'ショッピングカート画面で削除ボタンを押すことで削除される' do
-  #   flow_click_add_cart
-  #   click_link '削除'   
-  #   expect(page).to have_no_content "name0"
-  # end
-
   def flow_click_add_cart
     flow_click_link_product
     click_button 'カートに追加'    
