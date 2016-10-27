@@ -329,4 +329,8 @@
  * http://morizyun.github.io/blog/rspec-builtin-matcher-rails/
   * 色々と便利な書き方ができるみたい！都度都度で確認しよう！
 
+## featureテスト記載
+ * http://qiita.com/jnchito/items/607f956263c38a5fec24
+  * ↑超参考になる！
+
  
