@@ -12,4 +12,14 @@ feature 'ログインとログアウト' do
     click_button 'ログイン'
     expect(page).to have_content 'ログアウト'
   end
+
+  scenario 'ログアウトする' do
+    visit root_path
+    click_link 'ログイン'
+    fill_in 'メールアドレス', with: 'foo@example.com'
+    fill_in 'パスワード', with: '123456'
+    click_button 'ログイン'
+    click_link 'ログアウト'    
+    expect(page).to have_content 'ログイン'
+  end
 end
