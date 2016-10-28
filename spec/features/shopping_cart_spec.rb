@@ -29,6 +29,12 @@ RSpec.feature "ログイン後、ショッピングカート", type: :feature do
     expect(page).to have_button "カートに追加"
   end
 
+  scenario 'ショッピングカート画面からレジに進む画面遷移実行' do
+    flow_click_add_cart
+    click_on 'レジに進む'    
+    expect(page).to have_content "住所"
+  end
+
   def flow_click_add_cart
     flow_click_link_product
     click_button 'カートに追加'    
