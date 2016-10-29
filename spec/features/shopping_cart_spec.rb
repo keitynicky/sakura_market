@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'rails_helper'
+require 'date'
 
 RSpec.feature "ログイン後、ショッピングカート", type: :feature do
   background do
@@ -30,9 +31,36 @@ RSpec.feature "ログイン後、ショッピングカート", type: :feature do
   end
 
   scenario 'ショッピングカート画面からレジに進む画面遷移実行' do
-    flow_click_add_cart
-    click_on 'レジに進む'    
+    flow_goto_cash_register
     expect(page).to have_content "住所"
+  end
+
+  scenario 'お届先情報入力画面から配送情報入力画面へ遷移' do
+    flow_goto_delivery
+    expect(page).to have_content "配送日時"
+  end
+
+  scenario '配送情報入力画面から確認画面へ遷移' do
+    flow_goto_delivery
+    dt = (Date.today + 5).strftime("%Y-%m-%d")
+    fill_in '配送日', with: dt
+    click_on '次へ'
+    expect(page).to have_content "住所"
+  end
+
+  def flow_goto_delivery
+    flow_goto_cash_register
+    fill_in '郵便番号', with: '123456'
+    fill_in '都道府県', with: '都道府県'
+    fill_in '市区町村', with: '市区町村'
+    fill_in '氏名(姓)', with: '氏名(姓)'
+    fill_in '氏名(名)', with: '氏名(名)'
+    click_on '次へ'
+  end
+
+  def flow_goto_cash_register
+    flow_click_add_cart
+    click_on 'レジに進む'        
   end
 
   def flow_click_add_cart

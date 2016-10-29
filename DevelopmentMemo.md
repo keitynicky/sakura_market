@@ -344,6 +344,9 @@
 #### capybara-webkitを入れられない。。
  * windowsでcapybara-webkitを入れる方法↓
   * http://d.hatena.ne.jp/penult/20140429/1398755123
-  * 新たにアカウント作らないといけないのかぁ。。一旦保留だね。→TODO：質問！
+  * 新たにアカウント作らないといけないのかぁ。。一旦保留だね。
+  * https://groups.google.com/forum/#!topic/capybara-webkit/2tnnGLkrQkU
+   * ここまでしないといけないの。。うーん。。。ちょっとなぁ。。
+  * rubyを64bitから32bitに変更してみて検証してみる価値はあるかも
 
  
