@@ -20,7 +20,10 @@
               = image_tag show_photo_product_path(item.product), size: "100x80"
           %td.product_detail 
             %h4
-              = link_to item.product.name, item.product
+              - if is_cart
+                = link_to item.product.name, item.product
+              - else
+                = item.product.name
             %span
               = item.product.description
           %td.number
