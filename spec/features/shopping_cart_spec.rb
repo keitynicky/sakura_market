@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'rails_helper'
 require 'date'
 
-RSpec.feature "ログイン後、ショッピングカート", type: :feature do
+RSpec.feature 'ログイン後、ショッピングカート', type: :feature do
   background do
     @user = build(:user)
     login_as(@user, scope: :user)    
@@ -11,7 +11,7 @@ RSpec.feature "ログイン後、ショッピングカート", type: :feature do
   scenario 'ショッピングカート未追加でショッピングカートを表示すると一覧は表示されない' do
     login_as(@user, scope: :user)
     visit order_items_path
-    expect(page).to have_content "ショッピングカートは空です。"
+    expect(page).to have_content 'ショッピングカートは空です。'
   end
 
   scenario '商品詳細ページでカートに追加ボタンが表示されている' do
@@ -21,31 +21,46 @@ RSpec.feature "ログイン後、ショッピングカート", type: :feature do
 
   scenario '商品詳細ページから個数追加でショッピングカート画面に遷移する' do
     flow_click_add_cart
-    expect(page).to have_content "レジに進む"
+    expect(page).to have_content 'レジに進む'
   end
 
   scenario 'ショッピングカート画面から商品名選択で商品詳細ページに遷移する' do
     flow_click_add_cart
     click_link 'name0'    
-    expect(page).to have_button "カートに追加"
+    expect(page).to have_button 'カートに追加'
   end
 
   scenario 'ショッピングカート画面からレジに進む画面遷移実行' do
     flow_goto_cash_register
-    expect(page).to have_content "住所"
+    expect(page).to have_content '住所'
   end
 
   scenario 'お届先情報入力画面から配送情報入力画面へ遷移' do
     flow_goto_delivery
-    expect(page).to have_content "配送日時"
+    expect(page).to have_content '配送日時'
   end
 
   scenario '配送情報入力画面から確認画面へ遷移' do
+    flow_goto_confirm
+    expect(page).to have_content '住所'
+  end
+
+  scenario '確認画面では商品詳細のリンクが表示されていない' do
+    flow_goto_confirm
+    expect(page).to have_no_link 'name0'
+  end
+
+  scenario '確認画面から完了画面へ遷移' do
+    flow_goto_confirm
+    click_on 'ご購入'    
+    expect(page).to have_content 'ご購入頂きありがとうございました。'
+  end
+
+  def flow_goto_confirm
     flow_goto_delivery
-    dt = (Date.today + 5).strftime("%Y-%m-%d")
+    dt = (Date.today + 5).strftime('%Y-%m-%d')
     fill_in '配送日', with: dt
     click_on '次へ'
-    expect(page).to have_content "住所"
   end
 
   def flow_goto_delivery
