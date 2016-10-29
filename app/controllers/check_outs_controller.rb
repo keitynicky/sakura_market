@@ -28,7 +28,7 @@ class CheckOutsController < ApplicationController
 
   def update
     if complete?
-      order_is_phurchased
+      @order.update_is_phurchased
       init_order
       redirect_to complete_check_out_path
     else
@@ -77,10 +77,5 @@ class CheckOutsController < ApplicationController
     else
       render :delivery
     end
-  end
-
-  def order_is_phurchased
-    @order.is_phurchased = true
-    @order.save(context: :checkout)
   end
 end

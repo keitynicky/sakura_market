@@ -45,6 +45,17 @@ class Order < ApplicationRecord
     self.delivery_time = order_params[:delivery_time]
   end
 
+  def update_is_phurchased
+    self.is_phurchased = true
+    self.subtotal = subtotal
+    self.tax = tax
+    self.shipping = shipping
+    self.cash_on_delivery = cash_on_delivery
+    self.total = total
+
+    self.save(context: :checkout)
+  end
+
   private
 
   def subtotal_cost
