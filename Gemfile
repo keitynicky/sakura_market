@@ -17,6 +17,7 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'seed-fu'
 gem 'kaminari'
+gem 'simple_enum'
 
 group :development, :test do
   gem 'pry-rails'

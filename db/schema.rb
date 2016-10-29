@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021112121) do
+ActiveRecord::Schema.define(version: 20161029123916) do
 
   create_table "cash_on_deliveries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "min_fee"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20161021112121) do
     t.string   "address_level2"
     t.string   "address_line1"
     t.string   "address_line2"
+    t.integer  "auth_type",              default: 1
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

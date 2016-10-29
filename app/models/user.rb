@@ -10,6 +10,8 @@ class User < ApplicationRecord
   validates :family_name, presence: true, on: :checkout
   validates :given_name, presence: true, on: :checkout
 
+  as_enum :auth_type, admin: 0, normal: 1
+
   def phurchased_orders?
     orders.where(is_phurchased: true).order('updated_at DESC')
   end
