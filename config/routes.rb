@@ -13,5 +13,10 @@ Rails.application.routes.draw do
     member {get :complete}
   end
   root to: "products#index"
+
+  namespace :admin do
+    resources :products
+    resources :users, except: [:new, :create]
+  end
 end
 
