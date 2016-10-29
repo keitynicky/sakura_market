@@ -1,2 +1,2 @@
-Order.delete_all
-OrderItem.delete_all
+Order.destroy_all
+OrderItem.destroy_all
