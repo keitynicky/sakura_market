@@ -352,6 +352,8 @@
 ## deviseで管理者権限ユーザー
  * http://qiita.com/Yama-to/items/54ab4ce08e126ef7dade
   * でもこれはモデルまで分けるパターンだからここでは違うかな
- 
+ * https://github.com/plataformatec/devise/wiki/How-To:-Add-an-Admin-Role
+  * 管理者ユーザーの列を追加する方式でしている。
+   * userのモデルに管理者かどうかのチェックをするメソッドを追加しよう
 
  
