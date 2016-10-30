@@ -362,6 +362,6 @@
 
 ## railsで拡張メソッドを定義する際にどこにファイルを置くのか
  * http://stackoverflow.com/questions/5654517/in-ruby-on-rails-to-extend-the-string-class-where-should-the-code-be-put-in
- 
+
 
  
