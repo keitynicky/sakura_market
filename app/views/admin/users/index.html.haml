@@ -1,1 +1,8 @@
-ユーザー一覧
+%h2
+  ユーザー一覧
+- @users.each do |user|
+  %ul
+    - user.attributes.each do |attr_name, attr_value|
+      %li
+        = attr_name 
+        = attr_value 
