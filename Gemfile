@@ -17,7 +17,6 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'seed-fu'
 gem 'kaminari'
-gem 'simple_enum', '~> 2.0.0' , require: 'simple_enum/mongoid'
 
 group :development, :test do
   gem 'pry-rails'
