@@ -27,9 +27,9 @@
                   %span.caret
                 %ul.dropdown-menu
                   %li
-                    = link_to "ユーザ管理", account_path
+                    = link_to "ユーザ管理", admin_users_path
                   %li
-                    = link_to "商品管理", account_path
+                    = link_to "商品管理", admin_products_path
           %li 
             - if user_signed_in? 
               = link_to "ログアウト", destroy_user_session_path, method: :delete

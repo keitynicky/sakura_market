@@ -356,4 +356,8 @@
   * 管理者ユーザーの列を追加する方式でしている。
    * userのモデルに管理者かどうかのチェックをするメソッドを追加しよう
 
+## before_actionで処理を止める
+ * https://teratail.com/questions/22079
+  * rails5以降はfalseではなくthrow(:abort)を用いる
+
  
