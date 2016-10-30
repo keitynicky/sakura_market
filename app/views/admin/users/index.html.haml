@@ -1,8 +1,44 @@
 %h2
   ユーザー一覧
-- @users.each do |user|
-  %ul
-    - user.attributes.each do |attr_name, attr_value|
-      %li
-        = attr_name 
-        = attr_value 
+%table.table.table-striped
+  %thead
+    %tr
+      %th
+        メールアドレス
+      %th
+        直近ログイン日時
+      %th
+        最終ログイン日時
+      %th 
+        作成日時
+      %th 
+        更新日時
+      %th 
+        郵便番号
+      %th
+        住所
+      %th
+        氏名
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td
+          = user.email
+        %td
+          = user.current_sign_in_at.normal_display 
+        %td
+          = user.last_sign_in_at.normal_display
+        %td
+          = user.created_at.normal_display
+        %td
+          = user.updated_at.normal_display
+        %td
+          = user.postal_code 
+        %td
+          = user.address_level1             
+          = user.address_level2             
+          = user.address_line1             
+          = user.address_line2             
+        %td
+          = user.family_name             
+          = user.given_name              
