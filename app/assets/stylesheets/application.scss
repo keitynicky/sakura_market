@@ -26,6 +26,13 @@ body {
   }
   nav {
     background: $menu-color !important;
+    .navbar-nav {
+      li.open{
+        .dropdown-menu, a {
+          background: $menu-color !important;
+        }
+      }
+    }
     a {
       color: $menu-font-color !important;
     }
