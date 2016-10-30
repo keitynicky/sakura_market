@@ -34,10 +34,6 @@ class Order < ApplicationRecord
     "#{self[:delivery_date].strftime("%Y年%m月%d日")} #{self[:delivery_time]}時の間"
   end
 
-  def disp_updated_at
-    "#{self[:updated_at].strftime("%Y年%m月%d日 %H:%M:%S")}"
-  end
-
   def update_delivery(order_params)
     unless order_params[:delivery_date].empty?
       self.delivery_date = Date.parse order_params[:delivery_date]

@@ -22,7 +22,7 @@
         - current_user.phurchased_orders?.each do |order|
           %tr.clickable-row{"data-link" => check_out_path(order)}
             %td
-              = link_to order.disp_updated_at, check_out_path(order)
+              = link_to order.updated_at.normal_display, check_out_path(order)
             %td.text-center
               = order.disp_delivery_datetime
             %td.text-right

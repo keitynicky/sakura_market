@@ -64,15 +64,6 @@ RSpec.describe Order, type: :model do
     end
   end
 
-  describe `#disp_updated_at` do
-    context `値取得時` do
-      it `更新時間のデータが取得されること` do
-        order = Order.create
-        expect(order.disp_updated_at).to eq("#{order.updated_at.strftime("%Y年%m月%d日 %H:%M:%S")}")
-      end
-    end
-  end
-
   describe `#update_delivery` do
     context `配送情報更新時` do
       it `更新用の値が設定されること（正常系）` do
