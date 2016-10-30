@@ -360,4 +360,8 @@
  * https://teratail.com/questions/22079
   * rails5以降はfalseではなくthrow(:abort)を用いる
 
+## railsで拡張メソッドを定義する際にどこにファイルを置くのか
+ * http://stackoverflow.com/questions/5654517/in-ruby-on-rails-to-extend-the-string-class-where-should-the-code-be-put-in
+ 
+
  
