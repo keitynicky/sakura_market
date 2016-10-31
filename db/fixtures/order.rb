@@ -1,2 +1,0 @@
-Order.destroy_all
-OrderItem.destroy_all
