@@ -366,6 +366,9 @@
 ## simple_formでnamespaceを切っている時の指定
  * https://github.com/plataformatec/simple_form/issues/356
  
+## submitボタンyml切り替え
+ * http://stackoverflow.com/questions/16977371/submit-button-helper-with-i18n-t
+
 
 
  
