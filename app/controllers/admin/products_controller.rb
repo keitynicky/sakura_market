@@ -1,5 +1,5 @@
 class Admin::ProductsController < Admin::AdminController
-  before_action :init_product , only:[:new, :create]
+  before_action :init_product, only: [:new, :create]
 
   def index
     @products = Product.all
