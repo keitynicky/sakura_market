@@ -1,6 +1,6 @@
 class Admin::ProductsController < Admin::AdminController
   before_action :init_product, only: [:new, :create]
-  before_action :set_product, only: [:edit, :update]
+  before_action :set_product, only: [:edit, :update, :destroy]
 
   def index
     @products = Product.all
@@ -25,6 +25,11 @@ class Admin::ProductsController < Admin::AdminController
   end
 
   def update
+  end
+
+  def destroy
+    @product.destroy
+    redirect_to admin_products_path
   end
 
   private

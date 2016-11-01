@@ -14,6 +14,7 @@
         ソート順
       %th 
         商品画像
+      %th
   %tbody
     - @products.each do |product|
       %tr.clickable-row{"data-link" => edit_admin_product_path(product)}
@@ -28,3 +29,5 @@
         %td
           %div.img-thumbnail
             = image_tag show_photo_product_path(product), size: "50x40"
+        %td
+          = link_to "削除", [:admin, product], method: :delete, data: {confirm: "削除して良いですか？"}, class: 'btn btn-danger'
