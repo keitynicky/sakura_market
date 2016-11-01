@@ -1,5 +1,6 @@
-= simple_form_for(@product, url: new_admin_product_path(@product)) do |f|
+= simple_form_for [:admin, @product] do |f|
   = f.input :name
   = f.input :description
   = f.input :price
   = f.input :sort
+  = f.submit "新規作成", class: 'btn btn-primary pull-right'
