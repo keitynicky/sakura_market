@@ -1,5 +1,8 @@
 ja:
   helpers:
+    submit:
+      update: "更新"
+      create: "新規作成"
     label:
       user:
         email: メールアドレス

@@ -16,9 +16,9 @@
         商品画像
   %tbody
     - @products.each do |product|
-      %tr
+      %tr.clickable-row{"data-link" => edit_admin_product_path(product)}
         %td
-          = product.name
+          = link_to product.name, edit_admin_product_path(product)
         %td
           = product.description 
         %td
