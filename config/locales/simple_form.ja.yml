@@ -6,6 +6,7 @@ ja:
         description: '商品説明'
         price: '価格'
         sort: '表示順'
+        photo: '商品画像'
       user:
         email: 'メールアドレス'
         remember_me: 'パスワードを記憶'
