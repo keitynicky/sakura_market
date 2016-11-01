@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161029123916) do
+ActiveRecord::Schema.define(version: 20161101095425) do
 
   create_table "cash_on_deliveries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "min_fee"
@@ -50,11 +50,11 @@ ActiveRecord::Schema.define(version: 20161029123916) do
     t.string   "name"
     t.integer  "price"
     t.string   "description"
-    t.boolean  "is_hidden",                 default: false
+    t.boolean  "is_hidden",                    default: false
     t.integer  "sort"
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
-    t.binary   "photo",       limit: 65535
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+    t.binary   "photo",       limit: 16777215
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
