@@ -369,6 +369,10 @@
 ## submitボタンyml切り替え
  * http://stackoverflow.com/questions/16977371/submit-button-helper-with-i18n-t
 
+## 商品画像のアップロード時のサイズ調整
+ * http://railscasts.com/episodes/182-cropping-images?view=asciicast
+  * cropping
+
 
 
  
