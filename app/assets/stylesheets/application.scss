@@ -9,15 +9,14 @@ $border-color: #C8CFBA;
 $h1-font-size: 25px;
 $base-font-size: 14px;
 $order-color: #53CFB6;
-/*
-*= require jquery.Jcrop.min
-*/
+
 @import 'bootstrap';
 @import 'bootstrap-datepicker.min';
 @import 'products';
 @import 'order_items';
 @import 'check_outs';
 @import 'accounts';
+@import 'jquery.Jcrop.min';
 
 body {
   font-size: $base-font-size !important;

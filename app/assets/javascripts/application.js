@@ -17,5 +17,4 @@
 //= require jquery.jpostal 
 //= require bootstrap.min.js
 //= require bootstrap-datepicker.min.js
-//= require jquery.Jcrop
-
+//= require jquery.Jcrop.min.js
