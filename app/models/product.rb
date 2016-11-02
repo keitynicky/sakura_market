@@ -7,4 +7,8 @@ class Product < ApplicationRecord
   validates :price, presence: true
 
   paginates_per 8
+
+  def can_delete?
+    order_items.count.zero?
+  end
 end
