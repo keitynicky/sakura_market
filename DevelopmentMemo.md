@@ -372,6 +372,7 @@
 ## 商品画像のアップロード時のサイズ調整
  * http://railscasts.com/episodes/182-cropping-images?view=asciicast
   * cropping
+ * http://qiita.com/gymnstcs/items/69d319a6415a53a6576e
 
 
 
