@@ -374,6 +374,13 @@
   * cropping
  * http://qiita.com/gymnstcs/items/69d319a6415a53a6576e
 
+## 別のファクトリークラスを定義したけれど呼び出しでエラー
+ * http://qiita.com/muran001/items/436fd07eba1db18ed622
+  * 同じような構成の拡張ファクトリーの場合は、classを指定すること
+
+## 管理者権限ユーザーでログイン
+ * login_asの引数には、ActiveRecordのリレーション付きオブジェクトではなく、model本体を渡すようにする
+
 
 
  
