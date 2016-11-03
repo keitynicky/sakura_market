@@ -2,7 +2,7 @@ require 'spec_helper'
 
 RSpec.describe User, type: :model do
 
-  describe `#特定の場合のみ空白を共用する項目` do
+  describe `#特定の場合のみ空白を許容する項目` do
     context `保存時` do
       it `checkoutでなければ空白でも保存できること` do
         user = build(:user)
