@@ -348,6 +348,7 @@
   * https://groups.google.com/forum/#!topic/capybara-webkit/2tnnGLkrQkU
    * ここまでしないといけないの。。うーん。。。ちょっとなぁ。。
   * rubyを64bitから32bitに変更してみて検証してみる価値はあるかも
+#### capybara-webkitを入れていなくてもconfirmのテストはできるみたいだから、まずはそこから着手
 
 ## deviseで管理者権限ユーザー
  * http://qiita.com/Yama-to/items/54ab4ce08e126ef7dade
