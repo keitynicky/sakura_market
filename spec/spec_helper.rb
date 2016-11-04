@@ -21,6 +21,8 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'shoulda-matchers'
 require 'simplecov'
+require 'capybara/poltergeist'
+
 SimpleCov.start 'rails' 
 
 Shoulda::Matchers.configure do |config|

@@ -349,6 +349,14 @@
    * ここまでしないといけないの。。うーん。。。ちょっとなぁ。。
   * rubyを64bitから32bitに変更してみて検証してみる価値はあるかも
 #### capybara-webkitを入れていなくてもconfirmのテストはできるみたいだから、まずはそこから着手
+ * http://altarf.net/computer/rails/3178
+  * ああ、上で煩雑ってしてしまっていた方法だね。。
+ * https://github.com/teampoltergeist/poltergeist#window-switching
+  * poltergeistの使い方補足
+ * http://qiita.com/tatsuyard/items/1dee6729228bb1c9073d
+  * requireや設定追加は、spec_helperに
+ * http://d.hatena.ne.jp/jiikko/touch/20140514/1400079410
+  * poltergeistを使っていると、常にOKが押される挙動とのこと。
 
 ## deviseで管理者権限ユーザー
  * http://qiita.com/Yama-to/items/54ab4ce08e126ef7dade

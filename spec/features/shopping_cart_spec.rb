@@ -1,12 +1,11 @@
 require 'spec_helper'
 require 'rails_helper'
 require 'date'
-require 'capybara/poltergeist'
 
 RSpec.feature 'ログイン後、ショッピングカート', type: :feature do
   background do
     @user = build(:user)
-    login_as(@user, scope: :user)    
+    login_as(@user, scope: :user)
   end
 
   scenario 'ショッピングカート未追加でショッピングカートを表示すると一覧は表示されない' do
@@ -31,7 +30,7 @@ RSpec.feature 'ログイン後、ショッピングカート', type: :feature do
     expect(page).to have_button 'カートに追加'
   end
 
-  scenario 'ショッピングカート画面で削除ボタンを押す' do
+  scenario 'ショッピングカート画面で削除ボタンを押し削除する' do
     flow_click_add_cart
     click_on '削除'
     page.driver.browser.switch_to.alert.accept unless Capybara.javascript_driver == :poltergeist
