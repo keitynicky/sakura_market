@@ -19,7 +19,6 @@
         住所
       %th
         氏名
-      %th
   %tbody
     - @users.each do |user|
       %tr
@@ -43,6 +42,3 @@
         %td
           = user.family_name             
           = user.given_name              
-        %td
-          - if user.can_delete?
-            = link_to "削除", [:admin, user], method: :delete, data: {confirm: "削除して良いですか？"}, class: 'btn btn-danger'          

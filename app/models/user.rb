@@ -23,4 +23,8 @@ class User < ApplicationRecord
   def disp_user_name
     "#{family_name} #{given_name}様"
   end
+
+  def can_delete?
+    orders.count.zero?
+  end
 end
