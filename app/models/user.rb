@@ -25,6 +25,6 @@ class User < ApplicationRecord
   end
 
   def can_delete?
-    orders.count.zero?
+    orders.count.zero? && !self.admin?
   end
 end
