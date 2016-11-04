@@ -357,6 +357,8 @@
   * requireや設定追加は、spec_helperに
  * http://d.hatena.ne.jp/jiikko/touch/20140514/1400079410
   * poltergeistを使っていると、常にOKが押される挙動とのこと。
+#### QT入れ直しで以下の手順を改めて実行してみる
+ * https://groups.google.com/forum/#!topic/capybara-webkit/2tnnGLkrQkU
 
 ## deviseで管理者権限ユーザー
  * http://qiita.com/Yama-to/items/54ab4ce08e126ef7dade
