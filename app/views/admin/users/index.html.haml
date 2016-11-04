@@ -22,9 +22,9 @@
       %th
   %tbody
     - @users.each do |user|
-      %tr
+      %tr.clickable-row{"data-link" => admin_user_path(user)}
         %td
-          = user.email
+          = link_to user.email, admin_user_path(user)
         %td
           = user.current_sign_in_at.normal_display 
         %td

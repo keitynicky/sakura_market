@@ -19,6 +19,9 @@ ja:
         address_line2: 'アパート／マンション名等' 
         family_name: '氏名(姓)'
         given_name: '氏名(名)'
+        sign_in_count: 'ログインした回数'
+        current_sign_in_at: '直近のログイン日時'
+        last_sign_in_at: '最終ログイン日時'
       order:
         delivery_date: '配送日'
       order_item:

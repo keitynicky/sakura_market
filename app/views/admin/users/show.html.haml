@@ -1,44 +1,9 @@
 %h2
-  ユーザー一覧
-%table.table.table-striped
-  %thead
-    %tr
-      %th
-        メールアドレス
-      %th
-        直近ログイン日時
-      %th
-        最終ログイン日時
-      %th 
-        作成日時
-      %th 
-        更新日時
-      %th 
-        郵便番号
-      %th
-        住所
-      %th
-        氏名
-  %tbody
-    - @users.each do |user|
-      %tr
-        %td
-          = user.email
-        %td
-          = user.current_sign_in_at.normal_display 
-        %td
-          = user.last_sign_in_at.normal_display
-        %td
-          = user.created_at.normal_display
-        %td
-          = user.updated_at.normal_display
-        %td
-          = user.postal_code 
-        %td
-          = user.address_level1             
-          = user.address_level2             
-          = user.address_line1             
-          = user.address_line2             
-        %td
-          = user.family_name             
-          = user.given_name              
+  ユーザー情報参照
+= simple_form_for [:admin, @user] do |f|
+  = f.input :email, disabled: true
+  = f.input :password, disabled: true
+  = f.input :sign_in_count, disabled: true
+  = f.input :current_sign_in_at, disabled: true
+  = f.input :last_sign_in_at, disabled: true
+  -# = link_to "一覧に戻る", admin_products_path, class: 'btn btn-default' 
