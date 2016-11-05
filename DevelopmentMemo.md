@@ -359,6 +359,50 @@
   * poltergeistを使っていると、常にOKが押される挙動とのこと。
 #### QT入れ直しで以下の手順を改めて実行してみる
  * https://groups.google.com/forum/#!topic/capybara-webkit/2tnnGLkrQkU
+##### 手順
+ * https://www.qt.io/download-open-source/#section-2
+  * Qt 5.7.0 for Windows 32-bit (MinGW 5.3.0, 1.1 GB)    (info)
+ * http://stackoverflow.com/questions/26769068/rename-permission-denied-sys-fail2
+  * devkitのinstallは管理者権限で実行
+ * path編集
+  * rubyはpathがもうあったから(64bitだけど)そのまま
+  * QTのbinのpathと、devkitの直下のpathを追加
+ * C:\Qt\Qt5.7.0\5.7\mingw53_32\mkspecs\win32-g++
+  * qmake.conf
+  * QMAKE_IDC がないよ？？？　←　うーん、ここでもうすでに手順が違ってしまう。。
+#### QT入れ直しで以下の手順を改めて実行してみる②
+ * http://stackoverflow.com/questions/27006640/installing-webkit-for-capybara
+##### 手順
+ * http://download.qt.io/archive/qt/4.8/4.8.5/
+  * qt-win-opensource-4.8.5-mingw.exe 
+ * mingwの設定時に「There is a problem with your MinGW installation:The installer could not find a valid 」というエラーが出ていたので、一旦ストップ
+#### QT入れ直しで以下の手順を改めて実行してみる③
+ * http://www.c-and-d.org/ruby/rails/rails_tips/2015/01/17/rails-on-windows#qtcapybara-webkit
+##### 手順
+ * http://download.qt.io/archive/qt/4.8/4.8.6/
+  * qt-opensource-windows-x86-mingw482-4.8.6-1.exe
+  * お！今回はmingwのところでdevkitのを選択してもエラーにならなかった！
+ * path追加
+ * C:\Qt\4.8.6\mkspecs\win32-g++
+  * qmake.conf
+   * QMAKE_LFLAGS		= -static-libgcc -static-libstdc++
+ * 最終的にやっぱりエラーになってる。。
+  * Could not create Makefile due to some reason, probably lack of necessary
+#### QT入れ直しで以下の手順を改めて実行してみる④
+ * http://stackoverflow.com/questions/36608732/not-able-to-install-capybara-webkit-using-bundle-install-command-in-rails-4
+##### 手順
+ * QT最新バージョンを入れる
+ * https://download.qt.io/archive/qt/5.5/5.5.1/
+  * qt-opensource-windows-x86-mingw492-5.5.1.exe
+ * https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit
+  * mkspecs/features/win32/default_pre.prf
+   * isEmpty($$list($$system("/usr/bin/xcrun -find xcrun 2>/dev/null")))): \
+   * ?? この行はなかったけど。。。
+    * あ、macの方にはあった。。うーん？？
+    * 一旦は上記を設定せずに作業をすすめる
+ * pathを通す
+ * エラーになってしまう。。
+  * No such file or directory @ rb_sysopen - src/debug/webkit_server.exe (Errno::ENOENT)
 
 ## deviseで管理者権限ユーザー
  * http://qiita.com/Yama-to/items/54ab4ce08e126ef7dade
