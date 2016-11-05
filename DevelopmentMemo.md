@@ -403,6 +403,13 @@
  * pathを通す
  * エラーになってしまう。。
   * No such file or directory @ rb_sysopen - src/debug/webkit_server.exe (Errno::ENOENT)
+ * ただ、今回の手順ではqmakeのコマンドは通るようになってるね
+#### QT入れ直しで以下の手順を改めて実行してみる⑤
+ * https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit
+##### 手順
+ * https://download.qt.io/archive/qt/5.7/5.7.0/
+  * qt-opensource-windows-x86-mingw530-5.7.0.exe
+ * 入れ直した後！path設定済。再起動して動作確認から明日作業予定
 
 ## deviseで管理者権限ユーザー
  * http://qiita.com/Yama-to/items/54ab4ce08e126ef7dade
