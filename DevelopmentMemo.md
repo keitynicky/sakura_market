@@ -439,6 +439,7 @@
    * https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit/7c91ef1252a5a57b64ffa594233538c1e19c5fc0
    * 。。。うーん、でも他のOSも最新バージョンの手順とは随分違っているから、参考にならないかなぁ。。
  * 直近の期間指定でwindows　capybara-webkit　あたりで検索したけれど目ぼしいのが無いなぁ。。
+ * windowsでの調査を明日一杯行って、質問も上げつつ、目処が立たなそうならば、相談後centosに切り替える等の検討をする
 ##### 手順
  * 
 
