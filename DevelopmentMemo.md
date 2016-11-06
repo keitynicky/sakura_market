@@ -413,6 +413,15 @@
  * qmakeコマンドは通っているね。gem install capybara-webkit してみる（念のため管理者で）
  * [Project ERROR: No QtWebKit installation found.]
   * いままでと違うエラー。これで調べてみよう！
+  * https://learn.launchacademy.com/questions/3023
+   * 5.6だとQTWebkitがどうのって話かな。うーん、そうすると昨日もうすでに5.5で試したからなぁ。。(´・ω・｀)
+#### QT入れ直しで以下の手順を改めて実行してみる⑥
+ * http://d.hatena.ne.jp/penult/20140429/1398755123
+ * あえて古いバージョンを入れてみることで検証実施！(capybara-webkitも古いのを入れる)
+##### 手順
+ * https://download.qt.io/archive/qt/4.8/4.8.6/qt-opensource-windows-x86-mingw482-4.8.6-1.exe
+ * C:\DevKit\mingw を指定してインストール
+  * エラーメッセージは表示されず
 
 ## deviseで管理者権限ユーザー
  * http://qiita.com/Yama-to/items/54ab4ce08e126ef7dade
