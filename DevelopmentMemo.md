@@ -428,6 +428,7 @@
   * 指定箇所書き換え。RCCが存在していることも確認
  * gem install capybara-webkit -v 1.1.1
   * 動いたー！！！！！！！！！！！！！！！！！！ヽ(=´▽`=)ﾉ(∩´∀｀)∩ﾜｰｲ
+ * いや、だめだ。。gem install は通ったけど、bundle installでエラーがでてしまう。。
 
 ## deviseで管理者権限ユーザー
  * http://qiita.com/Yama-to/items/54ab4ce08e126ef7dade
