@@ -429,6 +429,18 @@
  * gem install capybara-webkit -v 1.1.1
   * 動いたー！！！！！！！！！！！！！！！！！！ヽ(=´▽`=)ﾉ(∩´∀｀)∩ﾜｰｲ
  * いや、だめだ。。gem install は通ったけど、bundle installでエラーがでてしまう。。
+  * 流石に、1.1.1だと古過ぎて、capybaraも<2.2.0にしたけれど、そうしたことが影響しているのかな？
+ * 試しに、capybara-webkit -v 1.11.0で検証
+  * No such file or directoryっていうエラーが大量にでる。変わらないね。。
+   * gem install　なら通るんだけどね。。うーん。
+#### QT入れ直しで以下の手順を改めて実行してみる⑦
+ * https://groups.google.com/forum/?hl=en&fromgroups=#!topic/capybara-webkit/2tnnGLkrQkU
+  * 昔のwikiに記載されていた手順。
+   * https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit/7c91ef1252a5a57b64ffa594233538c1e19c5fc0
+   * 。。。うーん、でも他のOSも最新バージョンの手順とは随分違っているから、参考にならないかなぁ。。
+ * 直近の期間指定でwindows　capybara-webkit　あたりで検索したけれど目ぼしいのが無いなぁ。。
+##### 手順
+ * 
 
 ## deviseで管理者権限ユーザー
  * http://qiita.com/Yama-to/items/54ab4ce08e126ef7dade
