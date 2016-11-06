@@ -422,6 +422,12 @@
  * https://download.qt.io/archive/qt/4.8/4.8.6/qt-opensource-windows-x86-mingw482-4.8.6-1.exe
  * C:\DevKit\mingw を指定してインストール
   * エラーメッセージは表示されず
+ * path指定→再起動
+ * qmake -v実行→バージョン確認OK
+ * C:\Qt\4.8.6\mkspecs\win32-g++
+  * 指定箇所書き換え。RCCが存在していることも確認
+ * gem install capybara-webkit -v 1.1.1
+  * 動いたー！！！！！！！！！！！！！！！！！！ヽ(=´▽`=)ﾉ(∩´∀｀)∩ﾜｰｲ
 
 ## deviseで管理者権限ユーザー
  * http://qiita.com/Yama-to/items/54ab4ce08e126ef7dade
