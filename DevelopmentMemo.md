@@ -410,6 +410,9 @@
  * https://download.qt.io/archive/qt/5.7/5.7.0/
   * qt-opensource-windows-x86-mingw530-5.7.0.exe
  * 入れ直した後！path設定済。再起動して動作確認から明日作業予定
+ * qmakeコマンドは通っているね。gem install capybara-webkit してみる（念のため管理者で）
+ * [Project ERROR: No QtWebKit installation found.]
+  * いままでと違うエラー。これで調べてみよう！
 
 ## deviseで管理者権限ユーザー
  * http://qiita.com/Yama-to/items/54ab4ce08e126ef7dade
