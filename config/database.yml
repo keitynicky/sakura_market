@@ -2,7 +2,7 @@ development:
   adapter: mysql2
   host: localhost
   username: root
-  password: root
+  password: 
   database: sakura_market_development
   encoding: utf8
 
@@ -10,7 +10,7 @@ test:
   adapter: mysql2
   host: localhost
   username: root
-  password: root
+  password: 
   encoding: utf8
   database: sakura_market_test
 
