@@ -46,7 +46,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'capybara'
-  # gem 'capybara-webkit', '1.10.1'
+  gem 'capybara-webkit'
   gem 'poltergeist'
 end
 
