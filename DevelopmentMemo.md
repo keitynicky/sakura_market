@@ -479,7 +479,7 @@
  * login_asの引数には、ActiveRecordのリレーション付きオブジェクトではなく、model本体を渡すようにする
 
 ## CentOSでVisualStudioCode
- * 無事pushできた
+ * 無事pushできた!
 
 
  
