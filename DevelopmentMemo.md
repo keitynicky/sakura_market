@@ -480,6 +480,6 @@
 
 ## CentOSでVisualStudioCode
  * 無事pushできた!
-
+ * passwordの毎回入力はしなくてよくなっているかな？
 
  
