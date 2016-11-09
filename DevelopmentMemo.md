@@ -490,4 +490,17 @@
  * http://stackoverflow.com/questions/17153864/rails-scaffold-controller-generator-doesnt-apply-model-attributes-to-views/35122283#35122283
  * initializers に　scaffold_view_genaratorを追加
 
+## linux側だとrubocop実行時にエラーが発生していたので、一旦linux側ではrubocopをアンインストール
+ * error on parsing output ...
+
+## Gemfileをプラットフォームで切り分け
+ * http://qiita.com/mktakuya/items/e0c04f9db20d1b5a1144
+ * http://stackoverflow.com/questions/13358863/sharing-gemfile-lock-across-both-windows-and-linux-environment
+
+## simple_formでフォーム自体を読み取り専用にできないか確認
+ * http://stackoverflow.com/questions/27285639/simple-form-disable-form-without-adding-disabled-true-or-readonly-true-to-eve/36828959
+  * initializersでsimple_form.rbに追記すればできそうだけど、でもその設定をすると既存の設定を引き継ぐために何かしら追記しないといけないっぽい。
+   * そのままだと、例えばbootstrapは適用されないし、ラベルも表示されなかった。
+   * 既存の設定を拡張する方法は時間をみて調べること。一旦は参照をindexでのみ実装することにしたので、こちらは対応せず
+
  
