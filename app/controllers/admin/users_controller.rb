@@ -5,9 +5,6 @@ class Admin::UsersController < Admin::AdminController
     @users = User.all
   end
 
-  def show
-  end
-
   def destroy
     @user.destroy
     redirect_to admin_users_path
