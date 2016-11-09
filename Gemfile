@@ -17,7 +17,6 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'seed-fu'
 gem 'kaminari'
-gem 'therubyracer'
 
 group :development, :test do
   gem 'pry-rails'
@@ -47,8 +46,10 @@ group :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'capybara'
-  gem 'capybara-webkit'
-  gem 'poltergeist'
+  if RUBY_PLATFORM.match(/linux/)
+    gem 'capybara-webkit'
+    gem 'therubyracer'
+  end
 end
 
 group :production do
