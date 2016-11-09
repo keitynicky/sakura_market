@@ -21,7 +21,8 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'shoulda-matchers'
 require 'simplecov'
-require 'capybara/poltergeist'
+require 'capybara/rails'
+require 'capybara/rspec'
 
 SimpleCov.start 'rails' 
 
@@ -35,10 +36,7 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
-Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, :inspector => true)
-end
-Capybara.javascript_driver = :poltergeist
+Capybara.javascript_driver = :webkit
 
 RSpec.configure do |config|
 

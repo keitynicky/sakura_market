@@ -30,11 +30,20 @@ RSpec.feature 'ログイン後、ショッピングカート', type: :feature do
     expect(page).to have_button 'カートに追加'
   end
 
-  scenario 'ショッピングカート画面で削除ボタンを押し削除する' do
+  scenario 'ショッピングカート画面で削除ボタンを押し削除する', js: true do
     flow_click_add_cart
-    click_on '削除'
-    page.driver.browser.switch_to.alert.accept unless Capybara.javascript_driver == :poltergeist
+    page.accept_confirm do
+      click_on('削除')
+    end
     expect(page).to have_content 'ショッピングカートは空です。'
+  end
+
+  scenario 'ショッピングカート画面で削除ボタンを押し削除しない', js: true do
+    flow_click_add_cart
+    page.dismiss_confirm do
+      click_on('削除')
+    end
+    expect(page).to have_content 'name0'
   end
 
   scenario 'ショッピングカート画面からレジに進む画面遷移実行' do

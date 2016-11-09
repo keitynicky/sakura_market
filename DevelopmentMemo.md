@@ -479,7 +479,12 @@
  * login_asの引数には、ActiveRecordのリレーション付きオブジェクトではなく、model本体を渡すようにする
 
 ## CentOSでVisualStudioCode
- * 無事pushできた!
- * passwordの毎回入力はしなくてよくなっているかな？
+ * 無事pushできた
+
+## capybara-webkit動作確認！
+ * page.accept_confirm do でいける。
+  * yeildで渡す処理でconfirmを起動させる。その後、acceptかdissmissで切り替え。この部分がよくわかっていなくて、時間がかかってしまった。。
+  * あと、js: trueも。忘れずに。
+
 
  

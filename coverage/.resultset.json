@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/controllers/order_items_controller.rb": [
+      "/home/nana/Documents/sakura_market/app/controllers/order_items_controller.rb": [
         1,
         1,
         1,
@@ -28,43 +28,43 @@
         1,
         null,
         1,
-        19,
-        19,
+        21,
+        21,
         null,
         null,
         1,
-        8,
-        8,
-        8,
-        8,
-        8,
+        9,
+        9,
+        9,
+        9,
+        9,
         null,
         null,
         1,
-        16,
+        18,
         null,
         null
       ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/controllers/application_controller.rb": [
+      "/home/nana/Documents/sakura_market/app/controllers/application_controller.rb": [
         1,
         1,
         1,
         null,
         1,
-        46,
-        46,
-        27,
+        51,
+        51,
+        28,
         null,
-        19,
+        23,
         null,
-        null,
-        null,
-        1,
-        0,
         null,
         null,
         1,
         0,
+        null,
+        null,
+        1,
+        20,
         null,
         null,
         1,
@@ -77,11 +77,11 @@
         null,
         null,
         1,
-        31,
+        33,
         null,
         null
       ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/models/order.rb": [
+      "/home/nana/Documents/sakura_market/app/models/order.rb": [
         1,
         null,
         1,
@@ -95,7 +95,7 @@
         1,
         null,
         1,
-        37,
+        39,
         null,
         null,
         1,
@@ -152,7 +152,7 @@
         null,
         null
       ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/models/order_item.rb": [
+      "/home/nana/Documents/sakura_market/app/models/order_item.rb": [
         1,
         1,
         1,
@@ -165,40 +165,40 @@
         1,
         null,
         1,
-        134,
+        150,
         null,
         null,
         1,
         null,
-        68,
+        75,
         null,
         null,
         1,
-        12,
+        13,
         null,
         null,
         1,
         null,
         1,
-        16,
-        16,
+        18,
+        18,
         null,
         null
       ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/controllers/products_controller.rb": [
+      "/home/nana/Documents/sakura_market/app/controllers/products_controller.rb": [
         1,
         1,
-        9,
+        10,
         null,
         null,
         1,
-        10,
-        10,
-        10,
+        13,
+        13,
+        13,
         null,
         null
       ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/models/product.rb": [
+      "/home/nana/Documents/sakura_market/app/models/product.rb": [
         1,
         1,
         null,
@@ -214,7 +214,7 @@
         null,
         null
       ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/controllers/check_outs_controller.rb": [
+      "/home/nana/Documents/sakura_market/app/controllers/check_outs_controller.rb": [
         1,
         null,
         1,
@@ -297,80 +297,30 @@
         null,
         null
       ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/models/cash_on_delivery.rb": [
+      "/home/nana/Documents/sakura_market/app/models/cash_on_delivery.rb": [
         1,
         5,
         null
       ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/channels/application_cable/channel.rb": [
+      "/home/nana/Documents/sakura_market/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/channels/application_cable/connection.rb": [
+      "/home/nana/Documents/sakura_market/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/controllers/accounts_controller.rb": [
+      "/home/nana/Documents/sakura_market/app/controllers/accounts_controller.rb": [
         0,
         0,
         0,
         0
       ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/controllers/admin/admin_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/controllers/admin/products_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+      "/home/nana/Documents/sakura_market/app/controllers/admin/admin_controller.rb": [
         0,
         0,
         0,
@@ -382,7 +332,7 @@
         0,
         0
       ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/controllers/admin/users_controller.rb": [
+      "/home/nana/Documents/sakura_market/app/controllers/admin/products_controller.rb": [
         0,
         0,
         0,
@@ -397,51 +347,6 @@
         0,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/controllers/registrations_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/helpers/accounts_helper.rb": [
-        0,
-        0
-      ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/helpers/admin/products_helper.rb": [
-        0,
-        0
-      ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/helpers/admin/users_helper.rb": [
-        0,
-        0
-      ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/helpers/application_helper.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/helpers/check_outs_helper.rb": [
         0,
         0,
         0,
@@ -477,30 +382,125 @@
         0,
         0
       ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/helpers/order_items_helper.rb": [
+      "/home/nana/Documents/sakura_market/app/controllers/admin/users_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0
       ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/helpers/products_helper.rb": [
-        0,
-        0
-      ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/jobs/application_job.rb": [
-        0,
-        0
-      ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/mailers/application_mailer.rb": [
+      "/home/nana/Documents/sakura_market/app/controllers/registrations_controller.rb": [
         0,
         0,
         0,
-        0
-      ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/models/application_record.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0
       ],
-      "C:/Users/nana/Documents/GitHub/sakura_market/app/models/user.rb": [
+      "/home/nana/Documents/sakura_market/app/helpers/accounts_helper.rb": [
+        0,
+        0
+      ],
+      "/home/nana/Documents/sakura_market/app/helpers/admin/products_helper.rb": [
+        0,
+        0
+      ],
+      "/home/nana/Documents/sakura_market/app/helpers/admin/users_helper.rb": [
+        0,
+        0
+      ],
+      "/home/nana/Documents/sakura_market/app/helpers/application_helper.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/nana/Documents/sakura_market/app/helpers/check_outs_helper.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/nana/Documents/sakura_market/app/helpers/order_items_helper.rb": [
+        0,
+        0
+      ],
+      "/home/nana/Documents/sakura_market/app/helpers/products_helper.rb": [
+        0,
+        0
+      ],
+      "/home/nana/Documents/sakura_market/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/home/nana/Documents/sakura_market/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/nana/Documents/sakura_market/app/models/application_record.rb": [
+        0,
+        0,
+        0
+      ],
+      "/home/nana/Documents/sakura_market/app/models/user.rb": [
         0,
         0,
         0,
@@ -533,6 +533,6 @@
         0
       ]
     },
-    "timestamp": 1478264936
+    "timestamp": 1478667406
   }
 }
