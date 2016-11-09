@@ -1,0 +1,59 @@
+%h1 Listing users
+
+%table
+  %thead
+    %tr
+      %th Email
+      %th Encrypted password
+      %th Reset password token
+      %th Reset password sent at
+      %th Remember created at
+      %th Sign in count
+      %th Current sign in at
+      %th Last sign in at
+      %th Current sign in ip
+      %th Last sign in ip
+      %th Created at
+      %th Updated at
+      %th Family name
+      %th Given name
+      %th Postal code
+      %th Address level1
+      %th Address level2
+      %th Address line1
+      %th Address line2
+      %th Auth type
+      %th
+      %th
+      %th
+
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.email
+        %td= user.encrypted_password
+        %td= user.reset_password_token
+        %td= user.reset_password_sent_at
+        %td= user.remember_created_at
+        %td= user.sign_in_count
+        %td= user.current_sign_in_at
+        %td= user.last_sign_in_at
+        %td= user.current_sign_in_ip
+        %td= user.last_sign_in_ip
+        %td= user.created_at
+        %td= user.updated_at
+        %td= user.family_name
+        %td= user.given_name
+        %td= user.postal_code
+        %td= user.address_level1
+        %td= user.address_level2
+        %td= user.address_line1
+        %td= user.address_line2
+        %td= user.auth_type
+        %td= link_to 'Show', user
+        %td= link_to 'Edit', edit_user_path(user)
+        %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New User', new_user_path

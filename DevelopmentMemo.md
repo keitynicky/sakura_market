@@ -486,5 +486,8 @@
   * yeildで渡す処理でconfirmを起動させる。その後、acceptかdissmissで切り替え。この部分がよくわかっていなくて、時間がかかってしまった。。
   * あと、js: trueも。忘れずに。
 
+## 既存のmodelからviewだけのscafoldを作りたい。
+ * http://stackoverflow.com/questions/17153864/rails-scaffold-controller-generator-doesnt-apply-model-attributes-to-views/35122283#35122283
+ * initializers に　scaffold_view_genaratorを追加
 
  

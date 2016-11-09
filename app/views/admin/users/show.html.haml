@@ -1,9 +1,66 @@
-%h2
-  ユーザー情報参照
-= simple_form_for [:admin, @user] do |f|
-  = f.input :email, disabled: true
-  = f.input :password, disabled: true
-  = f.input :sign_in_count, disabled: true
-  = f.input :current_sign_in_at, disabled: true
-  = f.input :last_sign_in_at, disabled: true
-  -# = link_to "一覧に戻る", admin_products_path, class: 'btn btn-default' 
+%p#notice= notice
+
+%p
+  %b Email:
+  = @user.email
+%p
+  %b Encrypted password:
+  = @user.encrypted_password
+%p
+  %b Reset password token:
+  = @user.reset_password_token
+%p
+  %b Reset password sent at:
+  = @user.reset_password_sent_at
+%p
+  %b Remember created at:
+  = @user.remember_created_at
+%p
+  %b Sign in count:
+  = @user.sign_in_count
+%p
+  %b Current sign in at:
+  = @user.current_sign_in_at
+%p
+  %b Last sign in at:
+  = @user.last_sign_in_at
+%p
+  %b Current sign in ip:
+  = @user.current_sign_in_ip
+%p
+  %b Last sign in ip:
+  = @user.last_sign_in_ip
+%p
+  %b Created at:
+  = @user.created_at
+%p
+  %b Updated at:
+  = @user.updated_at
+%p
+  %b Family name:
+  = @user.family_name
+%p
+  %b Given name:
+  = @user.given_name
+%p
+  %b Postal code:
+  = @user.postal_code
+%p
+  %b Address level1:
+  = @user.address_level1
+%p
+  %b Address level2:
+  = @user.address_level2
+%p
+  %b Address line1:
+  = @user.address_line1
+%p
+  %b Address line2:
+  = @user.address_line2
+%p
+  %b Auth type:
+  = @user.auth_type
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', users_path

@@ -1,0 +1,9 @@
+%h2
+  ユーザー情報参照
+= simple_form_for [:admin, @user] do |f|
+  = f.input :email, disabled: true
+  = f.input :password, disabled: true
+  = f.input :sign_in_count, disabled: true
+  = f.input :current_sign_in_at, disabled: true
+  = f.input :last_sign_in_at, disabled: true
+  -# = link_to "一覧に戻る", admin_products_path, class: 'btn btn-default' 
