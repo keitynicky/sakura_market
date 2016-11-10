@@ -7,9 +7,11 @@ readURL = (input) ->
       reader = new FileReader()
       reader.onload = (e) ->
         $('#blah').attr 'src', e.target.result
+        $('#preview').attr 'src', e.target.result
         $ ->
           $('#blah').Jcrop
             onSelect: updateCoords
+            onChange: updateCoords
             bgOpacity: .4
             setSelect: [
               100
@@ -25,3 +27,9 @@ updateCoords = (c) ->
   $('#product_y').val c.y
   $('#product_w').val c.w
   $('#product_h').val c.h
+  if parseInt(c.w) > 0
+    $('#preview').css
+        width: Math.round(100 / c.w * $('#blah').width()) + 'px'
+        height: Math.round(100 / c.h * $('#blah').height()) + 'px'  
+        marginLeft: '-' + Math.round(100 / c.w * c.x) + 'px'
+        marginTop: '-' + Math.round(100 / c.h * c.y) + 'px'
