@@ -36,7 +36,7 @@ class Admin::ProductsController < Admin::AdminController
   end
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :sort)
+    params.require(:product).permit(:name, :description, :price, :sort, :x, :y, :h, :w)
   end
 
   def save_common(error_render)

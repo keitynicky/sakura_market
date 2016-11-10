@@ -5,9 +5,9 @@
   = f.input :sort
   = f.input :photo, as: :file
   %img#blah
-  %hidden#x
-  %hidden#y
-  %hidden#w
-  %hidden#h
+  = f.hidden_field :x
+  = f.hidden_field :y
+  = f.hidden_field :w
+  = f.hidden_field :h
   = f.submit class: 'btn btn-primary pull-right'
   = link_to "一覧に戻る", admin_products_path, class: 'btn btn-default'

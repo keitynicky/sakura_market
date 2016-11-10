@@ -21,7 +21,7 @@ readURL = (input) ->
       reader.readAsDataURL(input.files[0])
 
 updateCoords = (c) ->
-  $('#x').val c.x
-  $('#y').val c.y
-  $('#w').val c.w
-  $('#h').val c.h
+  $('#product_x').val c.x
+  $('#product_y').val c.y
+  $('#product_w').val c.w
+  $('#product_h').val c.h
