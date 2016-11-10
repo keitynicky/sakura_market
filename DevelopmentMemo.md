@@ -503,4 +503,7 @@
    * そのままだと、例えばbootstrapは適用されないし、ラベルも表示されなかった。
    * 既存の設定を拡張する方法は時間をみて調べること。一旦は参照をindexでのみ実装することにしたので、こちらは対応せず
 
+## 商品画像のcrop機能
+ * http://stackoverflow.com/questions/22965960/cropping-uploaded-image-using-jcrop
+
  
