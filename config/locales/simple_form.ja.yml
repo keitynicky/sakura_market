@@ -35,6 +35,8 @@ ja:
         given_name: '名前を入力してください'
       order:
         delivery_date: '3営業日（営業日: 月-金）から14営業日までが選択可能です'
+      product:
+        photo: '画像ファイルを選択しますと、表示サイズにあわせて切り取りが可能です。切り取り後のプレビューが画像の下に表示されます'        
     placeholders:
       user:
         email: 'abc@mail.com'
