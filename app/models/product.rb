@@ -1,5 +1,7 @@
 class Product < ApplicationRecord
   has_many :order_items
+  has_attached_file :image, styles: {thumb: '100x80', medium: '250x200'}
+  crop_attached_file :image , aspect: '5:4'
   attr_accessor :x, :y, :w, :h
 
   validates :name, presence: true

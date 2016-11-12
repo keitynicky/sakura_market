@@ -17,6 +17,8 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'seed-fu'
 gem 'kaminari'
+gem 'aws-sdk', '>= 2.0.0'
+gem 'papercrop'
 
 group :development, :test do
   gem 'pry-rails'
