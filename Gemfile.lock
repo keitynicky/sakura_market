@@ -38,18 +38,12 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    addressable (2.4.0)
-    arel (7.1.2)
-    autoprefixer-rails (6.4.1.1)
+    addressable (2.5.0)
+      public_suffix (~> 2.0, >= 2.0.2)
+    arel (7.1.4)
+    autoprefixer-rails (6.5.3)
       execjs
-    aws-sdk (2.6.19)
-      aws-sdk-resources (= 2.6.19)
-    aws-sdk-core (2.6.19)
-      jmespath (~> 1.0)
-    aws-sdk-resources (2.6.19)
-      aws-sdk-core (= 2.6.19)
     bcrypt (3.1.11)
-    bcrypt (3.1.11-x64-mingw32)
     bcrypt-ruby (3.1.1.rc1)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -61,7 +55,7 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.2)
-    byebug (9.0.5)
+    byebug (9.0.6)
     capybara (2.7.1)
       addressable
       mime-types (>= 1.16)
@@ -69,10 +63,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    climate_control (0.0.3)
-      activesupport (>= 3.0)
-    cocaine (0.5.8)
-      climate_control (>= 0.0.3, < 1.0)
+    capybara-webkit (1.11.1)
+      capybara (>= 2.3.0, < 2.8.0)
+      json
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -105,7 +98,6 @@ GEM
     faker (1.6.6)
       i18n (~> 0.5)
     ffi (1.9.14)
-    ffi (1.9.14-x64-mingw32)
     formatador (0.2.5)
     fuubar (2.2.0)
       rspec-core (~> 3.0)
@@ -151,15 +143,15 @@ GEM
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
-    jmespath (1.3.1)
     jquery-rails (4.2.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
-    json (1.8.3)
+    json (2.0.2)
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    libv8 (3.16.14.15)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -173,35 +165,18 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mimemagic (0.3.2)
     mini_portile2 (2.1.0)
-    minitest (5.9.0)
+    minitest (5.9.1)
     multi_json (1.12.1)
-    mysql2 (0.4.4)
-    mysql2 (0.4.4-x64-mingw32)
+    mysql2 (0.4.5)
     nenv (0.3.0)
     nio4r (1.2.1)
-    nokogiri (1.6.8)
+    nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
-      pkg-config (~> 1.1.7)
-    nokogiri (1.6.8-x64-mingw32)
-      mini_portile2 (~> 2.1.0)
-      pkg-config (~> 1.1.7)
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
     orm_adapter (0.5.0)
-    paperclip (5.1.0)
-      activemodel (>= 4.2.0)
-      activesupport (>= 4.2.0)
-      cocaine (~> 0.5.5)
-      mime-types
-      mimemagic (~> 0.3.0)
-    papercrop (0.3.0)
-      jquery-rails
-      paperclip (>= 3.4)
-      rails (>= 3.1)
-    pkg-config (1.1.7)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -214,6 +189,7 @@ GEM
       yard (~> 0.8)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
+    public_suffix (2.0.4)
     puma (3.6.0)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -249,16 +225,18 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (11.3.0)
-    rb-fsevent (0.9.7)
+    rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    ref (2.0.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
+    rmagick (2.16.0)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
       rspec-mocks (~> 3.5.0)
-    rspec-core (3.5.3)
+    rspec-core (3.5.4)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -276,8 +254,8 @@ GEM
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
     ruby-progressbar (1.8.1)
-    ruby_dep (1.4.0)
-    ruby_parser (3.8.2)
+    ruby_dep (1.5.0)
+    ruby_parser (3.8.3)
       sexp_processor (~> 4.1)
     sass (3.4.22)
     sass-rails (5.0.6)
@@ -302,7 +280,8 @@ GEM
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
     slop (3.6.0)
-    spring (1.7.2)
+    spring (2.0.0)
+      activesupport (>= 4.2)
     sprockets (3.7.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -310,6 +289,9 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    therubyracer (0.12.2)
+      libv8 (~> 3.16.14.0)
+      ref
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.5)
@@ -318,14 +300,12 @@ GEM
     turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2016.6)
-      tzinfo (>= 1.0.0)
-    uglifier (3.0.2)
+    uglifier (3.0.3)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (0.1.1)
     warden (1.2.6)
       rack (>= 1.0)
-    web-console (3.3.1)
+    web-console (3.4.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
       debug_inspector
@@ -339,16 +319,15 @@ GEM
 
 PLATFORMS
   ruby
-  x64-mingw32
 
 DEPENDENCIES
-  aws-sdk (>= 2.0.0)
   bcrypt
   bcrypt-ruby (= 3.1.1.rc1)
   better_errors
   binding_of_caller
   bootstrap-sass
   capybara
+  capybara-webkit
   coffee-rails (~> 4.2)
   devise
   dotenv-rails
@@ -365,7 +344,6 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mysql2 (>= 0.3.13, < 0.5)
-  papercrop
   pry-byebug
   pry-doc
   pry-rails
@@ -373,6 +351,7 @@ DEPENDENCIES
   rails (~> 5.0.0, >= 5.0.0.1)
   rails-footnotes
   rails_12factor
+  rmagick
   rspec-rails
   sass-rails (~> 5.0)
   seed-fu
@@ -380,6 +359,7 @@ DEPENDENCIES
   simple_form
   simplecov
   spring
+  therubyracer
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)

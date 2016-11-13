@@ -41,9 +41,7 @@ class Admin::ProductsController < Admin::AdminController
 
   def save_common(error_render)
     @product.update_attributes(product_params)
-    unless params[:product][:photo].nil?
-      @product.photo = File.open(params[:product][:photo].path, 'rb').read
-    end
+    @product.set_photo params[:product][:photo]
     if @product.save
       redirect_to admin_products_path
     else

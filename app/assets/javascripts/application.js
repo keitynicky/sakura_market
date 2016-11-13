@@ -18,4 +18,3 @@
 //= require bootstrap.min.js
 //= require bootstrap-datepicker.min.js
 //= require jquery.Jcrop.min.js
-//= require papercrop
