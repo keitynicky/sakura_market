@@ -18,4 +18,18 @@ RSpec.describe ApplicationHelper, type: :helper do
       end
     end
   end
+
+  describe `#disp_normal_date` do
+    context `基本日付を取得する拡張メソッドで値を取得する時` do
+      it `フォーマットが定義したもので日時を取得できること` do
+        t = Time.zone.now 
+        expect(disp_normal_date t).to eq(t.strftime("%Y年%m月%d日 %H:%M:%S"))
+      end
+
+      it `nilの場合は空白を取得できること` do
+        t = nil
+        expect(disp_normal_date t).to be_nil
+      end
+    end
+  end
 end
