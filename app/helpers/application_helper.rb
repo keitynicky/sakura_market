@@ -6,4 +6,10 @@ module ApplicationHelper
   def disp_number(target)
     number_with_delimiter(target, delimiter: ',')
   end
+
+  def disp_normal_date(target)
+    unless target.nil?
+      target.strftime("%Y年%m月%d日 %H:%M:%S")
+    end
+  end
 end

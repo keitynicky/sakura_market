@@ -26,13 +26,13 @@
         %td
           = user.email
         %td
-          = user.current_sign_in_at.normal_display 
+          = disp_normal_date user.current_sign_in_at 
         %td
-          = user.last_sign_in_at.normal_display
+          = disp_normal_date user.last_sign_in_at
         %td
-          = user.created_at.normal_display:
+          = disp_normal_date user.created_at
         %td
-          = user.updated_at.normal_display
+          = disp_normal_date user.updated_at
         %td
           = user.postal_code 
         %td
