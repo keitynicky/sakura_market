@@ -506,4 +506,16 @@
 ## 商品画像のcrop機能
  * http://stackoverflow.com/questions/22965960/cropping-uploaded-image-using-jcrop
 
- 
+## papercrop導入断念
+ * papercropを(paperclip等を参照しつつ)導入しようとしたが詰まったため、導入断念。
+  * http://stackoverflow.com/questions/13056932/paperclip-file-not-found-error
+  * 上記と同様のエラーが出たが、その後、cocaineをbundle installしようとしたら、他のlibraryとの依存性の整合性に支障をきたし、調整困難と判断して採用を断念した。
+   * bundle currently has locked If you are updating multiple gems in your Gemfile at once
+
+## rmagickのインストール
+ * http://qiita.com/abgata20000/items/8a75779d296dbf57f913
+  * 事前にImageMagickのインストールが必要
+
+## windowsでのrmagicの利用
+ * linuxでは動作確認済。Windowsでの動作は現在調査中
+  * http://www.ownway.info/Ruby/rmagick/howtoinstall/windows
