@@ -519,3 +519,5 @@
 ## windowsでのrmagicの利用
  * linuxでは動作確認済。Windowsでの動作は現在調査中
   * http://www.ownway.info/Ruby/rmagick/howtoinstall/windows
+ * http://stackoverflow.com/questions/4873276/i-cant-install-rmagick-gem-on-windows
+  * 実行時のオプションを上記のサイトに倣って指定。再起動→管理者権限実行で一歩前へ！
