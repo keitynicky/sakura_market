@@ -17,7 +17,9 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'seed-fu'
 gem 'kaminari'
-gem 'rmagick'
+if RUBY_PLATFORM.match(/linux/)
+  gem 'rmagick'
+end
 
 group :development, :test do
   gem 'pry-rails'

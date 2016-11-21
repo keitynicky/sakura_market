@@ -1,5 +1,7 @@
 require 'rubygems'
-require 'rmagick'
+if RUBY_PLATFORM.match(/linux/)
+  require 'rmagick'
+end
 
 class Product < ApplicationRecord
   
