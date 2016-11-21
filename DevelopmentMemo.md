@@ -521,3 +521,5 @@
   * http://www.ownway.info/Ruby/rmagick/howtoinstall/windows
  * http://stackoverflow.com/questions/4873276/i-cant-install-rmagick-gem-on-windows
   * 実行時のオプションを上記のサイトに倣って指定。再起動→管理者権限実行で一歩前へ！
+   * imagemagickのバージョンが7以上の場合はコマンド実行後すぐにエラーになってしまうが、6系ならばインストール作業が進みその後エラーになっている。
+   * https://shoobm.wordpress.com/2013/01/03/installing-rmagick-gem-on-windows-7/
